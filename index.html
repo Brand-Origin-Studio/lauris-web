@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lauris Legal - Termini e Privacy</title>
-    <meta name="description" content="Termini, Condizioni e Privacy Policy Lauris Studio OS - App gratuita per studenti universitari">
+    <meta name="description" content="Termini e Privacy Policy Lauris Studio OS - MVP gratuito per studenti universitari">
     <style>
         :root {
             --bg-primary: #ffffff;
@@ -14,7 +14,6 @@
             --text-secondary: #48484a;
             --text-muted: #86868b;
             --border: #e0e0e5;
-            --shadow-light: 0 1px 3px rgba(0,0,0,0.1);
             --shadow-card: 0 8px 32px rgba(0,0,0,0.12);
             --radius: 16px;
         }
@@ -29,7 +28,6 @@
             overflow-x: hidden;
         }
 
-        /* Top Navigation Bar Apple-style */
         .top-nav {
             position: fixed;
             top: 0;
@@ -54,14 +52,6 @@
             font-size: 20px;
             font-weight: 700;
             color: var(--text-primary);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .logo::before {
-            content: '📱';
-            font-size: 24px;
         }
 
         .lang-toggle {
@@ -84,12 +74,8 @@
             white-space: nowrap;
         }
 
-        .lang-btn.active {
-            background: var(--text-primary);
-            color: white;
-        }
+        .lang-btn.active { background: var(--text-primary); color: white; }
 
-        /* Main Content */
         .main-content {
             padding-top: 88px;
             padding-bottom: 60px;
@@ -99,7 +85,6 @@
             padding-right: 20px;
         }
 
-        /* Hero Cards moderne */
         .cards-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
@@ -120,48 +105,14 @@
             user-select: none;
         }
 
-        .card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--text-primary), transparent);
-            transform: scaleX(0);
-            transition: transform 0.3s;
-        }
+        .card:hover { transform: translateY(-6px); box-shadow: 0 20px 56px rgba(0,0,0,0.15); }
 
-        .card:hover::before, .card.active::before {
-            transform: scaleX(1);
-        }
+        .card-icon { font-size: 48px; margin-bottom: 20px; opacity: 0.8; }
 
-        .card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 20px 56px rgba(0,0,0,0.15);
-        }
+        .card h2 { font-size: 28px; font-weight: 700; margin-bottom: 12px; color: var(--text-primary); }
 
-        .card-icon {
-            font-size: 48px;
-            margin-bottom: 20px;
-            opacity: 0.8;
-        }
+        .card p { font-size: 17px; color: var(--text-secondary); line-height: 1.5; }
 
-        .card h2 {
-            font-size: 28px;
-            font-weight: 700;
-            margin-bottom: 12px;
-            color: var(--text-primary);
-        }
-
-        .card p {
-            font-size: 17px;
-            color: var(--text-secondary);
-            margin-bottom: 0;
-            line-height: 1.5;
-        }
-
-        /* Content Detail */
         .content-detail {
             display: none;
             background: var(--bg-primary);
@@ -172,8 +123,8 @@
             overflow: hidden;
         }
 
-        .content-detail.active {
-            display: block;
+        .content-detail.active { 
+            display: block; 
             animation: slideUp 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
 
@@ -191,19 +142,11 @@
             border-bottom: 1px solid var(--border);
         }
 
-        .detail-header h1 {
-            font-size: 36px;
-            font-weight: 700;
-            color: var(--text-primary);
-            margin: 0;
-        }
+        .detail-header h1 { font-size: 36px; font-weight: 700; color: var(--text-primary); margin: 0; }
 
-        .detail-actions {
-            display: flex;
-            gap: 12px;
-        }
+        .detail-actions { display: flex; gap: 12px; }
 
-        .close-btn, .lang-toggle-detail {
+        .close-btn {
             background: none;
             border: 1px solid var(--border);
             border-radius: 12px;
@@ -213,16 +156,9 @@
             cursor: pointer;
             color: var(--text-secondary);
             transition: all 0.2s;
-            display: flex;
-            align-items: center;
-            gap: 8px;
         }
 
-        .close-btn:hover, .lang-toggle-detail:hover {
-            background: var(--bg-secondary);
-            border-color: var(--text-primary);
-            color: var(--text-primary);
-        }
+        .close-btn:hover { background: var(--bg-secondary); border-color: var(--text-primary); color: var(--text-primary); }
 
         .content-body {
             padding: 48px 40px 60px;
@@ -230,12 +166,15 @@
             overflow-y: auto;
         }
 
-        .date {
-            font-size: 17px;
-            color: var(--text-muted);
-            margin-bottom: 32px;
-            font-weight: 500;
+        .disclaimer {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 12px;
+            padding: 24px;
+            margin: 24px 0;
         }
+
+        .date { font-size: 17px; color: var(--text-muted); margin-bottom: 32px; font-weight: 500; }
 
         .content-body h2 {
             font-size: 24px;
@@ -244,14 +183,7 @@
             color: var(--text-primary);
         }
 
-        .content-body h2:first-child { margin-top: 0; }
-
-        .content-body h3 {
-            font-size: 20px;
-            font-weight: 600;
-            margin: 32px 0 16px 0;
-            color: var(--text-primary);
-        }
+        .content-body h2:first-child { margin-top: 24px; }
 
         .content-body p, .content-body li {
             font-size: 17px;
@@ -262,14 +194,6 @@
         .content-body ul { padding-left: 28px; margin-bottom: 20px; }
         .content-body li { margin-bottom: 12px; }
 
-        .highlight {
-            background: var(--bg-tertiary);
-            padding: 24px;
-            border-radius: 12px;
-            border-left: 4px solid var(--border);
-            margin: 24px 0;
-        }
-
         .contact-box {
             background: var(--bg-secondary);
             padding: 32px;
@@ -279,45 +203,10 @@
         }
 
         @media (max-width: 768px) {
-            .cards-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-            
-            .main-content {
-                padding-left: 16px;
-                padding-right: 16px;
-            }
-            
-            .content-detail .detail-header,
-            .content-body {
-                padding-left: 24px;
-                padding-right: 24px;
-            }
-            
-            .detail-header h1 {
-                font-size: 28px;
-            }
-            
-            .content-body {
-                max-height: 65vh;
-                padding-bottom: 40px;
-            }
-        }
-
-        /* Scrollbar custom */
-        .content-body::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        .content-body::-webkit-scrollbar-track {
-            background: var(--bg-secondary);
-            border-radius: 4px;
-        }
-
-        .content-body::-webkit-scrollbar-thumb {
-            background: var(--text-muted);
-            border-radius: 4px;
+            .cards-grid { grid-template-columns: 1fr; gap: 20px; }
+            .main-content { padding-left: 16px; padding-right: 16px; }
+            .content-detail .detail-header, .content-body { padding-left: 24px; padding-right: 24px; }
+            .detail-header h1 { font-size: 28px; }
         }
     </style>
 </head>
@@ -326,8 +215,8 @@
         <div class="nav-container">
             <div class="logo">Lauris</div>
             <div class="lang-toggle">
-                <a href="#" class="lang-btn active" data-lang="it">Italiano</a>
-                <a href="#" class="lang-btn" data-lang="en">English</a>
+                <a href="#" class="lang-btn active" data-lang="it">🇮🇹 IT</a>
+                <a href="#" class="lang-btn" data-lang="en">🇬🇧 EN</a>
             </div>
         </div>
     </nav>
@@ -337,203 +226,181 @@
             <div class="card" onclick="openSection('termini')" tabindex="0">
                 <div class="card-icon">⚖️</div>
                 <h2>Termini e Condizioni</h2>
-                <p>Regole d'uso, licenza e responsabilità per l'app gratuita Lauris Studio OS</p>
+                <p>Regole d'uso per Lauris MVP gratuito</p>
             </div>
-            
             <div class="card" onclick="openSection('privacy')" tabindex="0">
                 <div class="card-icon">🔒</div>
                 <h2>Privacy Policy</h2>
-                <p>Protezione dati GDPR-compliant. Operiamo 100% local-first senza raccolta dati</p>
+                <p>100% locale - zero dati raccolti</p>
             </div>
         </div>
 
-        <!-- Termini e Condizioni -->
-        <div id="termini-content" class="content-detail">
-            <div class="detail-header">
-                <h1>Termini e Condizioni</h1>
-                <div class="detail-actions">
-                    <button class="lang-toggle-detail" onclick="switchLanguage('termini')">
-                        <span class="lang-text">EN</span>
-                    </button>
-                    <button class="close-btn" onclick="closeSection('termini')">Chiudi</button>
-                </div>
-            </div>
-            
-            <div class="content-body">
-                <p class="date">Ultimo aggiornamento: 25 febbraio 2026</p>
-                
-                <h2>1. Introduzione e Accettazione</h2>
-                <p>Benvenuto/a in <strong>Lauris</strong>, l'app gratuita "Studio OS" per studenti universitari. Utilizzando l'app accetti integralmente questi Termini, la <a href="#" onclick="openSection('privacy'); return false;">Privacy Policy</a> e le linee guida Apple.</p>
-
-                <h2>2. Descrizione del Servizio</h2>
-                <ul>
-                    <li><strong>App gratuita</strong> iOS per pianificazione studio universitario</li>
-                    <li><strong>100% locale</strong>: note, tracker e piani restano sul tuo dispositivo</li>
-                    <li><strong>Sync opzionale</strong> iCloud (gestito da Apple con crittografia)</li>
-                    <li><strong>No login/account</strong> richiesti</li>
-                </ul>
-
-                <h2>3. Licenza d'Uso</h2>
-                <ul>
-                    <li>Licenza gratuita, non esclusiva, non trasferibile per uso personale</li>
-                    <li>Fornita "così com'è" senza garanzie espresse o implicite</li>
-                    <li>Non garantisce funzionamento perfetto o assenza di bug minori</li>
-                </ul>
-
-                <h2>4. Vietato Assolutamente</h2>
-                <ul>
-                    <li>Reverse engineering, decompilazione, disassemblaggio</li>
-                    <li>Modifica codice, risorse o interfaccia</li>
-                    <li>Distribuzione non ufficiale o uso commerciale</li>
-                    <li>Violazione diritti IP dello sviluppatore</li>
-                </ul>
-
-                <h2>5. Responsabilità Limitata</h2>
-                <ul>
-                    <li><strong>Non responsabili</strong> per danni indiretti, dati persi o lucro cessante</li>
-                    <li>Responsabilità massima pari a €0 (prezzo app gratuita)</li>
-                    <li>Non responsabili per risultati accademici o piani studio suggeriti</li>
-                </ul>
-
-                <h2>6. Terminazione</h2>
-                <p>Disinstalla l'app per terminare. Lo sviluppatore può sospendere con preavviso nell'app.</p>
-
-                <h2>7. Legge Applicabile</h2>
-                <ul>
-                    <li><strong>Legge italiana</strong> regola questi termini</li>
-                    <li><strong>Foro esclusivo:</strong> Tribunale di Milano</li>
-                    <li>Linee guida Apple App Review applicabili</li>
-                </ul>
-
-                <div class="contact-box">
-                    <h3>Contatti Sviluppatore</h3>
-                    <p><strong>Email supporto:</strong> <a href="mailto:supporto@lauris.app">[contatta via form]</a><br>
-                    <strong>Sviluppatore individuale</strong> - Italia<br>
-                    <strong>Data:</strong> 25 febbraio 2026</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Privacy Policy -->
+        <!-- PRIVACY POLICY -->
         <div id="privacy-content" class="content-detail">
             <div class="detail-header">
                 <h1>Privacy Policy</h1>
                 <div class="detail-actions">
-                    <button class="lang-toggle-detail" onclick="switchLanguage('privacy')">
-                        <span class="lang-text">EN</span>
-                    </button>
+                    <span class="lang-btn active" style="padding: 8px 16px; font-size: 15px;">🇮🇹 IT</span>
                     <button class="close-btn" onclick="closeSection('privacy')">Chiudi</button>
                 </div>
             </div>
-            
-            <div class="content-body">
-                <p class="date">Ultimo aggiornamento: 25 febbraio 2026</p>
+            <div class="content-body" data-lang="it">
+                <p class="date">Ultima modifica: 25 febbraio 2026</p>
                 
-                <div class="highlight">
-                    <h3>✅ Lauris è 100% Local-First</h3>
-                    <p><strong>Nessun dato personale</strong> viene raccolto, trasmesso o salvato sui nostri server.</p>
+                <div class="disclaimer">
+                    <strong>❗ Disclaimer Legale:</strong> Questa policy informa sull'uso dati ma <strong>non costituisce consulenza legale</strong>. 
+                    Non può essere copiata, venduta o usata commercialmente.
                 </div>
+
+                <p>Benvenuto nell'app <strong>Lauris</strong>. Utilizzando questa applicazione, accetti la presente Privacy Policy.</p>
 
                 <h2>1. Dati Raccolti</h2>
+                <p><strong>Nessun dato viene raccolto, memorizzato o trasmesso dal dispositivo.</strong></p>
                 <ul>
-                    <li><strong>Zero dati identificativi:</strong> nome, email, ID dispositivo, IP</li>
-                    <li><strong>Dati locali:</strong> note, piani studio, progressi (solo sul tuo iPhone)</li>
-                    <li><strong>iCloud sync:</strong> opzionale, crittografato end-to-end da Apple</li>
-                    <li><strong>Analytics:</strong> Firebase aggregati anonimi (opt-out disponibile)</li>
+                    <li>Tutti i contenuti (note, progressi, impostazioni) restano <strong>esclusivamente locali</strong> sul tuo iPhone/iPad</li>
+                    <li><strong>Zero accesso remoto</strong> da parte dello sviluppatore o terze parti</li>
                 </ul>
 
-                <h2>2. Titolare Trattamento</h2>
-                <div class="highlight">
-                    <p><strong>Sviluppatore individuale</strong><br>
-                    Italia<br>
-                    <strong>Email Privacy:</strong> <a href="mailto:privacy@lauris.app">[contatta via form]</a></p>
+                <h2>2. Finalità e Base Legale</h2>
+                <ul>
+                    <li><strong>Nessuna elaborazione dati</strong>, profiling o analisi</li>
+                    <li><strong>Nessuna condivisione</strong> con servizi esterni</li>
+                    <li>Conformità GDPR: <strong>trattamento dati nullo</strong> (Art. 5 GDPR)</li>
+                </ul>
+
+                <h2>3. Diritti dell'Utente (GDPR)</h2>
+                <ul>
+                    <li><strong>Accesso/cancellazione:</strong> elimina l'app per rimuovere tutti i dati locali</li>
+                    <li><strong>Opposizione:</strong> disinstalla in qualsiasi momento</li>
+                    <li><strong>Contattaci per info:</strong> <a href="mailto:support@lauris.app">[support@lauris.app]</a></li>
+                </ul>
+
+                <h2>4. Sicurezza</h2>
+                <ul>
+                    <li>Dati protetti da <strong>iOS sandbox</strong> e crittografia locale</li>
+                    <li><strong>Nessun network request</strong> (zero internet permissions)</li>
+                    <li>Aggiornamenti automatici per sicurezza</li>
+                </ul>
+
+                <h2>5. Modifiche alla Policy</h2>
+                <p>Possiamo aggiornare questa policy. Ti informeremo nell'app. <strong>Uso continuato = accettazione.</strong></p>
+
+                <div class="contact-box">
+                    <h3>Contatti</h3>
+                    <p><strong>Email:</strong> <a href="mailto:support@lauris.app">[support@lauris.app]</a><br>
+                    <strong>Sviluppatore:</strong> [Tuo Nome], Milano (IT)</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- TERMINI E CONDIZIONI -->
+        <div id="termini-content" class="content-detail">
+            <div class="detail-header">
+                <h1>Termini e Condizioni</h1>
+                <div class="detail-actions">
+                    <span class="lang-btn active" style="padding: 8px 16px; font-size: 15px;">🇮🇹 IT</span>
+                    <button class="close-btn" onclick="closeSection('termini')">Chiudi</button>
+                </div>
+            </div>
+            <div class="content-body" data-lang="it">
+                <p class="date">Ultima modifica: 25 febbraio 2026</p>
+                
+                <div class="disclaimer">
+                    <strong>❗ Disclaimer Legale:</strong> Questi termini informano sull'uso dell'app ma <strong>non costituiscono consulenza legale di valore legale</strong>. 
+                    Non possono essere copiati, venduti o usati commercialmente.
                 </div>
 
-                <h2>3. Finalità e Base Legale GDPR</h2>
+                <p>Benvenuto nell'app <strong>Lauris</strong>. Utilizzando questa applicazione, accetti i presenti Termini e Condizioni.</p>
+
+                <h2>1. Uso dell'App</h2>
+                <p>Lauris è fornita <strong>"così com'è"</strong> senza garanzie di funzionamento ininterrotto o assenza di errori.</p>
                 <ul>
-                    <li><strong>Funzionalità app:</strong> Legittimo Interesse (Art. 6.1.f GDPR)</li>
-                    <li><strong>Analytics opzionali:</strong> Consenso esplicito (Art. 6.1.a GDPR)</li>
-                    <li><strong>iCloud:</strong> Esecuzione contratto Apple (Art. 6.1.b GDPR)</li>
+                    <li>L'app è destinata a <strong>studenti universitari</strong> per supporto allo studio locale</li>
+                    <li>È vietato: <strong>reverse engineering</strong>, decompilazione, uso commerciale non autorizzato</li>
                 </ul>
 
-                <h2>4. Diritti GDPR (Art. 15-22)</h2>
+                <h2>2. Account e Accesso</h2>
                 <ul>
-                    <li><strong>Accesso:</strong> richiedi via email privacy</li>
-                    <li><strong>Cancellazione:</strong> disinstalla app (dati locali eliminati)</li>
-                    <li><strong>Opposizione:</strong> disattiva analytics nelle impostazioni</li>
-                    <li><strong>Portabilità:</strong> dati locali esportabili dall'app</li>
-                    <li><strong>Tempi risposta:</strong> massimo 30 giorni</li>
+                    <li><strong>Nessun account</strong> richiesto o creato</li>
+                    <li><strong>Accesso anonimo</strong> e locale-only</li>
                 </ul>
 
-                <h2>5. Sicurezza Dati</h2>
+                <h2>3. Proprietà Intellettuale</h2>
+                <p><strong>Tutti i contenuti, design, codice e marchi di Lauris sono proprietà esclusiva dello sviluppatore.</strong></p>
                 <ul>
-                    <li>Sandbox iOS nativa</li>
-                    <li>Crittografia AES locale</li>
-                    <li>Zero connessioni server non autorizzate</li>
-                    <li>Aggiornamenti automatici sicurezza</li>
+                    <li>È consentito <strong>l'uso personale non commerciale</strong></li>
+                    <li><strong>Vietata la copia o distribuzione</strong> senza consenso scritto</li>
                 </ul>
 
-                <h2>6. Terze Parti</h2>
+                <h2>4. Limitazione di Responsabilità</h2>
                 <ul>
-                    <li><strong>Apple:</strong> iCloud (non accessibile da noi)</li>
-                    <li><strong>Firebase:</strong> statistiche aggregate anonime (Google Inc.)</li>
-                    <li><strong>Trasferimenti USA:</strong> Clausole Contrattuali Standard UE</li>
+                    <li>Lo sviluppatore <strong>non è responsabile</strong> per danni diretti, indiretti, incidentali o consequenziali</li>
+                    <li>L'app <strong>non sostituisce consulenza professionale</strong> (es. tutoraggio medico/legale)</li>
+                    <li>Massima responsabilità limitata a <strong>€0</strong> (gratuita)</li>
+                </ul>
+
+                <h2>5. Pagamenti e Abbonamenti</h2>
+                <p>Lauris è <strong>completamente gratuita</strong> nella versione attuale.</p>
+
+                <h2>6. Modifiche ai Termini</h2>
+                <p>Possiamo aggiornare questi termini senza preavviso. <strong>Continuando a usare l'app accetti le modifiche.</strong></p>
+
+                <h2>7. Terminazione</h2>
+                <ul>
+                    <li>Puoi cessare l'uso <strong>disinstallando l'app</strong></li>
+                    <li>Lo sviluppatore può sospendere servizi in qualsiasi momento</li>
+                </ul>
+
+                <h2>8. Legge Applicabile</h2>
+                <ul>
+                    <li>Questi termini sono regolati dalla <strong>legge italiana</strong></li>
+                    <li>Qualsiasi disputa sarà risolta dal <strong>Tribunale di Milano</strong></li>
                 </ul>
 
                 <div class="contact-box">
-                    <h3>Problemi Privacy?</h3>
-                    <p><strong>Contattaci:</strong> <a href="mailto:privacy@lauris.app">[form privacy]</a><br>
-                    <strong>Garante Privacy:</strong> <a href="https://www.garanteprivacy.it" target="_blank">www.garanteprivacy.it</a><br>
-                    <strong>Apple Support:</strong> report.apple.com</p>
+                    <h3>Contatti</h3>
+                    <p><strong>Email:</strong> <a href="mailto:support@lauris.app">[support@lauris.app]</a><br>
+                    <strong>Sviluppatore:</strong> [Tuo Nome], Milano (IT)</p>
                 </div>
             </div>
         </div>
     </main>
 
     <script>
+        let currentLang = 'it';
+
         function openSection(section) {
-            // Chiudi tutte le sezioni
-            document.querySelectorAll('.content-detail').forEach(el => {
-                el.classList.remove('active');
-            });
-            document.querySelectorAll('.card').forEach(el => {
-                el.classList.remove('active');
-            });
-            
-            // Apri sezione selezionata
+            document.querySelectorAll('.content-detail').forEach(el => el.classList.remove('active'));
             document.getElementById(section + '-content').classList.add('active');
-            document.querySelector(`[onclick="openSection('${section}')"]`).classList.add('active');
-            
-            // Scroll suave in cima
-            document.body.scrollTop = document.documentElement.scrollTop = 0;
-            
-            // Focus trap per accessibilità
-            document.getElementById(section + '-content').focus();
+            document.body.scrollTop = 0;
         }
 
         function closeSection(section) {
             document.getElementById(section + '-content').classList.remove('active');
-            document.querySelector(`[onclick="openSection('${section}')"]`).classList.remove('active');
         }
 
-        function switchLanguage(section) {
-            const btn = event.target.closest('.lang-toggle-detail');
-            const currentLang = btn.querySelector('.lang-text').textContent;
-            btn.querySelector('.lang-text').textContent = currentLang === 'EN' ? 'IT' : 'EN';
-            // TODO: Implementa switch contenuti multilingua
-        }
-
-        // Language toggle top bar
+        // Language toggle
         document.querySelectorAll('.lang-btn').forEach(btn => {
             btn.addEventListener('click', (e) => {
                 e.preventDefault();
                 document.querySelector('.lang-btn.active').classList.remove('active');
                 btn.classList.add('active');
+                currentLang = btn.dataset.lang;
+                updateLanguage();
             });
         });
 
-        // Keyboard navigation per cards
-        document.querySelectorAll('.card').forEach((card, index) => {
+        function updateLanguage() {
+            const sections = document.querySelectorAll('.content-body');
+            sections.forEach(section => {
+                const lang = currentLang === 'it' ? 'it' : 'en';
+                // Qui implementeresti il cambio testi reali
+                console.log('Switching to:', lang);
+            });
+        }
+
+        // Keyboard navigation
+        document.querySelectorAll('.card').forEach(card => {
             card.addEventListener('keydown', (e) => {
                 if (e.key === 'Enter' || e.key === ' ') {
                     e.preventDefault();
@@ -542,13 +409,9 @@
             });
         });
 
-        // Close on Escape
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {
-                document.querySelectorAll('.content-detail.active').forEach(detail => {
-                    const section = detail.id.replace('-content', '');
-                    closeSection(section);
-                });
+                document.querySelector('.content-detail.active')?.classList.remove('active');
             }
         });
     </script>
