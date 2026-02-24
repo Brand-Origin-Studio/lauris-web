@@ -3,150 +3,164 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lauris - Termini e Privacy</title>
+    <title>Lauris - Termini e Privacy Policy</title>
+    <meta name="description" content="Termini e Condizioni e Privacy Policy completa per Lauris - Studio OS per studenti universitari">
     <style>
         :root {
-            --bg-primary: #fcfcff;
-            --bg-secondary: #f5f5f7;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f2f2f7;
+            --bg-tertiary: #f8f9fa;
             --text-primary: #1d1d1f;
-            --text-secondary: #6e6e73;
-            --accent: #0071e3;
-            --border: #d2d2d7;
+            --text-secondary: #48484a;
+            --text-muted: #86868b;
+            --border: #e0e0e5;
+            --shadow-light: 0 1px 3px rgba(0,0,0,0.1);
+            --shadow-heavy: 0 4px 12px rgba(0,0,0,0.08);
             --radius: 12px;
-            --shadow: 0 4px 12px rgba(0,0,0,0.08);
         }
 
-        * { 
-            margin: 0; 
-            padding: 0; 
-            box-sizing: border-box; 
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body { 
-            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, var(--bg-primary) 0%, #f8f9ff 100%);
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: var(--bg-secondary);
             color: var(--text-primary);
-            line-height: 1.6;
-            padding: 40px 20px;
-            min-height: 100vh;
+            line-height: 1.7;
+            padding: 20px 0;
         }
 
         .container { 
-            max-width: 800px; 
+            max-width: 900px; 
             margin: 0 auto; 
-            background: white;
+            background: var(--bg-primary);
             border-radius: var(--radius);
-            box-shadow: var(--shadow);
+            box-shadow: var(--shadow-heavy);
             overflow: hidden;
         }
 
         .header {
-            background: linear-gradient(135deg, var(--accent) 0%, #005bb5 100%);
-            color: white;
-            padding: 40px 32px;
+            background: var(--bg-primary);
+            padding: 48px 40px;
             text-align: center;
+            border-bottom: 1px solid var(--border);
         }
 
         .header h1 {
-            font-size: 32px;
-            font-weight: 600;
+            font-size: 40px;
+            font-weight: 700;
             margin-bottom: 8px;
+            color: var(--text-primary);
         }
 
-        .header p {
-            opacity: 0.9;
-            font-size: 17px;
+        .header .subtitle {
+            font-size: 20px;
+            color: var(--text-secondary);
+            font-weight: 400;
         }
 
         nav {
-            background: var(--bg-secondary);
-            padding: 24px 32px;
+            background: var(--bg-tertiary);
+            padding: 32px 40px;
             border-bottom: 1px solid var(--border);
         }
 
         nav h2 {
-            font-size: 20px;
+            font-size: 24px;
             font-weight: 600;
-            margin-bottom: 16px;
+            margin-bottom: 24px;
             color: var(--text-primary);
         }
 
         .nav-link {
             display: block;
-            padding: 12px 16px;
-            color: var(--accent);
+            padding: 16px 20px;
+            color: var(--text-primary);
             text-decoration: none;
-            font-size: 17px;
+            font-size: 18px;
             font-weight: 500;
-            border-radius: 8px;
-            margin-bottom: 8px;
-            transition: all 0.2s;
+            border-radius: 10px;
+            margin-bottom: 12px;
+            transition: background 0.2s ease;
             border: 1px solid transparent;
         }
 
         .nav-link:hover, .nav-link:focus {
-            background: rgba(0,113,227,0.1);
-            border-color: var(--accent);
+            background: var(--bg-secondary);
+            border-color: var(--border);
         }
 
         .section {
-            padding: 40px 32px;
+            padding: 48px 40px;
             border-bottom: 1px solid var(--border);
         }
 
-        .section:last-child {
-            border-bottom: none;
-        }
+        .section:last-child { border-bottom: none; }
 
         .section h1 {
-            font-size: 28px;
-            font-weight: 600;
-            margin-bottom: 8px;
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 12px;
             color: var(--text-primary);
         }
 
         .section h2 {
-            font-size: 22px;
+            font-size: 24px;
+            font-weight: 600;
+            margin: 40px 0 20px 0;
+            color: var(--text-primary);
+        }
+
+        .section h2:first-child { margin-top: 0; }
+
+        .section h3 {
+            font-size: 20px;
             font-weight: 600;
             margin: 32px 0 16px 0;
             color: var(--text-primary);
         }
 
-        .section h2:first-child {
-            margin-top: 0;
-        }
-
         .date {
             font-size: 17px;
-            color: var(--text-secondary);
-            margin-bottom: 24px;
+            color: var(--text-muted);
+            margin-bottom: 32px;
+            font-weight: 500;
         }
 
-        p {
+        p, li {
             font-size: 17px;
             margin-bottom: 16px;
+            color: var(--text-secondary);
         }
 
-        strong {
-            color: var(--text-primary);
+        strong { color: var(--text-primary); font-weight: 600; }
+
+        ul { padding-left: 24px; margin-bottom: 20px; }
+        li { margin-bottom: 12px; }
+
+        .highlight {
+            background: var(--bg-tertiary);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid var(--border);
+            margin: 24px 0;
         }
 
-        .contact {
+        .contact-box {
             background: var(--bg-secondary);
-            padding: 24px;
+            padding: 32px;
             border-radius: var(--radius);
-            margin-top: 24px;
+            margin: 32px 0;
             border: 1px solid var(--border);
         }
 
-        @media (max-width: 768px) {
-            body { padding: 20px 16px; }
-            .header, .section, nav { padding-left: 24px; padding-right: 24px; }
-            .header h1 { font-size: 26px; }
-        }
+        .contact-box strong { display: block; margin-bottom: 8px; }
 
-        @media (prefers-reduced-motion: reduce) {
-            * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+        @media (max-width: 768px) {
+            body { padding: 10px 0; }
+            .container { margin: 0 10px; border-radius: 16px; }
+            .header, .section, nav { padding-left: 24px; padding-right: 24px; }
+            .header h1 { font-size: 32px; }
+            .section h1 { font-size: 28px; }
         }
     </style>
 </head>
@@ -154,7 +168,7 @@
     <div class="container">
         <header class="header">
             <h1>Lauris</h1>
-            <p>Studio OS</p>
+            <p class="subtitle">Studio OS - Il tuo sistema operativo per lo studio</p>
         </header>
 
         <nav>
@@ -164,60 +178,154 @@
         </nav>
 
         <section id="termini" class="section">
-            <h1>Termini e Condizioni</h1>
+            <h1>Termini e Condizioni Lauris</h1>
             <p class="date">Data ultima modifica: 25 febbraio 2026</p>
 
-            <p>Benvenuto/a in <strong>Lauris</strong>. Utilizzando questa applicazione, accetti i presenti Termini e Condizioni.</p>
+            <h2>1. Introduzione e Accettazione</h2>
+            <p>Benvenuto/a in <strong>Lauris</strong>, l'app di supporto allo studio per studenti universitari. Utilizzando Lauris (inclusi download, installazione e qualsiasi uso), accetti integralmente questi Termini e Condizioni e la Privacy Policy collegata.</p>
 
-            <h2>Descrizione App</h2>
-            <p>Lauris è fornita "così com'è" senza garanzie di funzionamento ininterrotto o assenza di errori. L'app è destinata a studenti universitari per supporto allo studio locale (Studio OS).</p>
+            <h2>2. Descrizione del Servizio</h2>
+            <ul>
+                <li>Lauris è un'app gratuita "Studio OS" per iOS</li>
+                <li>Funzionalità: pianificazione studio, tracker progressi, note locali, timer focus</li>
+                <li>Operatività 100% locale sul dispositivo iOS</li>
+                <li>Sincronizzazione opzionale tramite iCloud (gestita da Apple)</li>
+                <li>Nessun backend server o login richiesto</li>
+            </ul>
 
-            <h2>Divieti</h2>
-            <p>È vietato: reverse engineering, decompilazione, uso commerciale non autorizzato, distribuzione non ufficiale.</p>
+            <h2>3. Licenza e Utilizzo</h2>
+            <ul>
+                <li>License gratuita non esclusiva per uso personale e non commerciale</li>
+                <li>App fornita "così com'è" senza garanzie di alcun tipo</li>
+                <li>Non garantisce funzionamento ininterrotto o assenza di bug</li>
+            </ul>
 
-            <h2>Nessun Account</h2>
-            <p>Accesso anonimo e locale-only. Nessun dato salvato su server.</p>
+            <h2>4. Divieti Assoluti</h2>
+            <ul>
+                <li>Reverse engineering, decompilazione o disassemblaggio</li>
+                <li>Modifica del codice sorgente o risorse</li>
+                <li>Uso commerciale, distribuzione o sublicenza</li>
+                <li>Utilizzo per scopi illegali o fraudolenti</li>
+                <li>Interferenza con altri utenti o servizi Apple</li>
+            </ul>
 
-            <h2>Aggiornamenti</h2>
-            <p>Lo sviluppatore può aggiornare i termini senza preavviso. L'uso continuato implica accettazione.</p>
+            <h2>5. Nessun Account o Registrazione</h2>
+            <p>Lauris opera in modalità completamente anonima. Non raccogliamo identificativi utente, email o password. Tutti i dati restano sul tuo dispositivo.</p>
 
-            <h2>Responsabilità</h2>
-            <p>Lo sviluppatore non è responsabile per danni indiretti. Puoi cessare l'uso disinstallando l'app.</p>
+            <h2>6. Aggiornamenti e Modifiche</h2>
+            <ul>
+                <li>Nuove versioni tramite App Store automatico</li>
+                <li>Possiamo modificare termini senza preavviso individuale</li>
+                <li>Uso continuato = accettazione delle modifiche</li>
+                <li>Notifica cambiamenti significativi nell'app</li>
+            </ul>
 
-            <h2>Legge Applicabile</h2>
-            <p>Regolata dalla legge italiana. Qualsiasi disputa dal Tribunale di Milano.</p>
+            <h2>7. Limitazione Responsabilità</h2>
+            <ul>
+                <li>Non responsabili per danni indiretti, consequenziali o dati persi</li>
+                <li>Responsabilità massima: prezzo pagato (€0 per app gratuita)</li>
+                <li>Non responsabili per imprecisioni nei piani di studio suggeriti</li>
+            </ul>
 
-            <div class="contact">
+            <h2>8. Terminazione</h2>
+            <p>Puoi terminare in qualsiasi momento disinstallando l'app. Lo sviluppatore può sospendere servizi con preavviso nell'app.</p>
+
+            <h2>9. Legge Applicabile</h2>
+            <ul>
+                <li>Legge italiana governa questi termini</li>
+                <li>Foro esclusivo: Tribunale di Milano</li>
+                <li>Applicazione linee guida Apple App Review</li>
+            </ul>
+
+            <div class="contact-box">
+                <strong>Contatti Sviluppatore</strong>
                 <p><strong>Email:</strong> [tua-email@example.com]<br>
-                <strong>Sviluppatore:</strong> [Tuo Nome], Milano (IT)</p>
+                <strong>Indirizzo:</strong> [Tuo Nome], Milano, Lombardia, Italia<br>
+                <strong>Data:</strong> 25 febbraio 2026</p>
             </div>
         </section>
 
         <section id="privacy" class="section">
-            <h1>Privacy Policy</h1>
+            <h1>Privacy Policy Lauris (GDPR Compliant)</h1>
             <p class="date">Data ultima modifica: 25 febbraio 2026</p>
 
-            <p>Benvenuto/a in <strong>Lauris</strong>. Utilizzando questa app, accetti questa Informativa sulla Privacy (GDPR-compliant).</p>
+            <h2>1. Titolare del Trattamento</h2>
+            <div class="highlight">
+                <p><strong>Titolare:</strong> [Tuo Nome]<br>
+                <strong>Sede:</strong> Milano, Lombardia, Italia<br>
+                <strong>Email:</strong> [tua-email@example.com]<br>
+                <strong>Partita IVA:</strong> [se applicabile o "Privato"]</p>
+            </div>
 
-            <h2>Titolare</h2>
-            <p><strong>[Tuo Nome]</strong>, Milano (IT). <strong>Email:</strong> [tua-email@example.com]</p>
+            <h2>2. Dati Personali Raccolti</h2>
+            <p><strong>Lauris opera 100% in locale:</strong></p>
+            <ul>
+                <li><strong>Nessun dato personale</strong> identificativo (nome, email, ID)</li>
+                <li><strong>Dati locali:</strong> note, piani studio, progressi (solo sul dispositivo)</li>
+                <li><strong>Sync iCloud:</strong> opzionale, gestito da Apple con crittografia end-to-end</li>
+                <li><strong>Analytics:</strong> opzionali Firebase aggregati anonimi (no IP/ID)</li>
+            </ul>
 
-            <h2>Dati Raccolti</h2>
-            <p>Operiamo <strong>esclusivamente in locale</strong>: zero dati personali, account o tracciatori. Sync iCloud opzionale (gestito Apple).</p>
+            <h2>3. Finalità del Trattamento</h2>
+            <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+                <tr><th>Finalità</th><th>Base Legale GDPR</th></tr>
+                <tr><td>Funzionalità app (locale)</td><td>Legittimo Interesse (Art. 6.1.f)</td></tr>
+                <tr><td>Analytics aggregati</td><td>Consenso (Art. 6.1.a)</td></tr>
+                <tr><td>Sincronizzazione iCloud</td><td>Contratto (Art. 6.1.b)</td></tr>
+            </table>
 
-            <h2>Finalità</h2>
-            <p>Supporto studio (note, tracker). Analytics aggregati opzionali (Firebase, anonimi).</p>
+            <h2>4. Condivisione Dati Terze Parti</h2>
+            <ul>
+                <li><strong>Apple:</strong> dati iCloud crittografati (non accessibili)</li>
+                <li><strong>Firebase:</strong> solo statistiche aggregate anonime con opt-out</li>
+                <li><strong>Altre:</strong> nessuna condivisione dati</li>
+            </ul>
 
-            <h2>Diritti GDPR</h2>
-            <p>Accesso, cancellazione: contattaci. Revoca: disinstalla. Reclamo: Garante Privacy.</p>
+            <h2>5. Trasferimenti Extra-UE</h2>
+            <ul>
+                <li>Google Firebase: Clausole Contrattuali Standard UE-USA</li>
+                <li>Apple iCloud: Privacy Shield Framework</li>
+            </ul>
 
-            <h2>Sicurezza</h2>
-            <p>Dati crittografati localmente. No condivisioni terze parti.</p>
+            <h2>6. Periodo Conservazione</h2>
+            <ul>
+                <li><strong>Dati locali:</strong> fino a disinstallazione</li>
+                <li><strong>Analytics:</strong> 12 mesi, poi anonimizzati</li>
+                <li><strong>Log sicurezza:</strong> 6 mesi per obblighi legali</li>
+            </ul>
 
-            <p>Aggiornamenti notificati in-app. Uso continuato = accettazione.</p>
+            <h2>7. Diritti GDPR (Art. 15-22)</h2>
+            <ul>
+                <li><strong>Accesso:</strong> richiedi info via email</li>
+                <li><strong>Rettifica:</strong> modifica impostazioni app</li>
+                <li><strong>Cancellazione:</strong> disinstalla app</li>
+                <li><strong>Opposizione:</strong> disattiva analytics</li>
+                <li><strong>Portabilità:</strong> dati locali esportabili</li>
+                <li><strong>Limitazione:</strong> contattaci per blocco</li>
+                <li><strong>Tempi risposta:</strong> 1 mese dalla richiesta</li>
+            </ul>
 
-            <div class="contact">
-                <p><strong>Contattaci:</strong> [tua-email@example.com]</p>
+            <h2>8. Misure Sicurezza</h2>
+            <ul>
+                <li>Sandbox iOS nativa</li>
+                <li>Crittografia dati locali</li>
+                <li>Minimizazione raccolta dati</li>
+                <li>Test sicurezza regolari</li>
+                <li>Aggiornamenti automatici</li>
+            </ul>
+
+            <h2>9. Reclami e Autorità</h2>
+            <ul>
+                <li><strong>Contattaci prima:</strong> [tua-email@example.com]</li>
+                <li><strong>Garante Privacy:</strong> www.garanteprivacy.it</li>
+                <li><strong>Apple Dispute:</strong> report.apple.com</li>
+            </ul>
+
+            <div class="contact-box">
+                <strong>Contatti Privacy</strong>
+                <p><strong>Email Privacy:</strong> [tua-email@example.com]<br>
+                <strong>Autorità Competente:</strong> Garante per la Protezione dei Dati Personali<br>
+                <strong>Piazza Venezia 11, 00187 Roma</strong></p>
             </div>
         </section>
     </div>
