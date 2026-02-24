@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lauris - Termini e Privacy</title>
+    <style>
+        :root {
+            --bg-primary: #fcfcff;
+            --bg-secondary: #f5f5f7;
+            --text-primary: #1d1d1f;
+            --text-secondary: #6e6e73;
+            --accent: #0071e3;
+            --border: #d2d2d7;
+            --radius: 12px;
+            --shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+        }
+
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, var(--bg-primary) 0%, #f8f9ff 100%);
+            color: var(--text-primary);
+            line-height: 1.6;
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+
+        .container { 
+            max-width: 800px; 
+            margin: 0 auto; 
+            background: white;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--accent) 0%, #005bb5 100%);
+            color: white;
+            padding: 40px 32px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .header p {
+            opacity: 0.9;
+            font-size: 17px;
+        }
+
+        nav {
+            background: var(--bg-secondary);
+            padding: 24px 32px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        nav h2 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: var(--text-primary);
+        }
+
+        .nav-link {
+            display: block;
+            padding: 12px 16px;
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 17px;
+            font-weight: 500;
+            border-radius: 8px;
+            margin-bottom: 8px;
+            transition: all 0.2s;
+            border: 1px solid transparent;
+        }
+
+        .nav-link:hover, .nav-link:focus {
+            background: rgba(0,113,227,0.1);
+            border-color: var(--accent);
+        }
+
+        .section {
+            padding: 40px 32px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        .section h1 {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text-primary);
+        }
+
+        .section h2 {
+            font-size: 22px;
+            font-weight: 600;
+            margin: 32px 0 16px 0;
+            color: var(--text-primary);
+        }
+
+        .section h2:first-child {
+            margin-top: 0;
+        }
+
+        .date {
+            font-size: 17px;
+            color: var(--text-secondary);
+            margin-bottom: 24px;
+        }
+
+        p {
+            font-size: 17px;
+            margin-bottom: 16px;
+        }
+
+        strong {
+            color: var(--text-primary);
+        }
+
+        .contact {
+            background: var(--bg-secondary);
+            padding: 24px;
+            border-radius: var(--radius);
+            margin-top: 24px;
+            border: 1px solid var(--border);
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 20px 16px; }
+            .header, .section, nav { padding-left: 24px; padding-right: 24px; }
+            .header h1 { font-size: 26px; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Lauris</h1>
+            <p>Studio OS</p>
+        </header>
+
+        <nav>
+            <h2>Indice</h2>
+            <a href="#termini" class="nav-link">Termini e Condizioni</a>
+            <a href="#privacy" class="nav-link">Privacy Policy</a>
+        </nav>
+
+        <section id="termini" class="section">
+            <h1>Termini e Condizioni</h1>
+            <p class="date">Data ultima modifica: 25 febbraio 2026</p>
+
+            <p>Benvenuto/a in <strong>Lauris</strong>. Utilizzando questa applicazione, accetti i presenti Termini e Condizioni.</p>
+
+            <h2>Descrizione App</h2>
+            <p>Lauris è fornita "così com'è" senza garanzie di funzionamento ininterrotto o assenza di errori. L'app è destinata a studenti universitari per supporto allo studio locale (Studio OS).</p>
+
+            <h2>Divieti</h2>
+            <p>È vietato: reverse engineering, decompilazione, uso commerciale non autorizzato, distribuzione non ufficiale.</p>
+
+            <h2>Nessun Account</h2>
+            <p>Accesso anonimo e locale-only. Nessun dato salvato su server.</p>
+
+            <h2>Aggiornamenti</h2>
+            <p>Lo sviluppatore può aggiornare i termini senza preavviso. L'uso continuato implica accettazione.</p>
+
+            <h2>Responsabilità</h2>
+            <p>Lo sviluppatore non è responsabile per danni indiretti. Puoi cessare l'uso disinstallando l'app.</p>
+
+            <h2>Legge Applicabile</h2>
+            <p>Regolata dalla legge italiana. Qualsiasi disputa dal Tribunale di Milano.</p>
+
+            <div class="contact">
+                <p><strong>Email:</strong> [tua-email@example.com]<br>
+                <strong>Sviluppatore:</strong> [Tuo Nome], Milano (IT)</p>
+            </div>
+        </section>
+
+        <section id="privacy" class="section">
+            <h1>Privacy Policy</h1>
+            <p class="date">Data ultima modifica: 25 febbraio 2026</p>
+
+            <p>Benvenuto/a in <strong>Lauris</strong>. Utilizzando questa app, accetti questa Informativa sulla Privacy (GDPR-compliant).</p>
+
+            <h2>Titolare</h2>
+            <p><strong>[Tuo Nome]</strong>, Milano (IT). <strong>Email:</strong> [tua-email@example.com]</p>
+
+            <h2>Dati Raccolti</h2>
+            <p>Operiamo <strong>esclusivamente in locale</strong>: zero dati personali, account o tracciatori. Sync iCloud opzionale (gestito Apple).</p>
+
+            <h2>Finalità</h2>
+            <p>Supporto studio (note, tracker). Analytics aggregati opzionali (Firebase, anonimi).</p>
+
+            <h2>Diritti GDPR</h2>
+            <p>Accesso, cancellazione: contattaci. Revoca: disinstalla. Reclamo: Garante Privacy.</p>
+
+            <h2>Sicurezza</h2>
+            <p>Dati crittografati localmente. No condivisioni terze parti.</p>
+
+            <p>Aggiornamenti notificati in-app. Uso continuato = accettazione.</p>
+
+            <div class="contact">
+                <p><strong>Contattaci:</strong> [tua-email@example.com]</p>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
