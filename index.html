@@ -1,4 +1,3 @@
-<!--
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -6,7 +5,73 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Lauris - Legal &amp; Support</title>
 <style>
-:root{--color-bg:#fff;--color-text:#1d1d1f;--color-text-secondary:#6e6e73;--color-border:#d2d2d7;--color-accent:#06c;--sf-pro:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Roboto,sans-serif}*{margin:0;padding:0;box-sizing:border-box}body{font-family:var(--sf-pro);background:var(--color-bg);color:var(--color-text);line-height:1.6;-webkit-font-smoothing:antialiased}nav{position:sticky;top:0;background:rgba(255,255,255,.8);backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--color-border);z-index:100}nav .container{max-width:980px;margin:0 auto;padding:16px 20px;display:flex;justify-content:space-between;align-items:center}nav h1{font-size:21px;font-weight:600;letter-spacing:-.01em}nav a{color:var(--color-text);text-decoration:none;font-size:12px;font-weight:400;padding:4px 12px;border-radius:12px;transition:background .2s}nav a:hover{background:rgba(0,0,0,.05)}nav .links{display:flex;gap:16px}.hero{text-align:center;padding:60px 20px 40px;max-width:720px;margin:0 auto}.hero h2{font-size:48px;font-weight:700;letter-spacing:-.02em;margin-bottom:12px}.hero p{font-size:21px;color:var(--color-text-secondary);font-weight:400}.container{max-width:820px;margin:0 auto;padding:0 20px}section{margin:80px 0}section h2{font-size:40px;font-weight:700;letter-spacing:-.015em;margin-bottom:40px;padding-bottom:16px;border-bottom:1px solid var(--color-border)}section h3{font-size:28px;font-weight:600;margin:40px 0 16px;letter-spacing:-.01em}section h4{font-size:21px;font-weight:600;margin:28px 0 12px;color:var(--color-text)}section p{font-size:17px;line-height:1.7;color:var(--color-text-secondary);margin-bottom:20px}section ul{margin:20px 0 20px 24px}section li{font-size:17px;line-height:1.7;color:var(--color-text-secondary);margin-bottom:12px}.quote{background:#f5f5f7;border-left:4px solid var(--color-accent);padding:24px 28px;margin:32px 0;border-radius:8px}.quote p{font-size:19px;font-style:italic;color:var(--color-text);margin:0}.quote cite{display:block;margin-top:12px;font-size:15px;font-style:normal;font-weight:500;color:var(--color-text-secondary)}.feature-list{display:grid;gap:24px;margin:32px 0}.feature-item{background:#f5f5f7;padding:24px;border-radius:12px}.feature-item h5{font-size:19px;font-weight:600;margin-bottom:8px;color:var(--color-text)}.feature-item p{font-size:15px;line-height:1.6;color:var(--color-text-secondary);margin:0}footer{background:#f5f5f7;padding:32px 20px;margin-top:120px;text-align:center}footer p{font-size:12px;color:var(--color-text-secondary)}a{color:var(--color-accent);text-decoration:none}a:hover{text-decoration:underline}@media(max-width:768px){.hero h2{font-size:36px}.hero p{font-size:19px}section h2{font-size:32px}section h3{font-size:24px}section h4{font-size:19px}nav .container{flex-direction:column;gap:12px;text-align:center}nav .links{justify-content:center}}
+:root {
+    /* Tema Chiaro di default */
+    --color-bg: #fff;
+    --color-text: #1d1d1f;
+    --color-text-secondary: #6e6e73;
+    --color-border: #d2d2d7;
+    --color-accent: #06c;
+    --color-surface: #f5f5f7;
+    --nav-bg: rgba(255,255,255,.8);
+    --nav-hover: rgba(0,0,0,.05);
+    --sf-pro: -apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Roboto,sans-serif;
+}
+
+/* Tema Scuro automatico */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-bg: #000000;
+        --color-text: #f5f5f7;
+        --color-text-secondary: #86868b;
+        --color-border: #38383a;
+        --color-accent: #0a84ff;
+        --color-surface: #1c1c1e;
+        --nav-bg: rgba(0,0,0,.8);
+        --nav-hover: rgba(255,255,255,.1);
+    }
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:var(--sf-pro); background:var(--color-bg); color:var(--color-text); line-height:1.6; -webkit-font-smoothing:antialiased; transition: background 0.3s, color 0.3s; }
+nav { position:sticky; top:0; background:var(--nav-bg); backdrop-filter:saturate(180%) blur(20px); -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--color-border); z-index:100; transition: background 0.3s, border-color 0.3s; }
+nav .container { max-width:980px; margin:0 auto; padding:16px 20px; display:flex; justify-content:space-between; align-items:center; }
+nav h1 { font-size:21px; font-weight:600; letter-spacing:-.01em; }
+nav a { color:var(--color-text); text-decoration:none; font-size:12px; font-weight:400; padding:4px 12px; border-radius:12px; transition:background .2s; }
+nav a:hover { background:var(--nav-hover); }
+nav .links { display:flex; gap:16px; }
+.hero { text-align:center; padding:60px 20px 40px; max-width:720px; margin:0 auto; }
+.hero h2 { font-size:48px; font-weight:700; letter-spacing:-.02em; margin-bottom:12px; }
+.hero p { font-size:21px; color:var(--color-text-secondary); font-weight:400; }
+.container { max-width:820px; margin:0 auto; padding:0 20px; }
+section { margin:80px 0; }
+section h2 { font-size:40px; font-weight:700; letter-spacing:-.015em; margin-bottom:40px; padding-bottom:16px; border-bottom:1px solid var(--color-border); transition: border-color 0.3s; }
+section h3 { font-size:28px; font-weight:600; margin:40px 0 16px; letter-spacing:-.01em; }
+section h4 { font-size:21px; font-weight:600; margin:28px 0 12px; color:var(--color-text); }
+section p { font-size:17px; line-height:1.7; color:var(--color-text-secondary); margin-bottom:20px; }
+section ul { margin:20px 0 20px 24px; }
+section li { font-size:17px; line-height:1.7; color:var(--color-text-secondary); margin-bottom:12px; }
+.quote { background:var(--color-surface); border-left:4px solid var(--color-accent); padding:24px 28px; margin:32px 0; border-radius:8px; transition: background 0.3s; }
+.quote p { font-size:19px; font-style:italic; color:var(--color-text); margin:0; }
+.quote cite { display:block; margin-top:12px; font-size:15px; font-style:normal; font-weight:500; color:var(--color-text-secondary); }
+.feature-list { display:grid; gap:24px; margin:32px 0; }
+.feature-item { background:var(--color-surface); padding:24px; border-radius:12px; transition: background 0.3s; }
+.feature-item h5 { font-size:19px; font-weight:600; margin-bottom:8px; color:var(--color-text); }
+.feature-item p { font-size:15px; line-height:1.6; color:var(--color-text-secondary); margin:0; }
+footer { background:var(--color-surface); padding:32px 20px; margin-top:120px; text-align:center; transition: background 0.3s; }
+footer p { font-size:12px; color:var(--color-text-secondary); }
+a { color:var(--color-accent); text-decoration:none; transition: color 0.3s; }
+a:hover { text-decoration:underline; }
+
+@media(max-width:768px) {
+    .hero h2 { font-size:36px; }
+    .hero p { font-size:19px; }
+    section h2 { font-size:32px; }
+    section h3 { font-size:24px; }
+    section h4 { font-size:19px; }
+    nav .container { flex-direction:column; gap:12px; text-align:center; }
+    nav .links { justify-content:center; }
+}
 </style>
 </head>
 <body>
@@ -20,7 +85,3 @@
 <footer><p>&copy; 2026 Lauris. Tutti i diritti riservati.</p></footer>
 </body>
 </html>
--->
-
-<!DOCTYPE html><html lang="it"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#000000"><link rel="manifest" href='application/manifest+json,{"name":"Lauris Legal","theme_color":"#000000","background_color":"#ffffff","display":"standalone"}'><title>Lauris - Privacy, Termini e Supporto</title><style>:root{--bg:#fff;--text:#1d1d1f;--text-secondary:#6e6e73;--accent:#0071e3;--border:#e5e5e7;--shadow:'0 20px 25px -5px rgba(0,0,0,0.1),0 10px 10px -5px rgba(0,0,0,0.04)';--radius:12px;--font:'-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif'}[data-theme=dark]{--bg:#0a0a0a;--text:#f5f5f7;--text-secondary:#86868b;--accent:#0a84ff;--border:#38383a}*{box-sizing:border-box;margin:0;padding:0}body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.65;font-size:17px;overflow-x:hidden;scroll-behavior:smooth}h1,h2,h3{font-weight:600;line-height:1.2}h1{font-size:40px;padding:20px 0}h2{font-size:28px;margin:40px 0 20px}h3{font-size:22px;margin:30px 0 15px}p{margin-bottom:1.2em;max-width:65ch}.container{max-width:800px;margin:0 auto;padding:20px}@media (min-width:768px){.container{padding:40px 20px}}.header{position:sticky;top:0;z-index:100;background:hsla(var(--bg-rgb),.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:12px 20px;display:flex;justify-content:space-between;align-items:center}.logo{font-size:24px;font-weight:700;background:linear-gradient(135deg,var(--accent),#2994ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}.progress-bar{position:fixed;top:0;left:0;height:3px;background:var(--accent);transform-origin:left;width:0;z-index:200;transition:width .1s ease-out}.nav{display:flex;gap:8px;margin-top:20px}@media (min-width:768px){.nav{order:-1}}.nav a{color:var(--text-secondary);text-decoration:none;font-size:16px;padding:8px 16px;border-radius:8px;transition:all .2s}.nav a:hover,.nav a.active{color:var(--accent);background:hsla(var(--accent-rgb),.1);transform:translateY(-1px);box-shadow:0 4px 12px hsla(var(--accent-rgb),.15)}.section{padding:40px 0}.section p{opacity:.95}.section ul{margin:20px 0 20px 20px}.section li{margin:12px 0}.section blockquote{font-style:italic;color:var(--accent);border-left:3px solid hsla(var(--accent-rgb),.3);padding-left:20px;margin:24px 0}@media (prefers-reduced-motion:no-preference){.fade-in{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}.fade-in.visible{opacity:1;transform:translateY(0)}.nav a{transition-timing-function:cubic-bezier(.25,.46,.45,.94)}}@media print{*{color:#000!important;background:#fff!important;box-shadow:none!important}body{font-size:1.1em;line-height:1.6}header,nav{display:none!important}.container{margin:40px!important;padding:0 40px!important;max-width:none!important}h1,h2,h3{page-break-after:avoid}.section{break-inside:avoid}}</style></head><body><div class="progress-bar" id="progress"></div><header class="header"><div class="logo">Lauris</div><nav class="nav"><a href="#privacy" class="nav-link">Privacy</a><a href="#termini" class="nav-link">Termini</a><a href="#supporto" class="nav-link">Supporto</a></nav></header><div class="container"><div class="section fade-in" id="privacy"><h1>Privacy Policy</h1><p><strong>Principio fondamentale:</strong> Crediamo che il tuo percorso accademico sia privato. Per questo motivo, Lauris è costruita per ridurre al minimo la raccolta di dati.</p><p><strong>Nessuna condivisione di dati personali:</strong> Non vendiamo, non scambiamo e non trasferiamo a terzi le tue informazioni personali identificabili. I tuoi piani di studio, le tue note e i tuoi progressi non vengono analizzati per scopi pubblicitari.</p><ul><li><strong>Dati aggregati Apple:</strong> Riceviamo da Apple solo dati statistici e aggregati (es. numero di download o abbonamenti attivi) che non sono ricollegabili alla tua specifica identità.</li><li><strong>Report di Crash:</strong> Se l'app smette di funzionare improvvisamente, potremmo ricevere un log tecnico anonimo. Questo ci serve esclusivamente per individuare il bug e ripararlo nel prossimo aggiornamento.</li></ul><blockquote>"La tua evoluzione accademica è una storia personale. Noi ci limitiamo a fornirti lo strumento per scriverla."<br><cite>— Team Lauris</cite></blockquote></div><div class="section fade-in" id="termini"><h1>Termini e Condizioni</h1><h2>1. Introduzione e accettazione</h2><p>Benvenuto in Lauris. Scaricando o utilizzando l'app, accetti i presenti termini. Se non sei d'accordo con una qualsiasi parte di questi termini, ti invitiamo a non utilizzare il servizio.</p><h2>2. Descrizione del servizio (MVP)</h2><p>Lauris è uno Study OS che include funzionalità di pianificazione (Widget, Obiettivi), Libreria appunti, Sessioni guidate (Focus Mode) e monitoraggio progressi. L'app è fornita 'così com'è' e le funzionalità possono evolvere nel tempo.</p><h2>3. Licenza d'uso non esclusiva</h2><p>Ti concediamo una licenza limitata, non esclusiva e non trasferibile per utilizzare l'app a scopo personale e non commerciale, in accordo con questi termini.</p><h2>4. Account utente e responsabilità</h2><p>Sei responsabile della sicurezza del tuo dispositivo e dell'accesso all'app. Poiché i dati sono salvati localmente, sei responsabile del loro backup tramite i sistemi del tuo dispositivo.</p><h2>5. Contenuti generati dall'utente (UGC)</h2><p>Gli appunti, i piani e i dati che inserisci in Lauris sono tuoi. Non rivendichiamo alcuna proprietà sui tuoi contenuti di studio.</p><h2>6. Comportamenti vietati</h2><p>Non è consentito: effettuare reverse engineering dell'app, utilizzare l'app per scopi illegali, o tentare di aggirare le protezioni di sicurezza.</p><h2>7. Proprietà intellettuale</h2><p>Il marchio Lauris, il logo, il codice sorgente, il design dell'interfaccia e i contenuti editoriali (Pillole) sono proprietà esclusiva di Lauris e sono protetti dalle leggi sul copyright.</p><h2>8. Limitazione di responsabilità</h2><p>Lauris fornisce strumenti per organizzare lo studio, ma non garantisce risultati specifici, voti o superamento di esami. Non siamo responsabili per danni diretti o indiretti derivanti dall'uso o dall'impossibilità di usare l'app.</p><h2>9. Disclaimer legale</h2><p>Lauris non è un servizio medico, terapeutico o psicologico. Le 'Pillole' e i suggerimenti su stress o ansia sono di natura pratica e organizzativa, non clinica. Per problemi di salute, rivolgiti a un professionista.</p><h2>10. Terminazione</h2><p>Possiamo sospendere o terminare il supporto all'app in qualsiasi momento, senza preavviso, se riteniamo che vi sia stata una violazione di questi termini.</p><h2>11. Modifiche ai termini</h2><p>Ci riserviamo il diritto di modificare questi termini. Le modifiche saranno effettive dal momento della pubblicazione nell'app o tramite notifica.</p><h2>12. Privacy</h2><p>L'uso dell'app è regolato anche dalla nostra Privacy Policy, consultabile nella sezione dedicata dell'account.</p><h2>13. Legge applicabile e foro competente</h2><p>Questi termini sono regolati dalla legge italiana. Per qualsiasi controversia sarà competente in via esclusiva il Foro di Milano.</p><h2>14. Contatti</h2><p>Per domande su questi termini, puoi contattare il team di sviluppo all'indirizzo email di supporto indicato nell'App Store.</p><h2>15. Data di ultimo aggiornamento</h2><p><strong>Febbraio 2026</strong></p></div><div class="section fade-in" id="supporto"><h1>Supporto Lauris</h1><h2>Oggi: il tuo punto di partenza</h2><p><strong>Tutto in un colpo d'occhio:</strong> La schermata 'Oggi' è progettata per ridurre il rumore mentale. Qui Lauris raccoglie solo le informazioni essenziali per affrontare la giornata corrente, permettendoti di passare dalla pianificazione all'azione in pochi istanti.</p><ul><li><strong>Lezioni del giorno:</strong> Visualizza orari e aule delle lezioni previste per oggi.</li><li><strong>Promemoria esami:</strong> Tieni sotto controllo i giorni mancanti alle prossime scadenze importanti.</li><li><strong>Panoramica carriera:</strong> Un rapido check sui tuoi dati principali, senza distrazioni.</li></ul><h2>Corsi: la tua libreria ordinata</h2><p><strong>Struttura solida, mente libera:</strong> Dimentica i file sparsi su dispositivi diversi. La sezione Corsi funge da archivio centrale del tuo Study OS.</p><ul><li><strong>Corso:</strong> Il contenitore principale (es. Diritto Privato, Analisi I).</li><li><strong>Argomento:</strong> Le macro-aree del corso, utili per spezzare la complessità.</li><li><strong>Appunto:</strong> La singola risorsa. Puoi creare capitoli per ogni argomento per scendere nel dettaglio.</li></ul><h2>Studio: dal piano all'azione</h2><p><strong>Tracker Obiettivi:</strong> Questa è la sala macchine del tuo studio. Qui non ti limiti a segnare le date, ma costruisci il percorso per arrivarci preparato.</p></div></div><script>const progress=document.getElementById('progress'),links=document.querySelectorAll('.nav-link'),sections=document.querySelectorAll('.section');let ticking=!1;function updateProgress(){const e=document.documentElement.scrollTop/(document.documentElement.scrollHeight-document.documentElement.clientHeight)*100;progress.style.width=e+'%'}function setActiveLink(){const e=window.scrollY+100,o=sections.length;for(let t=0;t<o;t++){const o=sections[t].offsetTop,n=o+sections[t].offsetHeight;if(e>=o&&e<n){links.forEach(s=>s.classList.remove('active')),links[t]&&links[t].classList.add('active');break}}}function initAutoTheme(){const e=window.matchMedia('(prefers-color-scheme: dark)');function t(e){e.matches?document.documentElement.setAttribute('data-theme','dark'):document.documentElement.setAttribute('data-theme','light')}t(e),e.addEventListener('change',t)}window.addEventListener('scroll',()=>{ticking||(requestAnimationFrame(()=>{updateProgress(),setActiveLink(),ticking=!1}),ticking=!0)}),document.addEventListener('DOMContentLoaded',()=>{initAutoTheme();const e=new IntersectionObserver(o=>{o.forEach(o=>{o.isIntersecting&&o.target.classList.add('visible')})},threshold:.1);sections.forEach(o=>e.observe(o))});</script></body></html>
-
