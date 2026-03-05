@@ -36,9 +36,14 @@
 body { font-family:var(--sf-pro); background:var(--color-bg); color:var(--color-text); line-height:1.6; -webkit-font-smoothing:antialiased; transition: background 0.3s, color 0.3s; }
 nav { position:sticky; top:0; background:var(--nav-bg); backdrop-filter:saturate(180%) blur(20px); -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--color-border); z-index:100; transition: background 0.3s, border-color 0.3s; }
 nav .container { max-width:980px; margin:0 auto; padding:16px 20px; display:flex; justify-content:space-between; align-items:center; }
-nav h1 { font-size:21px; font-weight:600; letter-spacing:-.01em; }
-nav a { color:var(--color-text); text-decoration:none; font-size:14px; font-weight:400; padding:6px 12px; border-radius:12px; transition:background .2s; }
-nav a:hover { background:var(--nav-hover); }
+
+/* Stile per il brand (Logo + Testo) */
+.brand { display: flex; align-items: center; gap: 8px; text-decoration: none; color: var(--color-text); }
+.brand svg { width: 24px; height: 24px; fill: var(--color-text); }
+.brand h1 { font-size:21px; font-weight:600; letter-spacing:-.01em; margin: 0; }
+
+nav a.nav-link { color:var(--color-text); text-decoration:none; font-size:14px; font-weight:400; padding:6px 12px; border-radius:12px; transition:background .2s; }
+nav a.nav-link:hover { background:var(--nav-hover); }
 nav .links { display:flex; gap:16px; }
 
 /* Stili Hero e Landing */
@@ -62,9 +67,10 @@ section li { font-size:17px; line-height:1.7; color:var(--color-text-secondary);
 .quote p { font-size:19px; font-style:italic; color:var(--color-text); margin:0; }
 .quote cite { display:block; margin-top:12px; font-size:15px; font-style:normal; font-weight:500; color:var(--color-text-secondary); }
 
-.feature-list { display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap:24px; margin:32px 0; }
-.feature-item { background:var(--color-surface); padding:32px; border-radius:16px; transition: background 0.3s; }
-.feature-item h5 { font-size:21px; font-weight:600; margin-bottom:12px; color:var(--color-text); }
+.feature-list { display:grid; gap:24px; margin:32px 0; }
+.feature-list-landing { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+.feature-item { background:var(--color-surface); padding:24px; border-radius:12px; transition: background 0.3s; }
+.feature-item h5 { font-size:19px; font-weight:600; margin-bottom:8px; color:var(--color-text); }
 .feature-item p { font-size:15px; line-height:1.6; color:var(--color-text-secondary); margin:0; }
 
 footer { background:var(--color-surface); padding:40px 20px; margin-top:120px; text-align:center; transition: background 0.3s; }
@@ -83,7 +89,6 @@ a:hover { text-decoration:underline; }
     section h4 { font-size:19px; }
     nav .container { flex-direction:column; gap:12px; text-align:center; }
     nav .links { justify-content:center; flex-wrap: wrap; }
-    .feature-list { grid-template-columns: 1fr; }
 }
 </style>
 </head>
@@ -91,25 +96,29 @@ a:hover { text-decoration:underline; }
 
 <nav>
     <div class="container">
-        <h1>Lauris</h1>
+        <a href="#" class="brand">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2L2 22h20L12 2zm0 3.8l6.2 12.2H5.8L12 5.8z"/>
+            </svg>
+            <h1>Lauris</h1>
+        </a>
         <div class="links">
-            <a href="#home">Home</a>
-            <a href="#features">Funzionalità</a>
-            <a href="#supporto">Supporto</a>
-            <a href="#privacy">Privacy</a>
+            <a href="#supporto" class="nav-link">Supporto</a>
+            <a href="#privacy" class="nav-link">Privacy</a>
+            <a href="#termini" class="nav-link">Termini e Condizioni</a>
         </div>
     </div>
 </nav>
 
-<div id="home" class="hero">
+<div class="hero">
     <h2>Studia con costanza. Arriva agli esami senza ansia.</h2>
     <p>L'app premium con una UX frictionless che trasforma i tuoi appunti e i tuoi piani di studio in sessioni guidate e progressi misurabili.</p>
-    <a href="#scarica" class="btn-primary">Scarica per iOS</a>
+    <a href="#supporto" class="btn-primary">Scarica per iOS</a>
 </div>
 
 <div class="container">
     
-    <section class="no-border">
+    <section class="no-border" style="margin-top: 40px; margin-bottom: 80px;">
         <h2>Un unico Study OS. Zero distrazioni.</h2>
         <p>Basta usare app di note, calendari frammentati e timer generici. Lo studente di oggi fatica a mantenere la costanza perché gli strumenti sono disconnessi e obsoleti. Lauris risolve il problema: organizza tutto in pochi tap, sconfigge la procrastinazione e ti fa arrivare all'esame preparato.</p>
         
@@ -118,11 +127,11 @@ a:hover { text-decoration:underline; }
         </div>
     </section>
 
-    <section id="features">
+    <section id="features" style="margin-top: 0;">
         <h2>Come funziona Lauris</h2>
         <p>Tutto ciò che ti serve per superare la sessione, in un'unica interfaccia veloce e intuitiva.</p>
 
-        <div class="feature-list">
+        <div class="feature-list feature-list-landing">
             <div class="feature-item">
                 <h5>📅 Oggi & Agenda</h5>
                 <p>Una dashboard chiara con le lezioni del giorno, scadenze e una panoramica della carriera. Configura i tuoi corsi settimanali: quando sei a lezione, una <strong>Live Activity</strong> ti accompagna in tempo reale.</p>
@@ -150,70 +159,22 @@ a:hover { text-decoration:underline; }
         </div>
     </section>
 
-    <hr style="border:0; border-top:1px solid var(--color-border); margin: 60px 0;">
+    <hr style="border:0; border-top:1px solid var(--color-border); margin: 80px 0;">
 
-    <section id="supporto">
-        <h2>Supporto & Guide</h2>
-        <p>Scopri come sfruttare al meglio ogni funzionalità del tuo nuovo Study OS. Se hai dubbi o vuoi scoprire le ultime novità introdotte, questa è la sezione giusta.</p>
-        
-        <h3>Oggi: il tuo punto di partenza</h3>
-        <p>La schermata 'Oggi' è progettata per ridurre il rumore mentale. Qui Lauris raccoglie solo le informazioni essenziali per affrontare la giornata corrente, permettendoti di passare dalla pianificazione all'azione in pochi istanti (Lezioni del giorno, Promemoria esami, Panoramica carriera).</p>
+    <section id="supporto"><h2>Supporto</h2><p>Scopri come sfruttare al meglio ogni funzionalità di Lauris.</p><h3>Oggi: il tuo punto di partenza</h3><p>Una dashboard chiara per capire subito cosa fare, senza perderti tra mille tab aperte.</p><h4>Tutto in un colpo d'occhio</h4><p>La schermata 'Oggi' è progettata per ridurre il rumore mentale. Qui Lauris raccoglie solo le informazioni essenziali per affrontare la giornata corrente, permettendoti di passare dalla pianificazione all'azione in pochi istanti.</p><div class="feature-list"><div class="feature-item"><h5>Lezioni del giorno</h5><p>Visualizza orari e aule delle lezioni previste per oggi.</p></div><div class="feature-item"><h5>Promemoria esami</h5><p>Tieni sotto controllo i giorni mancanti alle prossime scadenze importanti.</p></div><div class="feature-item"><h5>Panoramica carriera</h5><p>Un rapido check sui tuoi dati principali, senza distrazioni.</p></div></div><h3>Corsi: la tua libreria ordinata</h3><p>Centralizza appunti e materiali. Un sistema gerarchico semplice per ritrovare tutto in pochi tap.</p><h4>Struttura solida, mente libera</h4><p>Dimentica i file sparsi su dispositivi diversi. La sezione Corsi funge da archivio centrale del tuo Study OS. Abbiamo strutturato l'organizzazione in modo gerarchico per garantire la massima reperibilità.</p><div class="feature-list"><div class="feature-item"><h5>Corso</h5><p>Il contenitore principale (es. Diritto Privato, Analisi I).</p></div><div class="feature-item"><h5>Argomento</h5><p>Le macro-aree del corso, utili per spezzare la complessità.</p></div><div class="feature-item"><h5>Appunto</h5><p>La singola risorsa. Puoi creare capitoli per ogni argomento per scendere nel dettaglio.</p></div></div><h4>Formati supportati</h4><p>Ogni studente ha il suo metodo. Dentro ogni appunto puoi integrare:</p><div class="feature-list"><div class="feature-item"><h5>Testo e Scrittura a mano</h5><p>Per chi ama digitare o usare la stilo.</p></div><div class="feature-item"><h5>Audio e Foto</h5><p>Per catturare lezioni dal vivo o schemi alla lavagna.</p></div><div class="feature-item"><h5>File esterni</h5><p>Allega PDF o slide direttamente nell'argomento pertinente.</p></div></div><h3>Studio: dal piano all'azione</h3><p>Trasforma gli obiettivi in sessioni guidate e monitora i tuoi progressi visibili.</p><h4>Tracker Obiettivi</h4><p>Questa è la sala macchine del tuo studio. Qui non ti limiti a segnare le date, ma costruisci il percorso per arrivarci preparato.</p><div class="feature-list"><div class="feature-item"><h5>Registra Esame</h5><p>Crea un nuovo obiettivo legato a un Corso specifico.</p></div><div class="feature-item"><h5>Mappa gli argomenti</h5><p>All'interno dell'esami, elenca gli argomenti da studiare. Man mano che li completi, segnali come 'studiati'.</p></div><div class="feature-item"><h5>Progressi visibili</h5><p>Il sistema calcola automaticamente la percentuale di completamento dell'obiettivo complessivo. Saprai sempre a che punto sei.</p></div></div><h4>Sessione Guidata</h4><p>Quando è ora di studiare, avvia una Sessione di focus. Questo trasforma un'intenzione vaga in un'azione concreta, riducendo l'ansia da prestazione.</p><h3>Agenda: il tuo ritmo settimanale</h3><p>Pianifica le lezioni e sincronizza i tuoi tempi con la realtà universitaria.</p><h4>Calendario Lezioni</h4><p>L'Agenda di Lauris non è un calendario generico. È ottimizzata per la ciclicità universitaria. Configura il tuo orario settimanale una sola volta e lascia che l'app organizzi la visualizzazione.</p><div class="feature-list"><div class="feature-item"><h5>Configurazione Corsi</h5><p>Imposta i corsi settimanali con orari e aule ricorrenti.</p></div><div class="feature-item"><h5>Live Activity</h5><p>Quando una lezione è in corso, Lauris mostra un'attività live sulla schermata di blocco, per non perdere mai il senso del tempo durante la giornata.</p></div></div><h3>Account: il tuo profilo studente</h3><p>Gestisci le impostazioni, la privacy e trova supporto quando ne hai bisogno.</p><h4>Tutto sotto controllo</h4><p>Nella sezione Account gestisci la tua identità all'interno di Lauris. Qui puoi accedere alle informazioni legali (Privacy, Termini e Condizioni) e verificare i dettagli di sicurezza.</p><h4>Supporto e Guide</h4><p>Se hai dubbi su una funzionalità o vuoi scoprire le ultime novità introdotte nello Study OS, questa è la sezione giusta. Troverai guide rapide per sfruttare al meglio ogni strumento.</p><h3>Carriera: libretto digitale</h3><p>Monitora la tua media e guarda al futuro con le previsioni del voto di laurea.</p><h4>Misura il tuo percorso</h4><p>La sezione Carriera funge da libretto voti avanzato. Non serve a giudicarti, ma a darti consapevolezza sui risultati ottenuti.</p><div class="feature-list"><div class="feature-item"><h5>Aggiungi Voto</h5><p>Registra l'esito di ogni esame completato.</p></div><div class="feature-item"><h5>Media e Previsione</h5><p>Visualizza la tua media attuale e una proiezione realistica del voto di laurea, basata sui crediti acquisiti.</p></div></div><h3>Personalizzazione: uno spazio tuo</h3><p>Adatta l'aspetto di Lauris alle tue preferenze visive e di lettura.</p><h4>Comfort visivo</h4><p>Passiamo molte ore sullo schermo. Per questo Lauris ti permette di adattare l'interfaccia per ridurre l'affaticamento e sentirti a tuo agio.</p><div class="feature-list"><div class="feature-item"><h5>Avatar</h5><p>Scegli l'immagine che ti rappresenta nel tuo profilo.</p></div><div class="feature-item"><h5>Dark Mode</h5><p>Ideale per le sessioni di studio serali o per chi preferisce toni scuri.</p></div><div class="feature-item"><h5>Dimensione Testi</h5><p>Aumenta la leggibilità per non sforzare la vista durante la lettura degli appunti o dei quiz.</p></div></div></section>
 
-        <h3>Corsi: la tua libreria ordinata</h3>
-        <p>Dimentica i file sparsi su dispositivi diversi. Abbiamo strutturato l'organizzazione in modo gerarchico (Corso > Argomento > Appunto) per garantire la massima reperibilità. Supportiamo Testo, Scrittura a mano, Audio, Foto e File esterni (PDF/Slide).</p>
-
-        <h3>Studio: dal piano all'azione</h3>
-        <p>La sala macchine del tuo studio. Crea un nuovo obiettivo legato a un Corso, mappa gli argomenti e segnali come 'studiati'. Il sistema calcola automaticamente la percentuale di completamento. Quando è ora di studiare, avvia una Sessione di focus per trasformare un'intenzione vaga in un'azione concreta.</p>
-
-        <h3>Personalizzazione: uno spazio tuo</h3>
-        <p>Adatta l'aspetto di Lauris alle tue preferenze per ridurre l'affaticamento visivo: scegli il tuo Avatar, attiva la <strong>Dark Mode</strong> per le sessioni serali e modifica la dimensione dei testi per la massima leggibilità.</p>
-    </section>
-
-    <section id="privacy">
-        <h2>Privacy Policy</h2>
-        <p>I tuoi dati restano tuoi. Ecco come gestiamo le informazioni.</p>
-        
-        <h3>Principio fondamentale</h3>
-        <p>Crediamo che il tuo percorso accademico sia privato. Per questo motivo, Lauris è costruita per ridurre al minimo la raccolta di dati. Non vendiamo, non scambiamo e non trasferiamo a terzi le tue informazioni personali identificabili.</p>
-        
-        <div class="feature-list">
-            <div class="feature-item">
-                <h5>Dati aggregati Apple</h5>
-                <p>Riceviamo da Apple solo dati statistici e aggregati (es. numero di download o abbonamenti attivi) che non sono ricollegabili alla tua specifica identità.</p>
-            </div>
-            <div class="feature-item">
-                <h5>Report di Crash</h5>
-                <p>Se l'app smette di funzionare improvvisamente, potremmo ricevere un log tecnico anonimo, utile esclusivamente per riparare il bug.</p>
-            </div>
-        </div>
-
-        <h3>Sicurezza e Archiviazione Locale</h3>
-        <p>La sicurezza dei tuoi appunti è prioritaria. Attualmente, Lauris opera con una logica <strong>'Local First'</strong>. Il database dei tuoi corsi, le tue note e i tuoi piani di studio risiedono fisicamente sulla memoria del tuo dispositivo. Tu sei l'unico custode delle tue informazioni.</p>
-        <p><em>Consigliamo di mantenere attivo il backup del dispositivo (es. iCloud) per garantire che i dati locali siano salvati in caso di smarrimento del telefono.</em></p>
-    </section>
-
-    <section id="termini">
-        <h2>Termini e Condizioni</h2>
-        <p>Le regole per utilizzare Lauris in modo sicuro e responsabile. (Ultimo aggiornamento: Febbraio 2026).</p>
-        
-        <ul>
-            <li><strong>Accettazione e Licenza:</strong> Utilizzando l'app, accetti i presenti termini. Ti concediamo una licenza limitata, non esclusiva e personale per l'uso dell'app.</li>
-            <li><strong>I tuoi contenuti (UGC):</strong> Gli appunti e i piani che inserisci sono tuoi. Non rivendichiamo alcuna proprietà sui tuoi materiali di studio.</li>
-            <li><strong>Comportamenti vietati:</strong> Non è consentito effettuare reverse engineering, usare l'app per scopi illegali o aggirare le sicurezze.</li>
-            <li><strong>Limitazione di responsabilità:</strong> Lauris fornisce strumenti organizzativi, ma non garantisce voti o il superamento di esami.</li>
-            <li><strong>Disclaimer:</strong> Le 'Pillole' e i suggerimenti su stress o ansia sono di natura pratica, non clinica o medica.</li>
-            <li><strong>Legge applicabile:</strong> I presenti termini sono regolati dalla legge italiana (Foro di Milano).</li>
-        </ul>
-    </section>
+    <section id="privacy"><h2>Privacy Policy</h2><p>I tuoi dati restano tuoi. Ecco come gestiamo le informazioni.</p><h3>Principio fondamentale</h3><p>Crediamo che il tuo percorso accademico sia privato. Per questo motivo, Lauris è costruita per ridurre al minimo la raccolta di dati.</p><h3>Nessuna condivisione di dati personali</h3><p>Non vendiamo, non scambiamo e non trasferiamo a terzi le tue informazioni personali identificabili. I tuoi piani di studio, le tue note e i tuoi progressi non vengono analizzati per scopi pubblicitari.</p><div class="feature-list"><div class="feature-item"><h5>Dati aggregati Apple</h5><p>Riceviamo da Apple solo dati statistici e aggregati (es. numero di download o abbonamenti attivi) che non sono ricollegabili alla tua specifica identità.</p></div><div class="feature-item"><h5>Report di Crash</h5><p>Se l'app smette di funzionare improvvisamente, potremmo ricevere un log tecnico anonimo. Questo ci serve esclusivamente per individuare il bug e ripararlo nel prossimo aggiornamento.</p></div></div><div class="quote"><p>La tua evoluzione accademica è una storia personale. Noi ci limitiamo a fornirti lo strumento per scriverla.</p></div><h3>Sicurezza</h3><h4>Archiviazione Locale</h4><p>La sicurezza dei tuoi appunti è prioritaria. Attualmente, Lauris opera con una logica 'Local First'. Significa che il database dei tuoi corsi, le tue note e i tuoi piani di studio risiedono fisicamente sulla memoria del tuo dispositivo.</p><h4>Controllo totale</h4><p>Poiché i dati non vengono inviati a nostri server proprietari, tu sei l'unico custode delle tue informazioni. Nessuno dall'esterno può accedere ai tuoi materiali di studio.</p><div class="feature-list"><div class="feature-item"><h5>Backup</h5><p>Consigliamo di mantenere attivo il backup del dispositivo (es. iCloud Backup) per garantire che i dati locali siano salvati in caso di smarrimento del telefono.</p></div></div></section>
+    
+    <section id="termini"><h2>Termini e Condizioni</h2><p>Le regole per utilizzare Lauris in modo sicuro e responsabile.</p><h3>1. Introduzione e accettazione</h3><p>Benvenuto in Lauris. Scaricando o utilizzando l'app, accetti i presenti termini. Se non sei d'accordo con una qualsiasi parte di questi termini, ti invitiamo a non utilizzare il servizio.</p><h3>2. Descrizione del servizio (MVP)</h3><p>Lauris è uno Study OS che include funzionalità di pianificazione (Widget, Obiettivi), Libreria appunti, Sessioni guidate (Focus Mode) e monitoraggio progressi. L'app è fornita 'così com'è' e le funzionalità possono evolvere nel tempo.</p><h3>3. Licenza d'uso non esclusiva</h3><p>Ti concediamo una licenza limitata, non esclusiva e non trasferibile per utilizzare l'app a scopo personale e non commerciale, in accordo con questi termini.</p><h3>4. Account utente e responsabilità</h3><p>Sei responsabile della sicurezza del tuo dispositivo e dell'accesso all'app. Poiché i dati sono salvati localmente, sei responsabile del loro backup tramite i sistemi del tuo dispositivo.</p><h3>5. Contenuti generati dall'utente (UGC)</h3><p>Gli appunti, i piani e i dati che inserisci in Lauris sono tuoi. Non rivendichiamo alcuna proprietà sui tuoi contenuti di studio.</p><h3>6. Comportamenti vietati</h3><p>Non è consentito: effettuare reverse engineering dell'app, utilizzare l'app per scopi illegali, o tentare di aggirare le protezioni di sicurezza.</p><h3>7. Proprietà intellettuale</h3><p>Il marchio Lauris, il logo, il codice sorgente, il design dell'interfaccia e i contenuti editoriali (Pillole) sono proprietà esclusiva di Lauris e sono protetti dalle leggi sul copyright.</p><h3>8. Limitazione di responsabilità</h3><p>Lauris fornisce strumenti per organizzare lo studio, ma non garantisce risultati specifici, voti o superamento di esami. Non siamo responsabili per danni diretti o indiretti derivanti dall'uso o dall'impossibilità di usare l'app.</p><h3>9. Disclaimer legale</h3><p>Lauris non è un servizio medico, terapeutico o psicologico. Le 'Pillole' e i suggerimenti su stress o ansia sono di natura pratica e organizzativa, non clinica. Per problemi di salute, rivolgiti a un professionista.</p><h3>10. Terminazione</h3><p>Possiamo sospendere o terminare il supporto all'app in qualsiasi momento, senza preavviso, se riteniamo che vi sia stata una violazione di questi termini.</p><h3>11. Modifiche ai termini</h3><p>Ci riserviamo il diritto di modificare questi termini. Le modifiche saranno effettive dal momento della pubblicazione nell'app o tramite notifica.</p><h3>12. Privacy</h3><p>L'uso dell'app è regolato anche dalla nostra Privacy Policy, consultabile nella sezione dedicata dell'account.</p><h3>13. Legge applicabile e foro competente</h3><p>Questi termini sono regolati dalla legge italiana. Per qualsiasi controversia sarà competente in via esclusiva il Foro di Milano.</p><h3>14. Contatti</h3><p>Per domande su questi termini, puoi contattare il team di sviluppo all'indirizzo email di supporto indicato nell'App Store.</p><h3>15. Data di ultimo aggiornamento</h3><p>Febbraio 2026.</p></section>
 
 </div>
 
 <footer>
     <p>&copy; 2026 Lauris. Tutti i diritti riservati. Lo Study OS per gli studenti che puntano in alto.</p>
     <div class="footer-links">
-        <a href="#privacy">Privacy</a>
+        <a href="#supporto">Supporto</a>
+        <a href="#privacy">Privacy Policy</a>
         <a href="#termini">Termini e Condizioni</a>
-        <a href="#supporto">Contattaci</a>
     </div>
 </footer>
 
