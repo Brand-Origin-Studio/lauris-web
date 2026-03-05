@@ -1,10 +1,12 @@
-Put your HTML text here<!DOCTYPE html> 
+<!DOCTYPE html> 
 <html amp lang="it"> 
 <head> 
 <meta charset="UTF-8"> 
 <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1"> 
 <title>Lauris - Lo Study OS Premium per Universitari</title> 
 <link rel="canonical" href="https://lauris.app/">
+
+<meta name="apple-itunes-app" content="app-id=6759625379">
 
 <script async src="https://cdn.ampproject.org/v0.js"></script>
 <script async custom-element="amp-lightbox" src="https://cdn.ampproject.org/v0/amp-lightbox-0.1.js"></script>
@@ -51,9 +53,9 @@ nav { position:fixed; top:0; width: 100%; background:var(--nav-bg); backdrop-fil
 nav .container { max-width:980px; margin:0 auto; padding:12px 20px; display:flex; justify-content:space-between; align-items:center; } 
 .brand { display: flex; align-items: center; gap: 8px; text-decoration: none; color: var(--color-text); cursor:pointer; } 
 .brand h1 { font-size:21px; font-weight:600; letter-spacing:-.01em; margin: 0; } 
-nav a.nav-link, nav span.nav-link { color:var(--color-text); text-decoration:none; font-size:12px; font-weight:400; padding:6px 12px; border-radius:12px; transition:background .2s; cursor:pointer; } 
+nav a.nav-link, nav span.nav-link { color:var(--color-text); text-decoration:none; font-size:14px; font-weight:400; padding:6px 12px; border-radius:12px; transition:background .2s; cursor:pointer; } 
 nav span.nav-link:hover, nav a.nav-link:hover { background:var(--nav-hover); } 
-nav .links { display:flex; gap:8px; } 
+nav .links { display:flex; gap:12px; } 
 
 /* Hero Section */ 
 .hero { text-align:center; padding-top: 150px; max-width: 100%; display: flex; flex-direction: column; align-items: center; } 
@@ -104,7 +106,7 @@ nav .links { display:flex; gap:8px; }
 
 /* Typography & Layout */ 
 .container { max-width:980px; margin:0 auto; padding:0 20px; } 
-section { margin:160px 0; } 
+section { margin:160px 0; scroll-margin-top: 100px; } 
 section h2 { font-size:56px; font-weight:700; letter-spacing:-.02em; margin-bottom:24px; text-align: center; line-height: 1.1; } 
 .lead-text { font-size: 24px; text-align: center; max-width: 760px; margin: 0 auto 80px auto; color: var(--color-text-secondary); line-height: 1.4; font-weight: 500;} 
 
@@ -151,12 +153,13 @@ section h2 { font-size:56px; font-weight:700; letter-spacing:-.02em; margin-bott
 /* Modals Inner Elements */ 
 .quote { background:var(--color-surface); border-left:4px solid var(--color-accent); padding:24px 28px; margin:40px 0; border-radius:12px; } 
 .quote p { font-size:19px; font-style:italic; color:var(--color-text); margin:0; } 
+.quote-author { display: block; margin-top: 12px; font-size: 15px; font-weight: 600; color: var(--color-text-secondary); text-align: right; font-style: normal; }
 
 /* Footer */ 
 footer { padding:60px 20px; text-align:center; border-top: 1px solid var(--color-border); } 
 footer p { font-size:12px; color:var(--color-text-secondary); margin-bottom: 0; } 
-footer .footer-links { margin-top: 16px; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; } 
-footer .footer-links span { font-size: 12px; color: var(--color-text-secondary); text-decoration: none; cursor: pointer; transition: color 0.2s; } 
+footer .footer-links { margin-top: 16px; display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; } 
+footer .footer-links span { font-size: 14px; color: var(--color-text-secondary); text-decoration: none; cursor: pointer; transition: color 0.2s; font-weight: 500;} 
 footer .footer-links span:hover { color: var(--color-text); } 
 
 /* Mobile Optimizations */ 
@@ -193,9 +196,8 @@ footer .footer-links span:hover { color: var(--color-text); }
             <h1>Lauris</h1> 
         </div> 
         <div class="links"> 
-            <span role="button" tabindex="0" on="tap:modal-support" class="nav-link">Supporto</span> 
-            <span role="button" tabindex="0" on="tap:modal-privacy" class="nav-link">Privacy</span> 
-            <span role="button" tabindex="0" on="tap:modal-termini" class="nav-link">Termini</span> 
+            <a href="#features" class="nav-link">Funzionalità</a> 
+            <span role="button" tabindex="0" on="tap:modal-about" class="nav-link">Chi siamo</span> 
         </div> 
     </div> 
 </nav> 
@@ -212,6 +214,26 @@ footer .footer-links span:hover { color: var(--color-text); }
     <div class="hero-img-full">
         <amp-img src="hero.png" alt="Anteprima completa di Lauris" width="1400" height="800" layout="responsive"></amp-img> 
     </div>
+</div> 
+
+<div class="screenshots-section"> 
+    <div class="screenshots-container"> 
+        <div class="screenshot-item">
+            <amp-img lightbox="carousel" src="1.png" alt="Dashboard Oggi" width="320" height="692" layout="responsive"></amp-img>
+        </div>
+        <div class="screenshot-item">
+            <amp-img lightbox="carousel" src="2.png" alt="Libreria Corsi" width="320" height="692" layout="responsive"></amp-img>
+        </div>
+        <div class="screenshot-item">
+            <amp-img lightbox="carousel" src="3.png" alt="Tracker Obiettivi" width="320" height="692" layout="responsive"></amp-img>
+        </div>
+        <div class="screenshot-item">
+            <amp-img lightbox="carousel" src="4.png" alt="Focus Mode" width="320" height="692" layout="responsive"></amp-img>
+        </div>
+        <div class="screenshot-item">
+            <amp-img lightbox="carousel" src="5.png" alt="Libretto Carriera" width="320" height="692" layout="responsive"></amp-img>
+        </div>
+    </div> 
 </div> 
 
 <div id="features" class="container"> 
@@ -244,26 +266,6 @@ footer .footer-links span:hover { color: var(--color-text); }
     </section> 
 </div> 
 
-<div class="screenshots-section"> 
-    <div class="screenshots-container"> 
-        <div class="screenshot-item">
-            <amp-img lightbox="carousel" src="1.png" alt="Dashboard Oggi" width="320" height="692" layout="responsive"></amp-img>
-        </div>
-        <div class="screenshot-item">
-            <amp-img lightbox="carousel" src="2.png" alt="Libreria Corsi" width="320" height="692" layout="responsive"></amp-img>
-        </div>
-        <div class="screenshot-item">
-            <amp-img lightbox="carousel" src="3.png" alt="Tracker Obiettivi" width="320" height="692" layout="responsive"></amp-img>
-        </div>
-        <div class="screenshot-item">
-            <amp-img lightbox="carousel" src="4.png" alt="Focus Mode" width="320" height="692" layout="responsive"></amp-img>
-        </div>
-        <div class="screenshot-item">
-            <amp-img lightbox="carousel" src="5.png" alt="Libretto Carriera" width="320" height="692" layout="responsive"></amp-img>
-        </div>
-    </div> 
-</div> 
-
 <div id="download" class="download-section"> 
     <h2>Il tuo prossimo passo,<br>inizia qui.</h2> 
     <p>Unisciti a chi non cerca scorciatoie, ma l'eccellenza accademica.</p> 
@@ -287,6 +289,37 @@ footer .footer-links span:hover { color: var(--color-text); }
     </div> 
     <p style="margin-top: 24px;">&copy; 2026 Lauris. Tutti i diritti riservati. Fucina accademica.</p> 
 </footer> 
+
+<amp-lightbox id="modal-about" layout="nodisplay"> 
+    <div class="amp-modal-container">
+        <div class="modal-header"> 
+            <button class="btn-close" on="tap:modal-about.close">Chiudi</button> 
+        </div> 
+        <div class="modal-content"> 
+            <h2>Chi siamo</h2> 
+            <p style="font-size: 24px; color: var(--color-text);">La storia di Lauris, la nostra visione e perché abbiamo creato uno Study OS.</p> 
+            
+            <h3>La nostra storia</h3>
+            <p>Tutto è iniziato in uno Starbucks a Milano. Ci siamo guardati intorno e abbiamo visto la stessa scena ripetersi ovunque: studenti universitari con 27 tab aperte sul browser, mille fogli sparsi sul tavolo, appunti frammentati su diverse app e una chiara sensazione di affanno.</p>
+            <p>Non mancava la voglia di studiare. Mancava un sistema. Tra strumenti dispersivi e scadenze recuperate dai siti universitari, il piano di studio diventava fragile e l'ansia pre-esame cresceva.</p>
+            
+            <div class="quote">
+                <p>"Non serviva l’ennesimo posto dove archiviare note, ma un sistema per portarti all’azione ogni giorno."</p>
+                <span class="quote-author">— Team Lauris</span>
+            </div>
+            
+            <h3>La nostra Mission</h3>
+            <p>Abbiamo creato Lauris per supportare gli universitari nel costruire una routine sostenibile fino all'esame. Uniamo pianificazione, azione guidata e pillole pratiche nel momento giusto.</p>
+            <p>Lauris non è un'app di note generica o un calendario semplice. È uno Study OS premium che trasforma i tuoi obiettivi in sessioni guidate e progressi misurabili. Vogliamo ridurre la frizione tra il "dover studiare" e il "fare", aiutandoti a mantenere la costanza senza giudizio.</p>
+            
+            <ul>
+                <li><strong>Chiarezza operativa:</strong> Trasformiamo obiettivi complessi in azioni semplici. Una schermata, un'idea.</li>
+                <li><strong>Progresso misurabile:</strong> Metriche semplici e feedback sul prossimo passo, senza promesse irrealistiche.</li>
+                <li><strong>Rispetto per la persona:</strong> Un tono calmo che riconosce la fatica e ti aiuta a ripartire, non a sentirti in colpa.</li>
+            </ul>
+        </div>
+    </div>
+</amp-lightbox> 
 
 <amp-lightbox id="modal-support" layout="nodisplay"> 
     <div class="amp-modal-container">
@@ -392,7 +425,9 @@ footer .footer-links span:hover { color: var(--color-text); }
             <p>Riceviamo da Apple solo dati statistici e aggregati non ricollegabili alla tua specifica identità.</p> 
             <h4>Report di Crash</h4> 
             <p>Se l'app smette di funzionare improvvisamente, potremmo ricevere un log tecnico anonimo. Questo ci serve esclusivamente per individuare il bug e ripararlo.</p> 
-            <div class="quote"><p>"La tua evoluzione accademica è una storia personale. Noi ci limitiamo a fornirti lo strumento per scriverla."</p></div> 
+            <div class="quote">
+                <p>"La tua evoluzione accademica è una storia personale. Noi ci limitiamo a fornirti lo strumento per scriverla."</p>
+            </div> 
             <h3>Sicurezza</h3> 
             <p>Attualmente, Lauris opera con una logica 'Local First'. Significa che il database dei tuoi corsi, le tue note e i tuoi piani di studio risiedono fisicamente sulla memoria del tuo dispositivo. Tu sei l'unico custode delle tue informazioni.</p> 
         </div>
