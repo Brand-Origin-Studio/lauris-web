@@ -17,44 +17,58 @@
 
 <style amp-custom> 
 :root { 
-    --color-bg: #ffffff; 
+    --bg-primary: #ffffff; 
+    --bg-secondary: #f5f5f7; 
+    --bg-inverted: #000000;
+    
     --color-text: #1d1d1f; 
     --color-text-secondary: #86868b; 
+    --color-text-inverted: #f5f5f7;
+    
     --color-border: #d2d2d7; 
     --color-accent: #0071e3; 
-    --color-surface: #f5f5f7; 
-    --color-surface-alt: #e8e8ed;
+    
     --nav-bg: rgba(255,255,255,0.8); 
     --nav-hover: rgba(0,0,0,0.05); 
     --device-bezel: #1c1c1e;
     --sf-pro: -apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Roboto,sans-serif; 
-    --modal-bg: #ffffff; 
-    --footer-bg: #f5f5f7;
 } 
 
 @media (prefers-color-scheme: dark) { 
     :root { 
-        --color-bg: #000000; 
+        --bg-primary: #000000; 
+        --bg-secondary: #1c1c1e; 
+        --bg-inverted: #ffffff;
+        
         --color-text: #f5f5f7; 
         --color-text-secondary: #a1a1a6; 
+        --color-text-inverted: #1d1d1f;
+        
         --color-border: #424245; 
         --color-accent: #2997ff; 
-        --color-surface: #1c1c1e; 
-        --color-surface-alt: #2c2c2e;
+        
         --nav-bg: rgba(0,0,0,0.8); 
         --nav-hover: rgba(255,255,255,0.1); 
         --device-bezel: #2c2c2e;
-        --modal-bg: #1c1c1e; 
-        --footer-bg: #1c1c1e;
     } 
     .brand amp-img { filter: invert(1) hue-rotate(180deg); }
+    .manifesto { border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border); }
 } 
 
 * { margin:0; padding:0; box-sizing:border-box; } 
-body { font-family:var(--sf-pro); background:var(--color-bg); color:var(--color-text); line-height:1.47059; font-weight: 400; letter-spacing: -0.022em; -webkit-font-smoothing:antialiased; } 
+body { font-family:var(--sf-pro); background:var(--bg-primary); color:var(--color-text); line-height:1.47059; font-weight: 400; letter-spacing: -0.022em; -webkit-font-smoothing:antialiased; } 
 html { scroll-behavior: smooth; }
 
-/* Nav Bar */ 
+/* Animazione On-Load per la Hero (Senza Scroll) */
+@keyframes heroFadeIn {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.section-primary { background: var(--bg-primary); padding: 120px 0; }
+.section-secondary { background: var(--bg-secondary); padding: 160px 0; border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border); }
+.section-dark { background: var(--bg-inverted); color: var(--color-text-inverted); padding: 200px 0; text-align: center; }
+
 nav { position:fixed; top:0; width: 100%; background:var(--nav-bg); backdrop-filter:saturate(180%) blur(20px); -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--color-border); z-index:100; transition: all 0.3s; } 
 nav .container { max-width:1200px; margin:0 auto; padding:12px 24px; display:grid; grid-template-columns: 1fr auto 1fr; align-items:center; } 
 .brand { display: flex; align-items: center; gap: 8px; text-decoration: none; color: var(--color-text); cursor:pointer; justify-self: start;} 
@@ -63,105 +77,106 @@ nav .links { display:flex; gap:12px; justify-self: center; }
 nav a.nav-link { color:var(--color-text); text-decoration:none; font-size:14px; font-weight:400; padding:6px 12px; border-radius:12px; transition:background .2s; cursor: pointer; } 
 nav a.nav-link:hover { background:var(--nav-hover); } 
 .nav-actions { justify-self: end; }
-.btn-nav-download { background: var(--color-text); color: var(--color-bg); font-size: 14px; font-weight: 600; padding: 6px 16px; border-radius: 980px; text-decoration: none; transition: opacity 0.2s; }
+.btn-nav-download { background: var(--color-text); color: var(--bg-primary); font-size: 14px; font-weight: 600; padding: 6px 16px; border-radius: 980px; text-decoration: none; transition: opacity 0.2s; }
 .btn-nav-download:hover { opacity: 0.8; }
 
-/* Typography */
 h2 { font-size: 56px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 24px; }
 h3 { font-size: 32px; font-weight: 600; letter-spacing: -0.015em; margin-bottom: 16px; }
 p { font-size: 21px; line-height: 1.5; color: var(--color-text-secondary); margin-bottom: 24px; }
 .lead-text { font-size: 24px; max-width: 760px; margin: 0 auto 60px auto; color: var(--color-text-secondary); line-height: 1.4; font-weight: 500; text-align: center; } 
-.badge { display: inline-block; padding: 6px 12px; background: var(--color-surface-alt); color: var(--color-text); font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; border-radius: 980px; margin-bottom: 16px; border: 1px solid var(--color-border); }
+.badge { display: inline-block; padding: 6px 12px; background: var(--bg-secondary); color: var(--color-text); font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; border-radius: 980px; margin-bottom: 16px; border: 1px solid var(--color-border); }
 
-/* Bottoni */
-.btn-primary { display: inline-block; background: var(--color-text); color: var(--color-bg); font-size: 19px; font-weight: 600; padding: 20px 48px; border-radius: 980px; text-decoration: none; transition: transform 0.3s; cursor: pointer; border: none; } 
+.btn-primary { display: inline-block; background: var(--color-text); color: var(--bg-primary); font-size: 19px; font-weight: 600; padding: 20px 48px; border-radius: 980px; text-decoration: none; transition: transform 0.3s; cursor: pointer; border: none; } 
 .btn-primary:hover { transform: scale(1.03); opacity: 0.9; } 
 .btn-secondary { display: inline-block; background: transparent; color: var(--color-text); font-size: 17px; font-weight: 600; padding: 14px 28px; border-radius: 980px; text-decoration: none; border: 1px solid var(--color-border); cursor: pointer; transition: background 0.2s; }
-.btn-secondary:hover { background: var(--color-surface-alt); }
+.btn-secondary:hover { background: var(--nav-hover); }
 
-/* Layout Globale */
 .container { max-width:1080px; margin:0 auto; padding:0 24px; } 
-section { margin: 160px 0; scroll-margin-top: 100px; } 
 .text-center { text-align: center; }
 
 /* Hero */ 
-.hero { text-align:center; padding-top: 180px; padding-bottom: 80px; display: flex; flex-direction: column; align-items: center; } 
-.hero-content { max-width: 860px; padding: 0 20px; margin-bottom: 40px; } 
+.hero { text-align:center; padding-top: 200px; padding-bottom: 80px; display: flex; flex-direction: column; align-items: center; background: var(--bg-primary);} 
+.hero-content { 
+    max-width: 860px; padding: 0 20px; margin-bottom: 40px; 
+    /* Animazione CSS per risolvere il bug dello scroll iniziale */
+    animation: heroFadeIn 1s cubic-bezier(0.16, 1, 0.3, 1) forwards; 
+} 
 .hero h2 { font-size:80px; font-weight:700; letter-spacing:-.04em; margin-bottom:24px; line-height:1.05; } 
 .hero p { font-size:28px; font-weight:500; margin-bottom: 48px; letter-spacing: -0.015em; } 
 
-/* Carousel Screenshots */ 
-.screenshots-container { display: flex; gap: 40px; padding: 0 5vw 80px; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none; } 
+.screenshots-container { display: flex; gap: 40px; padding: 0 5vw 80px; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none; background: var(--bg-primary); } 
 .screenshots-container::-webkit-scrollbar { display: none; } 
 .screenshot-item { flex: 0 0 auto; width: 320px; scroll-snap-align: center; border-radius: 48px; border: 12px solid var(--device-bezel); box-shadow: 0 32px 64px rgba(0,0,0,0.12); background: #000; overflow: hidden; position: relative; }
 .screenshot-item amp-img img { object-fit: cover; }
 .screenshots-container::after { content: ''; flex: 0 0 5vw; } 
 
-/* Super Bento Grid */ 
-.bento-section { padding: 80px 20px; }
-.bento-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 24px; max-width: 1200px; margin: 0 auto; } 
-.bento-item { background: var(--color-surface); border-radius: 32px; padding: 48px; display: flex; flex-direction: column; overflow: hidden; position: relative; border: 1px solid var(--color-border); } 
-.bento-large { grid-column: span 12; align-items: center; text-align: center; padding: 80px 40px; background: linear-gradient(135deg, var(--color-surface) 0%, var(--color-surface-alt) 100%); } 
+.bento-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 24px; max-width: 1200px; margin: 0 auto; padding: 0 24px; } 
+.bento-item { background: var(--bg-primary); border-radius: 32px; padding: 48px; display: flex; flex-direction: column; overflow: hidden; position: relative; box-shadow: 0 20px 40px rgba(0,0,0,0.04); transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); } 
+.bento-item:hover { transform: translateY(-4px); }
+.bento-large { grid-column: span 12; align-items: center; text-align: center; padding: 80px 40px; } 
 .bento-large p { max-width: 760px; font-size: 24px; margin: 0; } 
 .bento-half { grid-column: span 6; justify-content: space-between; } 
-.bento-third { grid-column: span 4; justify-content: space-between; padding: 32px; }
-.bento-visual { margin-top: 32px; height: 220px; border-radius: 20px; background: var(--color-bg); display: flex; align-items: center; justify-content: center; font-size: 15px; color: var(--color-text-secondary); box-shadow: 0 10px 20px rgba(0,0,0,0.03); }
+.bento-third { grid-column: span 4; justify-content: space-between; padding: 40px 32px; }
+.bento-visual { margin-top: 32px; height: 220px; border-radius: 20px; background: var(--bg-secondary); display: flex; align-items: center; justify-content: center; font-size: 15px; color: var(--color-text-secondary); border: 1px solid var(--color-border); }
 
-/* Manifesto */
-.manifesto { background: var(--color-text); color: var(--color-bg); padding: 160px 20px; text-align: center; margin: 120px 0; }
-.manifesto-content { max-width: 800px; margin: 0 auto; }
-.manifesto h2 { color: var(--color-bg); font-size: 64px; margin-bottom: 40px; }
-.manifesto p { color: var(--color-bg); font-size: 28px; opacity: 0.9; line-height: 1.4; font-weight: 500;}
-.manifesto-quote { font-size: 32px; font-style: italic; margin-top: 60px; color: var(--color-accent); }
+.manifesto-content { max-width: 860px; margin: 0 auto; padding: 0 24px; }
+.manifesto h2 { font-size: 64px; margin-bottom: 40px; color: var(--color-text-inverted); }
+.manifesto p { font-size: 28px; opacity: 0.9; line-height: 1.4; font-weight: 500; color: var(--color-text-inverted); }
+.manifesto-quote { font-size: 32px; font-style: italic; margin-top: 80px; color: var(--color-text-inverted); opacity: 0.6; }
 
-/* Sezioni Split (Privacy & Accessibilità) */
-.split-section { display: flex; align-items: center; gap: 80px; margin: 160px auto; max-width: 1200px; padding: 0 24px; }
+.split-section { display: flex; align-items: center; gap: 80px; max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 .split-section.reverse { flex-direction: row-reverse; }
 .split-text { flex: 1; }
 .split-text h2 { font-size: 48px; margin-bottom: 24px; }
-.split-visual { flex: 1; height: 480px; background: var(--color-surface); border-radius: 40px; border: 1px solid var(--color-border); display: flex; align-items: center; justify-content: center; color: var(--color-text-secondary); font-size: 18px; font-weight: 500; overflow: hidden; }
+.split-visual { flex: 1; height: 480px; background: var(--bg-secondary); border-radius: 40px; display: flex; align-items: center; justify-content: center; color: var(--color-text-secondary); font-size: 18px; font-weight: 500; overflow: hidden; box-shadow: inset 0 0 0 1px var(--color-border); }
 
-/* Download Section */ 
-.download-section { text-align: center; padding: 120px 20px; max-width: 980px; margin: 0 auto; } 
+.download-section { text-align: center; max-width: 980px; margin: 0 auto; padding: 0 24px; } 
 .download-section h2 { font-size: 72px; letter-spacing: -0.03em;} 
 .download-assets { display: flex; flex-direction: column; align-items: center; gap: 40px; margin-top: 60px;} 
 .qr-container { width: 180px; height: 180px; background: #fff; padding: 16px; border-radius: 32px; box-shadow: 0 20px 40px rgba(0,0,0,0.08); } 
 
-/* FAQ Preview Section */
-.faq-preview-section { margin: 80px auto 160px auto; }
+.faq-preview-section { max-width: 1080px; margin: 120px auto 0; padding: 0 24px; }
 .faq-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; margin-bottom: 48px; }
-.faq-card { background: var(--color-surface); padding: 32px; border-radius: 24px; border: 1px solid var(--color-border); text-align: left; }
+.faq-card { background: var(--bg-primary); padding: 32px; border-radius: 24px; text-align: left; box-shadow: 0 10px 30px rgba(0,0,0,0.03); }
 .faq-card h4 { font-size: 21px; font-weight: 600; margin-bottom: 12px; line-height: 1.3; color: var(--color-text); }
 .faq-card p { font-size: 17px; margin-bottom: 0; color: var(--color-text-secondary); line-height: 1.5; }
 
-/* Footer */ 
-footer { padding:80px 20px; text-align:center; border-top: 1px solid var(--color-border); background: var(--footer-bg); } 
-footer .footer-links { margin-top: 24px; display: flex; justify-content: center; gap: 32px; flex-wrap: wrap; } 
-footer .footer-links span { font-size: 15px; color: var(--color-text-secondary); cursor: pointer; font-weight: 500;} 
-footer .footer-links span:hover { color: var(--color-text); } 
+/*  Nuovo Footer Professionale */ 
+footer { padding: 80px 24px 40px; background: var(--bg-primary); border-top: 1px solid var(--color-border); }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; max-width: 1080px; margin: 0 auto; text-align: left; }
+.footer-brand { margin-bottom: 24px; }
+.footer-brand h2 { font-size: 24px; margin-bottom: 8px; }
+.footer-brand p { font-size: 15px; color: var(--color-text-secondary); max-width: 280px;}
+.footer-col h4 { font-size: 14px; font-weight: 600; color: var(--color-text); margin-bottom: 16px; text-transform: uppercase; letter-spacing: 0.05em; }
+.footer-col ul { list-style: none; padding: 0; }
+.footer-col ul li { margin-bottom: 12px; }
+.footer-col ul li span { font-size: 15px; color: var(--color-text-secondary); cursor: pointer; transition: color 0.2s; font-weight: 500; }
+.footer-col ul li span:hover { color: var(--color-text); }
+.footer-bottom { max-width: 1080px; margin: 64px auto 0; padding-top: 24px; border-top: 1px solid var(--color-border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+.footer-bottom p { font-size: 13px; color: var(--color-text-secondary); margin: 0; }
 
-/* AMP Modals */
-.amp-modal-container { width: 100vw; height: 100vh; background: var(--modal-bg); overflow-y: auto; display: flex; flex-direction: column; }
+.amp-modal-container { width: 100vw; height: 100vh; background: var(--bg-primary); overflow-y: auto; display: flex; flex-direction: column; }
 .modal-header { position: sticky; top: 0; display: flex; justify-content: flex-end; padding: 20px 24px; background: rgba(255,255,255,0.8); backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px); z-index: 10; border-bottom: 1px solid var(--color-border); } 
 @media (prefers-color-scheme: dark) { .modal-header { background: rgba(28,28,30,0.8); } } 
-.btn-close { width: 40px; height: 40px; background: var(--color-surface); border: none; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; font-weight: 300; color: var(--color-text-secondary); cursor: pointer; transition: background 0.2s, color 0.2s, transform 0.2s; padding-bottom: 4px;} 
+.btn-close { width: 40px; height: 40px; background: var(--bg-secondary); border: none; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; font-weight: 300; color: var(--color-text-secondary); cursor: pointer; transition: background 0.2s, color 0.2s, transform 0.2s; padding-bottom: 4px;} 
 .btn-close:hover { background: var(--color-border); color: var(--color-text); transform: scale(1.05); } 
 .modal-content { max-width: 800px; margin: 0 auto; padding: 60px 20px 120px; width: 100%; } 
-.modal-content h2 { font-size: 48px; font-weight: 700; text-align: left; margin-bottom: 24px; } 
+.modal-content h2 { font-size: 48px; font-weight: 700; text-align: left; margin-bottom: 12px; } 
+.modal-desc { font-size: 24px; color: var(--color-text-secondary); margin-bottom: 48px; }
 
-/* AMP Accordion */
 .support-accordion { margin-top: 40px; }
-.support-accordion section { margin-bottom: 16px; background: var(--color-surface); border-radius: 24px; overflow: hidden; }
+.support-accordion section { margin-bottom: 16px; background: var(--bg-secondary); border-radius: 24px; overflow: hidden; }
 .support-accordion h3 { padding: 24px; font-size: 21px; font-weight: 600; color: var(--color-text); border: none; background: transparent; outline: none; cursor: pointer; margin: 0; line-height: 1.3;}
 .support-accordion section[expanded] h3 { border-bottom: 1px solid var(--color-border); }
 .accordion-content { padding: 24px; }
 .accordion-content p { font-size: 19px; margin: 0; }
 
-/* Mobile Optimizations */ 
 @media(max-width:980px) {
     .bento-half, .bento-third { grid-column: span 12; }
     .split-section, .split-section.reverse { flex-direction: column; gap: 48px; text-align: center; }
     .split-visual { width: 100%; height: 320px; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .footer-brand { grid-column: span 2; }
 }
 @media(max-width:768px) { 
     nav .links { display: none; } 
@@ -171,11 +186,14 @@ footer .footer-links span:hover { color: var(--color-text); }
     .hero p { font-size:24px; } 
     h2 { font-size:40px; } 
     h3 { font-size: 28px; }
-    .split-text h2 { font-size: 40px; }
-    .manifesto h2 { font-size: 48px; }
-    .manifesto p { font-size: 24px; }
+    .section-primary, .section-secondary { padding: 100px 0; }
+    .section-dark { padding: 140px 0; }
+    .manifesto h2 { font-size: 40px; }
+    .manifesto p { font-size: 21px; }
     .download-section h2 { font-size: 48px; }
     .screenshot-item { width: 75vw; border-radius: 40px; border-width: 8px; } 
+    .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+    .footer-brand { grid-column: span 1; }
 } 
 </style> 
 </head> 
@@ -200,7 +218,7 @@ footer .footer-links span:hover { color: var(--color-text); }
 </nav> 
 
 <main>
-    <section class="hero" amp-fx="fade-in fly-in-bottom"> 
+    <section class="hero"> 
         <div class="hero-content"> 
             <h2>Non stai solo studiando.<br>Stai forgiando il tuo futuro.</h2> 
             <p>Zero distrazioni. Massima resa. Trasforma il caos universitario in progressi visibili con lo Study OS progettato per farti superare ogni esame.</p> 
@@ -218,7 +236,7 @@ footer .footer-links span:hover { color: var(--color-text); }
         <div class="screenshot-item"><amp-img src="7.png" width="320" height="692" layout="responsive"></amp-img></div>
     </div> 
 
-    <section id="features" class="bento-section"> 
+    <section id="features" class="section-secondary"> 
         <div class="text-center" style="margin-bottom: 80px;" amp-fx="fade-in fly-in-bottom">
             <h2>Tutto ciò che serve.<br>Niente che distragga.</h2>
             <p class="lead-text">Ogni strumento è disegnato ossessivamente per azzerare l'attrito tra la pianificazione e lo studio reale.</p>
@@ -272,89 +290,120 @@ footer .footer-links span:hover { color: var(--color-text); }
         </div> 
     </section> 
 
-    <section id="manifesto" class="manifesto" amp-fx="fade-in">
-        <div class="manifesto-content" amp-fx="fly-in-bottom">
-            <h2>Nato in uno Starbucks.<br>Creato per portarti alla laurea.</h2>
-            <p>Ci siamo guardati intorno e abbiamo visto la stessa scena ripetersi: 27 tab aperte sul browser, appunti frammentati e una chiara sensazione di affanno. Non mancava la voglia di studiare, mancava un sistema.</p>
-            <p class="manifesto-quote">"Non serviva l’ennesimo archivio, ma un motore per l'azione quotidiana."</p>
+    <section id="manifesto" class="section-dark manifesto">
+        <div class="manifesto-content" amp-fx="fade-in fly-in-bottom">
+            <h2>L'ambizione ha bisogno<br>di un ecosistema.</h2>
+            <p>Studiare non dovrebbe significare combattere contro il disordine. Ci siamo resi conto che gli strumenti attuali frammentano l'attenzione invece di proteggerla.</p>
+            <p>Lauris nasce da una singola, ossessiva convinzione: la tecnologia deve fare un passo indietro, per lasciare che la tua concentrazione faccia un passo avanti.</p>
+            <p class="manifesto-quote">"Non abbiamo creato l'ennesima app di appunti.<br>Abbiamo costruito un motore per il tuo pensiero."</p>
         </div>
     </section>
 
-    <section id="privacy" class="split-section" amp-fx="fade-in fly-in-bottom">
-        <div class="split-text">
-            <h2>Privacy.<br>Local First.</h2>
-            <p>I tuoi voti, i tuoi appunti, il tuo percorso. Nessun server esterno, nessuna pubblicità, nessun tracciamento. I tuoi dati restano esclusivamente sul tuo dispositivo, esattamente dove dovrebbero stare.</p>
-            <button on="tap:modal-privacy" class="btn-secondary" style="margin-top: 16px;">Leggi la Privacy Policy</button>
-        </div>
-        <div class="split-visual">
-            [ Grafica / Icona Privacy Shield ]
-        </div>
-    </section>
-
-    <section id="accessibilita" class="split-section reverse" amp-fx="fade-in fly-in-bottom">
-        <div class="split-text">
-            <h2>Accessibilità.<br>Per ogni mente.</h2>
-            <p>Abbiamo progettato Lauris per adattarsi a te. Pieno supporto al Dynamic Type per ingrandire i testi a piacimento, Dark Mode nativa per non affaticare la vista e supporto in sviluppo per VoiceOver.</p>
-            <button on="tap:modal-accessibilita" class="btn-secondary" style="margin-top: 16px;">Scopri i dettagli</button>
-        </div>
-        <div class="split-visual">
-            [ Grafica / Icona Accessibilità ]
-        </div>
-    </section>
-
-    <section id="download" class="download-section" amp-fx="fade-in fly-in-bottom"> 
-        <h2>Il tuo prossimo passo,<br>inizia qui.</h2> 
-        <p class="lead-text">Unisciti a chi non cerca scorciatoie, ma l'eccellenza accademica.</p> 
-         
-        <div class="download-assets"> 
-            <div class="qr-container">
-                <amp-img src="qr.svg" alt="Scansiona il QR Code" width="180" height="180" layout="responsive"></amp-img> 
+    <section class="section-primary">
+        <div id="privacy" class="split-section" amp-fx="fade-in fly-in-bottom">
+            <div class="split-text">
+                <h2>Privacy.<br>Local First.</h2>
+                <p>I tuoi voti, i tuoi appunti, il tuo percorso. Nessun server esterno, nessuna pubblicità, nessun tracciamento. I tuoi dati restano esclusivamente sul tuo dispositivo, esattamente dove dovrebbero stare.</p>
+                <button on="tap:modal-privacy" class="btn-secondary" style="margin-top: 16px;">Leggi la Privacy Policy</button>
             </div>
-            <a href="https://apps.apple.com/us/app/lauris/id6759625379" target="_blank" class="btn-primary">Scarica dall'App Store</a>
+            <div class="split-visual">
+                [ Grafica / Icona Privacy Shield ]
+            </div>
+        </div>
+
+        <div id="accessibilita" class="split-section reverse" style="margin-top: 160px;" amp-fx="fade-in fly-in-bottom">
+            <div class="split-text">
+                <h2>Accessibilità.<br>Per ogni mente.</h2>
+                <p>Abbiamo progettato Lauris per adattarsi a te. Pieno supporto al Dynamic Type per ingrandire i testi a piacimento, Dark Mode nativa per non affaticare la vista e supporto per VoiceOver in continuo sviluppo.</p>
+                <button on="tap:modal-accessibilita" class="btn-secondary" style="margin-top: 16px;">Scopri i dettagli</button>
+            </div>
+            <div class="split-visual">
+                [ Grafica / Icona Accessibilità ]
+            </div>
+        </div>
+    </section>
+
+    <section id="download" class="section-secondary">
+        <div class="download-section" amp-fx="fade-in fly-in-bottom"> 
+            <h2>Il tuo prossimo passo,<br>inizia qui.</h2> 
+            <p class="lead-text">Unisciti a chi non cerca scorciatoie, ma l'eccellenza accademica.</p> 
+             
+            <div class="download-assets"> 
+                <div class="qr-container">
+                    <amp-img src="qr.svg" alt="Scansiona il QR Code" width="180" height="180" layout="responsive"></amp-img> 
+                </div>
+                <a href="https://apps.apple.com/us/app/lauris/id6759625379" target="_blank" class="btn-primary">Scarica dall'App Store</a>
+            </div> 
         </div> 
-    </section> 
 
-    <section id="faq-preview" class="container faq-preview-section" amp-fx="fade-in fly-in-bottom">
-        <div class="text-center" style="margin-bottom: 60px;">
-            <h2>Domande Frequenti</h2>
-        </div>
-        
-        <div class="faq-grid">
-            <div class="faq-card">
-                <h4>Che cos’è esattamente Lauris?</h4>
-                <p>È uno Study OS per universitari che collega le tue lezioni, appunti e obiettivi in un unico ecosistema fluido.</p>
+        <div id="faq-preview" class="faq-preview-section" amp-fx="fade-in fly-in-bottom">
+            <div class="text-center" style="margin-bottom: 60px;">
+                <h2>Domande Frequenti</h2>
             </div>
-            <div class="faq-card">
-                <h4>In cosa differisce da altre app?</h4>
-                <p>Lauris è pronto all'uso, senza setup infiniti. È progettato per l'azione: traccia i progressi, calcola la media e pianifica il focus.</p>
+            
+            <div class="faq-grid">
+                <div class="faq-card">
+                    <h4>Che cos’è esattamente Lauris?</h4>
+                    <p>Lauris è uno Study OS (Sistema Operativo di Studio) per universitari. Collega le tue lezioni, i tuoi appunti e i tuoi obiettivi in un unico flusso per aiutarti a studiare con costanza.</p>
+                </div>
+                <div class="faq-card">
+                    <h4>Come creo il mio primo Corso?</h4>
+                    <p>Vai nella sezione 'Corsi' e tocca '+'. Inserisci nome, crediti (CFU) e colore. Da lì potrai aggiungere argomenti e appunti specifici per la materia.</p>
+                </div>
+                <div class="faq-card">
+                    <h4>Posso registrare l'audio delle lezioni?</h4>
+                    <p>Certamente. Puoi registrare l'audio mentre prendi appunti testuali, così da avere tutto sincronizzato in un unico posto senza app esterne.</p>
+                </div>
+                <div class="faq-card">
+                    <h4>Cos’è la Live Activity?</h4>
+                    <p>È una notifica dinamica sulla schermata di blocco che ti mostra a colpo d'occhio l'argomento in corso e il tempo rimanente alla fine della lezione o sessione.</p>
+                </div>
+                <div class="faq-card">
+                    <h4>I miei dati sono al sicuro?</h4>
+                    <p>Assolutamente. I tuoi appunti, voti e dati di studio sono privati e salvati localmente. La privacy è per noi un valore fondamentale.</p>
+                </div>
             </div>
-            <div class="faq-card">
-                <h4>L’app funziona offline?</h4>
-                <p>Assolutamente sì. Puoi gestire le tue sessioni di studio, i materiali e gli orari anche senza connessione internet.</p>
-            </div>
-            <div class="faq-card">
-                <h4>Posso personalizzare l'aspetto?</h4>
-                <p>Sì, Lauris supporta interamente le impostazioni del tuo iPhone, inclusa la Dark Mode nativa e il Dynamic Type.</p>
-            </div>
-            <div class="faq-card">
-                <h4>I miei dati sono al sicuro?</h4>
-                <p>Essendo "Local First", i tuoi dati risiedono solo sul tuo dispositivo. Non ci sono server esterni che leggono i tuoi appunti.</p>
-            </div>
-        </div>
 
-        <div class="text-center">
-            <button on="tap:modal-faq" class="btn-secondary">Vai a tutte le Q&A</button>
+            <div class="text-center">
+                <button on="tap:modal-faq" class="btn-secondary">Vai a tutte le Q&A</button>
+            </div>
         </div>
     </section>
 </main>
 
 <footer> 
-    <div class="footer-links"> 
-        <span role="button" tabindex="0" on="tap:modal-faq">Q&A</span> 
-        <span role="button" tabindex="0" on="tap:modal-privacy">Privacy Policy</span> 
-        <span role="button" tabindex="0" on="tap:modal-termini">Termini e Condizioni</span> 
-    </div> 
-    <p style="margin-top: 32px; font-size:14px; color:var(--color-text-secondary);">&copy; 2026 Lauris. Tutti i diritti riservati. Fucina accademica.</p> 
+    <div class="footer-grid">
+        <div class="footer-brand">
+            <h2>Lauris</h2>
+            <p>Lo Study OS premium per universitari. Progettato per eliminare il caos e portarti all'azione ogni giorno.</p>
+        </div>
+        <div class="footer-col">
+            <h4>Prodotto</h4>
+            <ul>
+                <li><span role="button" tabindex="0" on="tap:AMP.scrollTo(id='features')">Funzionalità</span></li>
+                <li><span role="button" tabindex="0" on="tap:AMP.scrollTo(id='manifesto')">Mission</span></li>
+                <li><span role="button" tabindex="0" on="tap:modal-faq">Q&A</span></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Risorse</h4>
+            <ul>
+                <li><span role="button" tabindex="0" on="tap:modal-accessibilita">Accessibilità</span></li>
+                <li><span role="button" tabindex="0" on="tap:modal-sicurezza">Sicurezza</span></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Legale</h4>
+            <ul>
+                <li><span role="button" tabindex="0" on="tap:modal-privacy">Privacy Policy</span></li>
+                <li><span role="button" tabindex="0" on="tap:modal-termini">Termini e Condizioni</span></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 Lauris. Tutti i diritti riservati. Fucina accademica.</p>
+        <p>Italia</p>
+    </div>
 </footer> 
 
 <amp-lightbox id="modal-faq" layout="nodisplay"> 
@@ -363,28 +412,64 @@ footer .footer-links span:hover { color: var(--color-text); }
             <button class="btn-close" on="tap:modal-faq.close" aria-label="Chiudi">&times;</button> 
         </div> 
         <div class="modal-content"> 
-            <h2>Q&A</h2> 
-            <p style="font-size: 24px;">Tutto quello che devi sapere per iniziare a usare il tuo Study OS.</p> 
+            <h2>Domande Frequenti (FAQ)</h2> 
+            <p class="modal-desc">Tutto quello che devi sapere per iniziare a usare il tuo Study OS: dalla gestione dei corsi alla sessione di studio.</p> 
             <amp-accordion class="support-accordion" expand-single-section>
-                <section>
+                <section expanded>
                     <h3>Che cos’è esattamente Lauris?</h3>
-                    <div class="accordion-content"><p>Lauris è uno Study OS (Sistema Operativo di Studio) per universitari. A differenza di un’agenda o di un’app di note generica, Lauris collega le tue lezioni, i tuoi appunti e i tuoi obiettivi in un unico flusso.</p></div>
+                    <div class="accordion-content"><p>Lauris è uno Study OS (Sistema Operativo di Studio) per universitari. A differenza di un’agenda o di un’app di note generica, Lauris collega le tue lezioni, i tuoi appunti e i tuoi obiettivi in un unico flusso per aiutarti a studiare con costanza e vedere progressi chiari.</p></div>
                 </section>
                 <section>
-                    <h3>In cosa è diversa da altre app di appunti?</h3>
-                    <div class="accordion-content"><p>Altre app sono archivi da costruire; Lauris è pronto all'uso. È progettato specificamente per lo studente universitario, portandoti all'azione con strumenti dedicati.</p></div>
+                    <h3>In cosa è diversa da altre app di appunti o calendari?</h3>
+                    <div class="accordion-content"><p>Altre app sono archivi che devi costruire da zero; Lauris è pronto all'uso. È progettato specificamente per lo studente universitario: riduce il tempo di configurazione e ti porta subito all'azione con strumenti dedicati come il calcolo della media, il tracciamento dei progressi sugli argomenti e l'orario lezioni integrato.</p></div>
+                </section>
+                <section>
+                    <h3>Come creo il mio primo Corso?</h3>
+                    <div class="accordion-content"><p>Vai nella sezione 'Corsi' e tocca il pulsante '+'. Qui puoi inserire il nome dell'esame, il numero di crediti (CFU) e assegnare un colore. Una volta creato, potrai aggiungere argomenti, capitoli e appunti specifici per quella materia.</p></div>
+                </section>
+                <section>
+                    <h3>Come funzionano le Sessioni di Studio?</h3>
+                    <div class="accordion-content"><p>Nella sezione 'Studio', puoi pianificare o avviare una sessione. Seleziona l'esame su cui vuoi concentrarti e definisci l'obiettivo. Durante la sessione, puoi segnare come 'studiati' i singoli argomenti: questo aggiornerà automaticamente la barra dei progressi per quell'esame.</p></div>
+                </section>
+                <section>
+                    <h3>Posso prendere appunti direttamente nell'app?</h3>
+                    <div class="accordion-content"><p>Sì. Dentro ogni Corso e Argomento puoi creare note. Supportiamo testo formattato, foto (utili per slide o lavagne), file allegati e persino appunti scritti a mano libera se usi un iPad.</p></div>
+                </section>
+                <section>
+                    <h3>Posso registrare l'audio delle lezioni?</h3>
+                    <div class="accordion-content"><p>Certamente. Nell'editor degli appunti vocali troverai l'icona del microfono. Puoi registrare l'audio mentre prendi appunti testuali, così da avere tutto sincronizzato in un unico posto senza usare app esterne.</p></div>
+                </section>
+                <section>
+                    <h3>Come configuro il mio orario delle lezioni?</h3>
+                    <div class="accordion-content"><p>Vai nella sezione 'Agenda'. Qui puoi impostare il tuo orario settimanale ricorrente. Una volta configurato, Lauris ti mostrerà le lezioni del giorno nella Dashboard 'Oggi' e attiverà una Live Activity durante la lezione per mostrarti quanto manca alla fine.</p></div>
+                </section>
+                <section>
+                    <h3>Cos’è la Live Activity?</h3>
+                    <div class="accordion-content"><p>È una notifica dinamica che appare sulla schermata di blocco del tuo telefono quando una lezione (o una sessione di studio) è in corso. Ti permette di vedere a colpo d'occhio l'argomento e il tempo rimanente senza dover sbloccare il telefono e aprire l'app.</p></div>
+                </section>
+                <section>
+                    <h3>Come calcolo la mia media e il voto di laurea?</h3>
+                    <div class="accordion-content"><p>Nella sezione 'Carriera' (il libretto), puoi registrare i voti degli esami superati. L'app calcolerà automaticamente la tua media ponderata e aritmetica, fornendoti una previsione sul voto di partenza per la laurea.</p></div>
+                </section>
+                <section>
+                    <h3>Come misuro i miei progressi?</h3>
+                    <div class="accordion-content"><p>Il progresso in Lauris non è basato solo sul tempo passato, ma sugli argomenti coperti. Ogni volta che spunti un argomento come 'studiato' dentro una sessione, la percentuale di completamento dell'esame aumenta. Puoi vedere il riepilogo nella Dashboard o nel dettaglio del Corso.</p></div>
                 </section>
                 <section>
                     <h3>L’app funziona offline?</h3>
-                    <div class="accordion-content"><p>Sì, Lauris è pensata per funzionare offline. Puoi consultare orari e appunti senza connessione internet costante.</p></div>
+                    <div class="accordion-content"><p>Sì, Lauris è pensata per funzionare offline. Puoi consultare orari, prendere appunti e gestire sessioni senza una connessione internet.</p></div>
                 </section>
                 <section>
-                    <h3>Posso personalizzare l'aspetto?</h3>
-                    <div class="accordion-content"><p>Sì, supporta interamente le impostazioni del tuo iPhone, inclusa la Dark Mode nativa e il Dynamic Type.</p></div>
+                    <h3>Posso personalizzare l’aspetto dell’app?</h3>
+                    <div class="accordion-content"><p>Sì. Nella sezione 'Account' > 'Profilo' puoi scegliere il tuo Avatar, attivare la Dark Mode per riposare gli occhi durante lo studio serale e regolare la dimensione del testo per una migliore leggibilità.</p></div>
+                </section>
+                <section>
+                    <h3>Cosa trovo nella dashboard 'Oggi'?</h3>
+                    <div class="accordion-content"><p>La dashboard è il tuo punto di partenza. Raccoglie in una sola schermata le lezioni previste per oggi, i promemoria per i prossimi esami e un riepilogo rapido del tuo stato attuale, per sapere sempre qual è il prossimo passo senza cercare altrove.</p></div>
                 </section>
                 <section>
                     <h3>I miei dati sono al sicuro?</h3>
-                    <div class="accordion-content"><p>Essendo "Local First", i tuoi dati risiedono solo sul tuo dispositivo. Non ci sono server esterni che leggono i tuoi appunti.</p></div>
+                    <div class="accordion-content"><p>Assolutamente. La privacy è un valore fondamentale. I tuoi appunti, voti e dati di studio sono privati. Per dettagli specifici, puoi consultare la Privacy Policy nella sezione Account.</p></div>
                 </section>
             </amp-accordion>
         </div>
@@ -397,15 +482,38 @@ footer .footer-links span:hover { color: var(--color-text); }
             <button class="btn-close" on="tap:modal-privacy.close" aria-label="Chiudi">&times;</button> 
         </div> 
         <div class="modal-content"> 
-            <h2>Privacy Policy</h2> 
-            <p style="font-size: 24px;">I tuoi dati restano tuoi. Ecco come gestiamo le informazioni.</p> 
+            <h2>Privacy</h2> 
+            <p class="modal-desc">I tuoi dati appartengono a te. Ecco come li proteggiamo.</p> 
             <div style="margin-top: 48px; max-width: 800px;">
-                <h3>Principio fondamentale</h3> 
-                <p>Crediamo che il tuo percorso accademico sia privato. Lauris riduce al minimo la raccolta di dati.</p> 
-                <h3 style="margin-top: 40px;">Nessuna condivisione</h3> 
-                <p>Non vendiamo né analizziamo le tue note per scopi pubblicitari.</p> 
-                <h3 style="margin-top: 40px;">Sicurezza Local First</h3> 
-                <p>Il database dei tuoi corsi risiede fisicamente sulla memoria del tuo dispositivo.</p> 
+                <h3>I tuoi dati restano tuoi</h3> 
+                <p>Lauris è progettata per rispettare la tua privacy. Non vendiamo i tuoi dati a terzi e non analizziamo i tuoi appunti per scopi pubblicitari. Tutto ciò che scrivi e pianifichi è pensato per restare privato.</p> 
+                <h3 style="margin-top: 40px;">Dati aggregati e anonimi</h3> 
+                <p>Per migliorare l'app, raccogliamo solo dati aggregati e anonimi tramite gli strumenti standard di Apple. Questo ci serve per capire quali funzionalità vengono usate di più, senza mai sapere chi sta facendo cosa.</p> 
+                <h3 style="margin-top: 40px;">Gestione dei Crash</h3> 
+                <p>Se l'app dovesse chiudersi inaspettatamente, riceviamo un report tecnico anonimo (crash log). Questo ci aiuta a individuare e correggere i bug velocemente, garantendoti un'esperienza sempre più stabile.</p> 
+                <h3 style="margin-top: 40px;">Nessun tracciamento</h3> 
+                <p>Non ti tracciamo attraverso altri siti web o app. Il tuo percorso di studio è una questione personale e noi lo trattiamo come tale.</p> 
+            </div>
+        </div>
+    </div>
+</amp-lightbox> 
+
+<amp-lightbox id="modal-sicurezza" layout="nodisplay"> 
+    <div class="amp-modal-container">
+        <div class="modal-header"> 
+            <button class="btn-close" on="tap:modal-sicurezza.close" aria-label="Chiudi">&times;</button> 
+        </div> 
+        <div class="modal-content"> 
+            <h2>Sicurezza</h2> 
+            <p class="modal-desc">Crittografia locale e protezione del dispositivo per i tuoi progressi.</p> 
+            <div style="margin-top: 48px; max-width: 800px;">
+                <h3>Una cassaforte digitale</h3> 
+                <p>I tuoi appunti, i tuoi piani di studio e i tuoi progressi sono salvati localmente sul tuo dispositivo. Utilizziamo gli standard di sicurezza nativi di iOS per garantire che i tuoi file siano criptati e inaccessibili a chi non possiede il tuo codice di sblocco.</p> 
+                <h3 style="margin-top: 40px;">Backup e Cloud</h3> 
+                <p>Poiché i dati risiedono sul tuo dispositivo, ti consigliamo vivamente di attivare il backup su iCloud. Questo garantisce che, anche in caso di smarrimento del telefono, tu possa recuperare tutto il tuo percorso universitario senza perdere nemmeno una sessione.</p> 
+                <div style="margin: 40px 0; padding: 24px; border-left: 4px solid var(--color-accent); background: var(--bg-secondary); border-radius: 16px;">
+                    <p style="font-size: 21px; font-style: italic; margin-bottom: 0;">"Privacy al 100% locale: nessun dato sensibile viene inviato ai nostri server."</p>
+                </div> 
             </div>
         </div>
     </div>
@@ -418,12 +526,16 @@ footer .footer-links span:hover { color: var(--color-text); }
         </div> 
         <div class="modal-content"> 
             <h2>Accessibilità</h2> 
-            <p style="font-size: 24px;">La tecnologia è più potente quando tutti possono usarla.</p> 
+            <p class="modal-desc">Stiamo lavorando per rendere Lauris utilizzabile da tutti. Ecco le funzionalità di accessibilità supportate oggi.</p> 
             <div style="margin-top: 48px; max-width: 800px;">
-                <h3 style="margin-top: 40px;">Dynamic Type</h3>
-                <p>Lauris si adatta automaticamente alle impostazioni di dimensione del testo del tuo iPhone.</p>
-                <h3 style="margin-top: 40px;">Contrasto e Dark Mode</h3>
-                <p>La Dark Mode nativa protegge la tua vista durante le intense sessioni serali.</p>
+                <h3>Visione</h3>
+                <p>Lauris supporta il Testo Dinamico (Dynamic Type): se aumenti la dimensione dei caratteri dalle impostazioni del tuo iPhone, l'app si adatta per garantire una lettura confortevole. L'interfaccia è progettata con un contrasto sufficiente per distinguere chiaramente testi ed elementi grafici.</p>
+                <h3 style="margin-top: 40px;">Dark Mode</h3>
+                <p>Sappiamo che le sessioni di studio possono prolungarsi fino a tardi. Lauris supporta nativamente la Modalità Scura per ridurre l'affaticamento visivo in ambienti con scarsa illuminazione.</p>
+                <h3 style="margin-top: 40px;">Movimento</h3>
+                <p>Rispettiamo le preferenze di sistema per la riduzione del movimento (Reduce Motion), limitando le animazioni per chi soffre di sensibilità al movimento sullo schermo.</p>
+                <h3 style="margin-top: 40px;">VoiceOver</h3>
+                <p>Il supporto a VoiceOver è presente ma attualmente non copre il 100% delle funzionalità (come appunti, studio, e agenda). Stiamo lavorando per migliorare l'esperienza nelle prossime versioni.</p>
             </div>
         </div>
     </div>
@@ -436,11 +548,23 @@ footer .footer-links span:hover { color: var(--color-text); }
         </div> 
         <div class="modal-content"> 
             <h2>Termini e Condizioni</h2> 
-            <p style="font-size: 24px;">Le regole per utilizzare Lauris in modo sicuro.</p> 
+            <p class="modal-desc">Le regole per utilizzare Lauris in modo sicuro e responsabile.</p> 
             <div style="margin-top: 48px; max-width: 800px;">
-                <p><strong>1. Introduzione:</strong> Scaricando l'app, accetti i presenti termini.</p> 
-                <p><strong>2. Account e Dati:</strong> Sei responsabile della sicurezza del tuo dispositivo e del backup dei tuoi dati locali.</p> 
-                <p><strong>3. Disclaimer:</strong> Lauris offre strumenti di organizzazione, non garantiamo il superamento degli esami.</p> 
+                <p><strong>1. Introduzione e accettazione:</strong> Benvenuto in Lauris. Scaricando o utilizzando l'app, accetti i presenti termini. Se non sei d'accordo con una qualsiasi parte di questi termini, ti invitiamo a non utilizzare il servizio.</p> 
+                <p><strong>2. Descrizione del servizio (MVP):</strong> Lauris è uno Study OS che include funzionalità di pianificazione (Widget, Obiettivi), Libreria appunti, Sessioni guidate (Focus Mode) e monitoraggio progressi. L'app è fornita 'così com'è' e le funzionalità possono evolvere nel tempo.</p> 
+                <p><strong>3. Licenza d'uso non esclusiva:</strong> Ti concediamo una licenza limitata, non esclusiva e non trasferibile per utilizzare l'app a scopo personale e non commerciale, in accordo con questi termini.</p> 
+                <p><strong>4. Account utente e responsabilità:</strong> Sei responsabile della sicurezza del tuo dispositivo e dell'accesso all'app. Poiché i dati sono salvati localmente, sei responsabile del loro backup tramite i sistemi del tuo dispositivo.</p> 
+                <p><strong>5. Contenuti generati dall'utente (UGC):</strong> Gli appunti, i piani e i dati che inserisci in Lauris sono tuoi. Non rivendichiamo alcuna proprietà sui tuoi contenuti di studio.</p> 
+                <p><strong>6. Comportamenti vietati:</strong> Non è consentito: effettuare reverse engineering dell'app, utilizzare l'app per scopi illegali, o tentare di aggirare le protezioni di sicurezza.</p> 
+                <p><strong>7. Proprietà intellettuale:</strong> Il marchio Lauris, il logo, il codice sorgente, il design dell'interfaccia e i contenuti editoriali (Pillole) sono proprietà esclusiva di Lauris e sono protetti dalle leggi sul copyright.</p> 
+                <p><strong>8. Limitazione di responsabilità:</strong> Lauris fornisce strumenti per organizzare lo studio, ma non garantisce risultati specifici, voti o superamento di esami. Non siamo responsabili per danni diretti o indiretti derivanti dall'uso o dall'impossibilità di usare l'app.</p> 
+                <p><strong>9. Disclaimer legale:</strong> Lauris non è un servizio medico, terapeutico o psicologico. Le 'Pillole' e i suggerimenti su stress o ansia sono di natura pratica e organizzativa, non clinica. Per problemi di salute, rivolgiti a un professionista.</p> 
+                <p><strong>10. Terminazione:</strong> Possiamo sospendere o terminare il supporto all'app in qualsiasi momento, senza preavviso, se riteniamo che vi sia stata una violazione di questi termini.</p> 
+                <p><strong>11. Modifiche ai termini:</strong> Ci riserviamo il diritto di modificare questi termini. Le modifiche saranno effettive dal momento della pubblicazione nell'app o tramite notifica.</p> 
+                <p><strong>12. Privacy:</strong> L'uso dell'app è regolato anche dalla nostra Privacy Policy, consultabile nella sezione dedicata dell'account.</p> 
+                <p><strong>13. Legge applicabile e foro competente:</strong> Questi termini sono regolati dalla legge italiana. Per qualsiasi controversia sarà competente in via esclusiva il Foro di Milano.</p> 
+                <p><strong>14. Contatti:</strong> Per domande su questi termini, puoi contattare il team di sviluppo all'indirizzo email di supporto indicato nell'App Store.</p> 
+                <p><strong>15. Data di ultimo aggiornamento:</strong> Febbraio 2026.</p> 
             </div>
         </div>
     </div>
