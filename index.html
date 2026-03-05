@@ -62,21 +62,17 @@ nav .links { display:flex; gap:12px; }
 .hero-content { max-width: 860px; padding: 0 20px; margin-bottom: 50px; } 
 .hero h2 { font-size:72px; font-weight:700; letter-spacing:-.04em; margin-bottom:24px; line-height:1.05; } 
 .hero p { font-size:28px; color:var(--color-text-secondary); font-weight:500; margin-bottom: 40px; letter-spacing: -0.015em; line-height: 1.3; } 
-.hero-cta { display: flex; gap: 16px; justify-content: center; align-items: center; }
-.btn-primary { display: inline-block; background: var(--color-text); color: var(--color-bg); font-size: 17px; font-weight: 600; padding: 18px 36px; border-radius: 980px; text-decoration: none; transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s; } 
+.hero-cta { display: flex; gap: 24px; justify-content: center; align-items: center; }
+.btn-primary { display: inline-block; background: var(--color-text); color: var(--color-bg); font-size: 17px; font-weight: 600; padding: 18px 36px; border-radius: 980px; text-decoration: none; transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s; cursor: pointer; } 
 .btn-primary:hover { opacity: 0.9; transform: scale(1.03); text-decoration: none; } 
-.link-secondary { color: var(--color-accent); font-size: 19px; font-weight: 500; text-decoration: none; }
-.link-secondary:hover { text-decoration: underline; }
+.link-secondary { color: var(--color-accent); font-size: 19px; font-weight: 500; text-decoration: none; cursor: pointer; transition: opacity 0.2s; }
+.link-secondary:hover { opacity: 0.8; }
 
-.hero-img-full { width: 100%; max-width: 1400px; margin: 0 auto; border-radius: 32px 32px 0 0; } 
-
-/* Carousel */ 
+/* Carousel (Sotto la Hero) */ 
 .screenshots-section {  
-    padding: 80px 0;
-    background: var(--color-surface);  
+    padding: 0 0 80px 0;
     overflow: hidden; 
 } 
-
 .screenshots-container {  
     display: flex;  
     gap: 32px;  
@@ -97,7 +93,7 @@ nav .links { display:flex; gap:12px; }
     transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;  
     border-radius: 32px;
     box-shadow: 0 24px 48px rgba(0,0,0,0.08); 
-    border: 8px solid var(--color-bg);
+    border: 8px solid var(--color-surface);
     cursor: pointer;
 }
 .screenshot-item amp-img img { object-fit: cover; border-radius: 24px; }
@@ -106,18 +102,16 @@ nav .links { display:flex; gap:12px; }
 
 /* Typography & Layout */ 
 .container { max-width:980px; margin:0 auto; padding:0 20px; } 
-section { margin:160px 0; scroll-margin-top: 100px; } 
+section { margin:120px 0; scroll-margin-top: 100px; } 
 section h2 { font-size:56px; font-weight:700; letter-spacing:-.02em; margin-bottom:24px; text-align: center; line-height: 1.1; } 
 .lead-text { font-size: 24px; text-align: center; max-width: 760px; margin: 0 auto 80px auto; color: var(--color-text-secondary); line-height: 1.4; font-weight: 500;} 
 
-/* Sales Grid */ 
-.sales-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap:24px; } 
-.sales-card { background:var(--color-surface); padding:48px 40px; border-radius:32px; display: flex; flex-direction: column; justify-content: center; transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); } 
-.sales-card:hover { transform: scale(1.02); } 
-.sales-card.large { grid-column: 1 / -1; align-items: center; text-align: center; padding: 64px 40px; } 
-.sales-card.large p { max-width: 760px; margin: 0 auto; font-size: 21px; } 
-.sales-card h3 { font-size:32px; font-weight:600; margin-bottom:16px; color:var(--color-text); letter-spacing:-.015em; } 
-.sales-card p { font-size:19px; line-height:1.5; color:var(--color-text-secondary); margin:0; } 
+/* Marketing Grid Landing Page */ 
+.marketing-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap:24px; } 
+.marketing-card { background:var(--color-surface); padding:64px 40px; border-radius:32px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); } 
+.marketing-card:hover { transform: scale(1.02); } 
+.marketing-card h3 { font-size:32px; font-weight:600; margin-bottom:16px; color:var(--color-text); letter-spacing:-.015em; } 
+.marketing-card p { font-size:19px; line-height:1.5; color:var(--color-text-secondary); margin:0; } 
 
 /* Download Section */ 
 .download-section { text-align: center; padding: 120px 20px; background: var(--color-surface); border-radius: 40px; margin: 120px auto; max-width: 980px; transition: transform 0.4s ease; } 
@@ -130,22 +124,24 @@ section h2 { font-size:56px; font-weight:700; letter-spacing:-.02em; margin-bott
 
 /* AMP Modals */ 
 .amp-modal-container { width: 100vw; height: 100vh; background: var(--modal-bg); overflow-y: auto; display: flex; flex-direction: column; }
-.modal-header { position: sticky; top: 0; display: flex; justify-content: flex-end; padding: 20px; background: rgba(255,255,255,0.8); backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px); z-index: 10; padding-bottom: 10px; border-bottom: 1px solid var(--color-border); } 
+.modal-header { position: sticky; top: 0; display: flex; justify-content: flex-end; padding: 20px; background: rgba(255,255,255,0.8); backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px); z-index: 10; border-bottom: 1px solid var(--color-border); } 
 @media (prefers-color-scheme: dark) { .modal-header { background: rgba(28,28,30,0.8); } } 
-.btn-close { background: var(--color-surface); border: none; padding: 8px 16px; border-radius: 980px; font-size: 14px; font-weight: 600; color: var(--color-text); cursor: pointer; font-family: var(--sf-pro); transition: background 0.2s, transform 0.2s; } 
-.btn-close:hover { background: var(--color-border); transform: scale(1.05); } 
+/* Bottone X per chiusura */
+.btn-close { width: 36px; height: 36px; background: var(--color-surface); border: none; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: 400; color: var(--color-text-secondary); cursor: pointer; transition: background 0.2s, color 0.2s, transform 0.2s; padding-bottom: 2px;} 
+.btn-close:hover { background: var(--color-border); color: var(--color-text); transform: scale(1.05); } 
+
 .modal-content { max-width: 800px; margin: 0 auto; padding: 40px 20px 100px; width: 100%; } 
 .modal-content h2 { font-size: 48px; font-weight: 700; text-align: left; margin-bottom: 32px; letter-spacing: -0.015em; } 
-.modal-content h3 { font-size: 28px; font-weight: 600; margin: 40px 0 16px; } 
+.modal-content h3 { font-size: 28px; font-weight: 600; margin: 40px 0 16px; letter-spacing: -0.01em;} 
 .modal-content h4 { font-size: 21px; font-weight: 600; margin: 28px 0 12px; } 
-.modal-content p { font-size: 17px; line-height: 1.5; color: var(--color-text-secondary); margin-bottom: 24px; } 
+.modal-content p { font-size: 19px; line-height: 1.5; color: var(--color-text-secondary); margin-bottom: 24px; } 
 .modal-content ul, .modal-content ol { margin: 20px 0 20px 24px; } 
-.modal-content li { font-size: 17px; line-height: 1.5; color: var(--color-text-secondary); margin-bottom: 12px; } 
+.modal-content li { font-size: 19px; line-height: 1.5; color: var(--color-text-secondary); margin-bottom: 12px; } 
 
-/* AMP Accordion for Support */
+/* AMP Accordion for FAQ / Support */
 .support-accordion { margin-top: 40px; }
 .support-accordion section { margin-bottom: 16px; background: var(--color-surface); border-radius: 24px; overflow: hidden; }
-.support-accordion h3 { padding: 24px; font-size: 21px; font-weight: 600; color: var(--color-text); border: none; background: transparent; outline: none; cursor: pointer; margin: 0; }
+.support-accordion h3 { padding: 24px; font-size: 21px; font-weight: 600; color: var(--color-text); border: none; background: transparent; outline: none; cursor: pointer; margin: 0; line-height: 1.3;}
 .support-accordion section[expanded] h3 { border-bottom: 1px solid var(--color-border); }
 .accordion-content { padding: 24px; }
 .accordion-desc { font-weight: 500; font-size: 19px; margin-bottom: 24px; color: var(--color-accent); }
@@ -154,6 +150,11 @@ section h2 { font-size:56px; font-weight:700; letter-spacing:-.02em; margin-bott
 .quote { background:var(--color-surface); border-left:4px solid var(--color-accent); padding:24px 28px; margin:40px 0; border-radius:12px; } 
 .quote p { font-size:19px; font-style:italic; color:var(--color-text); margin:0; } 
 .quote-author { display: block; margin-top: 12px; font-size: 15px; font-weight: 600; color: var(--color-text-secondary); text-align: right; font-style: normal; }
+
+/* Grid per Funzionalità nella Modale */
+.features-grid { display: grid; grid-template-columns: 1fr; gap: 40px; margin-top: 40px; }
+.feature-block { background: var(--color-surface); padding: 40px; border-radius: 24px; }
+.feature-block h3 { margin-top: 0; font-size: 28px; }
 
 /* Footer */ 
 footer { padding:60px 20px; text-align:center; border-top: 1px solid var(--color-border); } 
@@ -167,9 +168,9 @@ footer .footer-links span:hover { color: var(--color-text); }
     .hero { padding-top: 100px; } 
     .hero h2 { font-size:48px; } 
     .hero p { font-size:21px; margin-bottom: 32px; } 
-    .hero-cta { flex-direction: column; }
+    .hero-cta { flex-direction: column; gap: 16px; }
     section h2 { font-size:40px; } 
-    .sales-card h3 { font-size:28px; } 
+    .marketing-card h3 { font-size:28px; } 
     .download-section { margin: 60px 20px; padding: 80px 20px; border-radius: 32px; } 
     .download-section h2 { font-size: 40px; } 
     
@@ -184,6 +185,7 @@ footer .footer-links span:hover { color: var(--color-text); }
     } 
     .screenshots-container::after { flex: 0 0 10vw; } 
     .screenshot-item:hover { transform: none; } 
+    .feature-block { padding: 32px 24px; }
 } 
 </style> 
 </head> 
@@ -196,7 +198,7 @@ footer .footer-links span:hover { color: var(--color-text); }
             <h1>Lauris</h1> 
         </div> 
         <div class="links"> 
-            <a href="#features" class="nav-link">Funzionalità</a> 
+            <span role="button" tabindex="0" on="tap:modal-features" class="nav-link">Funzionalità</span> 
             <span role="button" tabindex="0" on="tap:modal-about" class="nav-link">Chi siamo</span> 
         </div> 
     </div> 
@@ -207,13 +209,10 @@ footer .footer-links span:hover { color: var(--color-text); }
         <h2>Non stai solo studiando.<br>Stai forgiando il tuo futuro.</h2> 
         <p>Lo Study OS premium progettato per gli universitari. Zero distrazioni, massima resa: trasforma i tuoi obiettivi in sessioni guidate e progressi misurabili.</p> 
         <div class="hero-cta">
-            <a href="#download" class="btn-primary">Ottieni Lauris</a> 
-            <a href="#features" class="link-secondary">Scopri l'esperienza premium ></a>
+            <a href="#download" class="btn-primary">Installa Lauris</a> 
+            <span role="button" tabindex="0" on="tap:modal-features" class="link-secondary">Scopri funzionalità ></span>
         </div>
     </div> 
-    <div class="hero-img-full">
-        <amp-img src="hero.png" alt="Anteprima completa di Lauris" width="1400" height="800" layout="responsive"></amp-img> 
-    </div>
 </div> 
 
 <div class="screenshots-section"> 
@@ -236,31 +235,27 @@ footer .footer-links span:hover { color: var(--color-text); }
     </div> 
 </div> 
 
-<div id="features" class="container"> 
+<div class="container"> 
     <section> 
-        <h2>Meno rumore mentale.<br>Più esami superati.</h2> 
-        <p class="lead-text">Tutto è iniziato con una scena comune: 27 tab aperte, mille fogli sparsi e la costante sensazione di affanno. Non mancava la voglia di studiare, mancava un vero sistema. Lauris azzera la frizione tra il "dover studiare" e il "fare".</p> 
+        <h2>Il tuo metodo,<br>finalmente scalabile.</h2> 
+        <p class="lead-text">Abbandona l'ansia delle mille schede aperte e degli appunti frammentati. Lauris unisce la potenza di un archivio alla fluidità di un tracker di abitudini.</p> 
          
-        <div class="sales-grid"> 
-            <div class="sales-card large"> 
-                <h3>Uno Study OS, non un semplice archivio.</h3> 
-                <p>A differenza di una generica app di appunti che si limita a immagazzinare testo, Lauris collega le tue lezioni, i tuoi appunti e i tuoi obiettivi in un unico flusso continuo, guidandoti giorno dopo giorno fino al momento dell'esame.</p> 
+        <div class="marketing-grid"> 
+            <div class="marketing-card"> 
+                <h3>Frictionless</h3> 
+                <p>Nessun menu complicato o configurazione infinita. Entri, avvii la sessione, e il sistema ti guida sul prossimo argomento da affrontare.</p> 
             </div> 
-            <div class="sales-card"> 
-                <h3>Chiarezza operativa.</h3> 
-                <p>Trasformiamo obiettivi complessi in azioni semplici. Mappa gli argomenti e il Tracker Obiettivi trasformerà la tua scadenza in un piano eseguibile, riducendo l'ansia pre-esame.</p> 
+            <div class="marketing-card"> 
+                <h3>Azione, non solo Note</h3> 
+                <p>Mentre le altre app si limitano a raccogliere i tuoi testi, noi trasformiamo i tuoi file in un piano di studio eseguibile con calcolo automatico dei progressi.</p> 
             </div> 
-            <div class="sales-card"> 
-                <h3>Azione guidata.</h3> 
-                <p>Avvia una Focus Mode in un istante. La sessione guidata trasforma l'intenzione vaga in un'azione concreta, portandoti direttamente allo studio senza perdite di tempo.</p> 
+            <div class="marketing-card"> 
+                <h3>Local First & Privacy</h3> 
+                <p>I tuoi voti, le tue ansie e le tue idee sono uniche. I dati vivono nel tuo dispositivo, criptati. Nessuna pubblicità, nessun tracciamento.</p> 
             </div> 
-            <div class="sales-card"> 
-                <h3>Progresso misurabile.</h3> 
-                <p>Metriche chiare senza promesse irrealistiche. Un libretto digitale avanzato monitora la tua media e proietta il voto di laurea mentre costruisci il tuo percorso.</p> 
-            </div> 
-            <div class="sales-card"> 
-                <h3>Rispetto per il tuo ritmo.</h3> 
-                <p>Se salti un giorno di studio, nessun giudizio. Lauris ti affianca con Pillole Premium—consigli pratici integrati nel momento giusto—per farti ripartire con costanza.</p> 
+            <div class="marketing-card"> 
+                <h3>Ecosistema Apple</h3> 
+                <p>Live Activities per le lezioni in corso, Dark Mode nativa, supporto per testi dinamici e integrazione perfetta per studiare senza affaticare gli occhi.</p> 
             </div> 
         </div> 
     </section> 
@@ -283,17 +278,61 @@ footer .footer-links span:hover { color: var(--color-text); }
 
 <footer> 
     <div class="footer-links"> 
-        <span role="button" tabindex="0" on="tap:modal-support">Supporto</span> 
+        <span role="button" tabindex="0" on="tap:modal-faq">Q&A</span> 
         <span role="button" tabindex="0" on="tap:modal-privacy">Privacy Policy</span> 
         <span role="button" tabindex="0" on="tap:modal-termini">Termini e Condizioni</span> 
     </div> 
     <p style="margin-top: 24px;">&copy; 2026 Lauris. Tutti i diritti riservati. Fucina accademica.</p> 
 </footer> 
 
+<amp-lightbox id="modal-features" layout="nodisplay"> 
+    <div class="amp-modal-container">
+        <div class="modal-header"> 
+            <button class="btn-close" on="tap:modal-features.close" aria-label="Chiudi">&times;</button> 
+        </div> 
+        <div class="modal-content"> 
+            <h2>Funzionalità</h2> 
+            <p>Scopri l'esperienza premium che trasforma ogni tua sessione in un traguardo raggiunto.</p> 
+            
+            <div class="features-grid">
+                <div class="feature-block">
+                    <h3>Dashboard Oggi</h3>
+                    <p>Tutto in un colpo d'occhio. La schermata iniziale è progettata per azzerare il rumore mentale. Raccoglie solo le lezioni del giorno, i promemoria per i prossimi esami e i tuoi dati principali. Saprai sempre qual è il tuo prossimo passo senza distrazioni.</p>
+                </div>
+
+                <div class="feature-block">
+                    <h3>Libreria Corsi Unificata</h3>
+                    <p>Struttura solida, mente libera. Abbandona i file sparsi: centralizza appunti di testo, registrazioni audio, foto alla lavagna e PDF esterni in una gerarchia chiara (Corso > Argomento > Appunto). Ritrovare un'informazione richiede solo pochi tap.</p>
+                </div>
+
+                <div class="feature-block">
+                    <h3>Tracker Obiettivi</h3>
+                    <p>Da intenzione vaga ad azione concreta. Mappa gli argomenti d'esame e segnali come 'studiati' man mano che avanzi. Il Tracker converte la scadenza in un piano eseguibile, con un Gauge visivo che calcola la percentuale di completamento.</p>
+                </div>
+
+                <div class="feature-block">
+                    <h3>Focus Mode & Sessioni Guidate</h3>
+                    <p>Zero distrazioni. Quando decidi di iniziare, avvia una sessione guidata direttamente dall'argomento. Nessun setup lungo: l'app registra il tempo dedicato e incrementa i tuoi progressi, sbloccando la soddisfazione del traguardo quotidiano.</p>
+                </div>
+
+                <div class="feature-block">
+                    <h3>Libretto & Previsioni di Carriera</h3>
+                    <p>Misura il tuo percorso senza ansia. Visualizza la tua media (ponderata o aritmetica) e osserva una proiezione realistica del tuo futuro voto di laurea basata sui CFU acquisiti, per pianificare la tua strategia con serenità.</p>
+                </div>
+
+                <div class="feature-block">
+                    <h3>Integrazione Sistema (Live Activities)</h3>
+                    <p>Sincronizzati con la realtà. Grazie all'agenda integrata, configura il tuo orario settimanale. Durante una lezione, Lauris attiverà una Live Activity sulla schermata di blocco, tenendoti sempre aggiornato senza dover sbloccare l'iPhone.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</amp-lightbox> 
+
 <amp-lightbox id="modal-about" layout="nodisplay"> 
     <div class="amp-modal-container">
         <div class="modal-header"> 
-            <button class="btn-close" on="tap:modal-about.close">Chiudi</button> 
+            <button class="btn-close" on="tap:modal-about.close" aria-label="Chiudi">&times;</button> 
         </div> 
         <div class="modal-content"> 
             <h2>Chi siamo</h2> 
@@ -321,87 +360,56 @@ footer .footer-links span:hover { color: var(--color-text); }
     </div>
 </amp-lightbox> 
 
-<amp-lightbox id="modal-support" layout="nodisplay"> 
+<amp-lightbox id="modal-faq" layout="nodisplay"> 
     <div class="amp-modal-container">
         <div class="modal-header"> 
-            <button class="btn-close" on="tap:modal-support.close">Chiudi</button> 
+            <button class="btn-close" on="tap:modal-faq.close" aria-label="Chiudi">&times;</button> 
         </div> 
         <div class="modal-content"> 
-            <h2>Supporto e Guide</h2> 
-            <p>Scopri come sfruttare al massimo ogni angolo del tuo Study OS. Tocca una guida per esplorare il tuo prossimo passo.</p> 
+            <h2>Q&A</h2> 
+            <p>Tutto quello che devi sapere per iniziare a usare il tuo Study OS.</p> 
             
             <amp-accordion class="support-accordion" expand-single-section>
                 <section>
-                    <h3>Oggi: il tuo punto di partenza</h3>
+                    <h3>Che cos’è esattamente Lauris?</h3>
                     <div class="accordion-content">
-                        <p class="accordion-desc">Una dashboard chiara per capire subito cosa fare, senza perderti tra mille tab aperte.</p>
-                        <h4>Tutto in un colpo d'occhio</h4>
-                        <p>La schermata 'Oggi' è progettata per ridurre il rumore mentale. Qui Lauris raccoglie solo le informazioni essenziali per affrontare la giornata.</p>
-                        <ul>
-                            <li><strong>Lezioni del giorno:</strong> Visualizza orari e aule delle lezioni previste per oggi.</li>
-                            <li><strong>Promemoria esami:</strong> Tieni sotto controllo i giorni mancanti alle prossime scadenze importanti.</li>
-                            <li><strong>Panoramica carriera:</strong> Un rapido check sui tuoi dati principali, senza distrazioni.</li>
-                        </ul>
+                        <p>Lauris è uno Study OS (Sistema Operativo di Studio) per universitari. A differenza di un’agenda o di un’app di note generica, Lauris collega le tue lezioni, i tuoi appunti e i tuoi obiettivi in un unico flusso per aiutarti a studiare con costanza e vedere progressi chiari.</p>
                     </div>
                 </section>
                 <section>
-                    <h3>Corsi: la tua libreria ordinata</h3>
+                    <h3>In cosa è diversa da altre app di appunti o calendari?</h3>
                     <div class="accordion-content">
-                        <p class="accordion-desc">Centralizza appunti e materiali. Un sistema gerarchico semplice per ritrovare tutto in pochi tap.</p>
-                        <h4>Struttura solida, mente libera</h4>
-                        <p>Dimentica i file sparsi su dispositivi diversi. Abbiamo strutturato l'organizzazione in modo gerarchico per garantire la massima reperibilità (Corso > Argomento > Appunto).</p>
-                        <ul>
-                            <li><strong>Testo e Scrittura a mano:</strong> Per chi ama digitare o usare la stilo.</li>
-                            <li><strong>Audio e Foto:</strong> Per catturare lezioni dal vivo o schemi alla lavagna.</li>
-                            <li><strong>File esterni:</strong> Allega PDF o slide direttamente nell'argomento pertinente.</li>
-                        </ul>
+                        <p>Altre app sono archivi che devi costruire da zero; Lauris è pronto all'uso. È progettato specificamente per lo studente universitario: riduce il tempo di configurazione e ti porta subito all'azione con strumenti dedicati come il calcolo della media, il tracciamento dei progressi sugli argomenti e l'orario lezioni integrato.</p>
                     </div>
                 </section>
                 <section>
-                    <h3>Studio: dal piano all'azione</h3>
+                    <h3>Come creo il mio primo Corso?</h3>
                     <div class="accordion-content">
-                        <p class="accordion-desc">Trasforma gli obiettivi in sessioni guidate e monitora i tuoi progressi visibili.</p>
-                        <h4>Tracker Obiettivi</h4>
-                        <p>Qui non ti limiti a segnare le date, ma costruisci il percorso per arrivarci preparato.</p>
-                        <ul>
-                            <li><strong>Mappa gli argomenti:</strong> All'interno dell'esame, elenca gli argomenti. Man mano che li completi, segnali come 'studiati'.</li>
-                            <li><strong>Progressi visibili:</strong> Il sistema calcola automaticamente la percentuale di completamento dell'obiettivo.</li>
-                        </ul>
-                        <h4>Sessione Guidata</h4>
-                        <p>Quando è ora di studiare, avvia una Sessione di focus. Questo trasforma un'intenzione vaga in un'azione concreta.</p>
+                        <p>Vai nella sezione 'Corsi' e tocca il pulsante '+'. Qui puoi inserire il nome dell'esame, il numero di crediti (CFU) e assegnare un colore. Una volta creato, potrai aggiungere argomenti, capitoli e appunti specifici.</p>
                     </div>
                 </section>
                 <section>
-                    <h3>Agenda: il tuo ritmo settimanale</h3>
+                    <h3>Cosa trovo nella dashboard 'Oggi'?</h3>
                     <div class="accordion-content">
-                        <p class="accordion-desc">Pianifica le lezioni e sincronizza i tuoi tempi con la realtà universitaria.</p>
-                        <h4>Calendario Lezioni</h4>
-                        <p>Configura il tuo orario settimanale una sola volta e lascia che l'app organizzi la visualizzazione ottimizzata per la ciclicità universitaria.</p>
-                        <ul>
-                            <li><strong>Live Activity:</strong> Quando una lezione è in corso, Lauris mostra un'attività live sulla schermata di blocco.</li>
-                        </ul>
+                        <p>La dashboard è il tuo punto di partenza. Raccoglie in una sola schermata le lezioni previste per oggi, i promemoria per i prossimi esami e un riepilogo rapido del tuo stato attuale, per sapere sempre qual è il prossimo passo senza cercare altrove.</p>
                     </div>
                 </section>
                 <section>
-                    <h3>Carriera: libretto digitale</h3>
+                    <h3>L’app funziona offline?</h3>
                     <div class="accordion-content">
-                        <p class="accordion-desc">Monitora la tua media e guarda al futuro con le previsioni del voto.</p>
-                        <h4>Misura il tuo percorso</h4>
-                        <p>Avere i dati chiari ti aiuta a pianificare i prossimi passi con maggiore serenità e strategia.</p>
-                        <ul>
-                            <li><strong>Media e Previsione:</strong> Visualizza la tua media attuale e una proiezione realistica del voto di laurea, basata sui crediti acquisiti.</li>
-                        </ul>
+                        <p>Sì, Lauris è pensata per funzionare offline. Puoi consultare orari, prendere appunti e gestire sessioni senza una connessione internet costante.</p>
                     </div>
                 </section>
                 <section>
-                    <h3>Personalizzazione</h3>
+                    <h3>Posso personalizzare l’aspetto dell’app?</h3>
                     <div class="accordion-content">
-                        <p class="accordion-desc">Adatta l'aspetto di Lauris per ridurre l'affaticamento visivo.</p>
-                        <ul>
-                            <li><strong>Avatar:</strong> Scegli l'immagine che ti rappresenta nel tuo profilo.</li>
-                            <li><strong>Dark Mode:</strong> Ideale per le sessioni di studio serali o per chi preferisce toni scuri.</li>
-                            <li><strong>Dimensione Testi:</strong> Aumenta la leggibilità per non sforzare la vista.</li>
-                        </ul>
+                        <p>Sì. Nella sezione 'Account' > 'Profilo' puoi scegliere il tuo Avatar, attivare la Dark Mode per riposare gli occhi durante lo studio serale e regolare la dimensione del testo per una migliore leggibilità.</p>
+                    </div>
+                </section>
+                <section>
+                    <h3>I miei dati sono al sicuro?</h3>
+                    <div class="accordion-content">
+                        <p>Assolutamente. La privacy è un valore fondamentale. I tuoi appunti, voti e dati di studio sono privati e gestiti localmente (Local First). Per dettagli specifici, consulta la Privacy Policy.</p>
                     </div>
                 </section>
             </amp-accordion>
@@ -412,7 +420,7 @@ footer .footer-links span:hover { color: var(--color-text); }
 <amp-lightbox id="modal-privacy" layout="nodisplay"> 
     <div class="amp-modal-container">
         <div class="modal-header"> 
-            <button class="btn-close" on="tap:modal-privacy.close">Chiudi</button> 
+            <button class="btn-close" on="tap:modal-privacy.close" aria-label="Chiudi">&times;</button> 
         </div> 
         <div class="modal-content"> 
             <h2>Privacy Policy</h2> 
@@ -437,7 +445,7 @@ footer .footer-links span:hover { color: var(--color-text); }
 <amp-lightbox id="modal-termini" layout="nodisplay"> 
     <div class="amp-modal-container">
         <div class="modal-header"> 
-            <button class="btn-close" on="tap:modal-termini.close">Chiudi</button> 
+            <button class="btn-close" on="tap:modal-termini.close" aria-label="Chiudi">&times;</button> 
         </div> 
         <div class="modal-content"> 
             <h2>Termini e Condizioni</h2> 
