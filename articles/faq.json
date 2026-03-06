@@ -1,0 +1,79 @@
+{
+    "id": "faq",
+    "symbol": "questionmark.message.fill",
+    "title": "Domande Frequenti (FAQ)",
+    "description": "Tutto quello che devi sapere per iniziare a usare il tuo Study OS: dalla gestione dei corsi alla sessione di studio.",
+    "body": [
+        {
+            "type": "paragraph",
+            "title": "Che cos’è esattamente Lauris?",
+            "text": "Lauris è uno Study OS (Sistema Operativo di Studio) per universitari. A differenza di un’agenda o di un’app di note generica, Lauris collega le tue lezioni, i tuoi appunti e i tuoi obiettivi in un unico flusso per aiutarti a studiare con costanza e vedere progressi chiari."
+        },
+        {
+            "type": "paragraph",
+            "title": "In cosa è diversa da altre app di appunti o calendari?",
+            "text": "Altre app sono archivi che devi costruire da zero; Lauris è pronto all'uso. È progettato specificamente per lo studente universitario: riduce il tempo di configurazione e ti porta subito all'azione con strumenti dedicati come il calcolo della media, il tracciamento dei progressi sugli argomenti e l'orario lezioni integrato."
+        },
+        {
+            "type": "paragraph",
+            "title": "Come creo il mio primo Corso?",
+            "text": "Vai nella sezione 'Corsi' e tocca il pulsante '+'. Qui puoi inserire il nome dell'esame, il numero di crediti (CFU) e assegnare un colore. Una volta creato, potrai aggiungere argomenti, capitoli e appunti specifici per quella materia."
+        },
+        {
+            "type": "paragraph",
+            "title": "Come funzionano le Sessioni di Studio?",
+            "text": "Nella sezione 'Studio', puoi pianificare o avviare una sessione. Seleziona l'esame su cui vuoi concentrarti e definisci l'obiettivo. Durante la sessione, puoi segnare come 'studiati' i singoli argomenti: questo aggiornerà automaticamente la barra dei progressi per quell'esame."
+        },
+        {
+            "type": "paragraph",
+            "title": "Posso prendere appunti direttamente nell'app?",
+            "text": "Sì. Dentro ogni Corso e Argomento puoi creare note. Supportiamo testo formattato, foto (utili per slide o lavagne), file allegati e persino appunti scritti a mano libera se usi un iPad."
+        },
+        {
+            "type": "paragraph",
+            "title": "Posso registrare l'audio delle lezioni?",
+            "text": "Certamente. Nell'editor degli appunti vocali troverai l'icona del microfono. Puoi registrare l'audio mentre prendi appunti testuali, così da avere tutto sincronizzato in un unico posto senza usare app esterne."
+        },
+        {
+            "type": "paragraph",
+            "title": "Come configuro il mio orario delle lezioni?",
+            "text": "Vai nella sezione 'Agenda'. Qui puoi impostare il tuo orario settimanale ricorrente. Una volta configurato, Lauris ti mostrerà le lezioni del giorno nella Dashboard 'Oggi' e attiverà una Live Activity durante la lezione per mostrarti quanto manca alla fine."
+        },
+        {
+            "type": "paragraph",
+            "title": "Cos’è la Live Activity?",
+            "text": "È una notifica dinamica che appare sulla schermata di blocco del tuo telefono quando una lezione (o una sessione di studio) è in corso. Ti permette di vedere a colpo d'occhio l'argomento e il tempo rimanente senza dover sbloccare il telefono e aprire l'app."
+        },
+        {
+            "type": "paragraph",
+            "title": "Come calcolo la mia media e il voto di laurea?",
+            "text": "Nella sezione 'Carriera' (il libretto), puoi registrare i voti degli esami superati. L'app calcolerà automaticamente la tua media ponderata e aritmetica, fornendoti una previsione sul voto di partenza per la laurea."
+        },
+        {
+            "type": "paragraph",
+            "title": "Come misuro i miei progressi?",
+            "text": "Il progresso in Lauris non è basato solo sul tempo passato, ma sugli argomenti coperti. Ogni volta che spunti un argomento come 'studiato' dentro una sessione, la percentuale di completamento dell'esame aumenta. Puoi vedere il riepilogo nella Dashboard o nel dettaglio del Corso."
+        },
+        {
+            "type": "paragraph",
+            "title": "L’app funziona offline?",
+            "text": "Sì, Lauris è pensata per funzionare offline. Puoi consultare orari, prendere appunti e gestire sessioni senza una connessione internet."
+        },
+        {
+            "type": "paragraph",
+            "title": "Posso personalizzare l’aspetto dell’app?",
+            "text": "Sì. Nella sezione 'Account' > 'Profilo' puoi scegliere il tuo Avatar, attivare la Dark Mode per riposare gli occhi durante lo studio serale e regolare la dimensione del testo per una migliore leggibilità."
+        },
+        {
+            "type": "paragraph",
+            "title": "Cosa trovo nella dashboard 'Oggi'?",
+            "text": "La dashboard è il tuo punto di partenza. Raccoglie in una sola schermata le lezioni previste per oggi, i promemoria per i prossimi esami e un riepilogo rapido del tuo stato attuale, per sapere sempre qual è il prossimo passo senza cercare altrove."
+        },
+        {
+            "type": "paragraph",
+            "title": "I miei dati sono al sicuro?",
+            "text": "Assolutamente. La privacy è un valore fondamentale. I tuoi appunti, voti e dati di studio sono privati. Per dettagli specifici, puoi consultare la Privacy Policy nella sezione Account."
+        },
+    ],
+    "sources": []
+}

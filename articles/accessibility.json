@@ -1,0 +1,37 @@
+{
+    "id": "accessibility",
+    "title": "Accessibilità",
+    "description": "Stiamo lavorando per rendere Lauris utilizzabile da tutti. Ecco le funzionalità di accessibilità supportate oggi.",
+    "symbol": "accessibility.fill",
+    "body": [
+        {
+            "type": "paragraph",
+            "title": "Visione",
+            "text": "Lauris supporta il Testo Dinamico (Dynamic Type): se aumenti la dimensione dei caratteri dalle impostazioni del tuo iPhone, l'app si adatta per garantire una lettura confortevole. L'interfaccia è progettata con un contrasto sufficiente per distinguere chiaramente testi ed elementi grafici."
+        },
+        {
+            "type": "paragraph",
+            "title": "Dark Mode",
+            "text": "Sappiamo che le sessioni di studio possono prolungarsi fino a tardi. Lauris supporta nativamente la Modalità Scura per ridurre l'affaticamento visivo in ambienti con scarsa illuminazione."
+        },
+        {
+            "type": "paragraph",
+            "title": "Movimento",
+            "text": "Rispettiamo le preferenze di sistema per la riduzione del movimento (Reduce Motion), limitando le animazioni per chi soffre di sensibilità al movimento sullo schermo."
+        },
+        {
+            "type": "paragraph",
+            "title": "VoiceOver",
+            "text": "Il supporto a VoiceOver è presente ma attualmente non copre il 100% delle funzionalità (come appunti, studio, e agenda). Stiamo lavorando per migliorare l'esperienza nelle prossime versioni."
+        }
+    ],
+    "sources": [
+        {
+            "title": "Funzionalità Accessibilità",
+            "isBook": false,
+            "author": "Apple Inc.",
+            "url": "https://www.apple.com/it/accessibility/features/",
+            "imageURL": null
+        }
+    ]
+}

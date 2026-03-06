@@ -1,0 +1,57 @@
+{
+    "id": "about",
+    "symbol": "person.crop.square.filled.and.at.rectangle.fill",
+    "title": "Chi siamo",
+    "description": "La storia di Lauris, la nostra visione e perché abbiamo creato uno Study OS.",
+    "body": [
+        {
+            "type": "paragraph",
+            "title": "La nostra storia",
+            "text": "Tutto è iniziato in uno Starbucks a Milano. Ci siamo guardati intorno e abbiamo visto la stessa scena ripetersi ovunque: studenti universitari con 27 tab aperte sul browser, mille fogli sparsi sul tavolo, appunti frammentati su diverse app e una chiara sensazione di affanno."
+        },
+        {
+            "type": "paragraph",
+            "text": "Non mancava la voglia di studiare. Mancava un sistema. Tra strumenti dispersivi e scadenze recuperate dai siti universitari, il piano di studio diventava fragile e l'ansia pre-esame cresceva."
+        },
+        {
+            "type": "cit",
+            "text": "Non serviva l’ennesimo posto dove archiviare note, ma un sistema per portarti all’azione ogni giorno.",
+            "person": "Team Lauris"
+        },
+        {
+            "type": "paragraph",
+            "title": "La nostra Mission",
+            "text": "Abbiamo creato Lauris per supportare gli universitari nel costruire una routine sostenibile fino all'esame. Uniamo pianificazione, azione guidata e pillole pratiche nel momento giusto."
+        },
+        {
+            "type": "paragraph",
+            "text": "Lauris non è un'app di note generica o un calendario semplice. È uno Study OS premium che trasforma i tuoi obiettivi in sessioni guidate e progressi misurabili. Vogliamo ridurre la frizione tra il \"dover studiare\" e il \"fare\", aiutandoti a mantenere la costanza senza giudizio."
+        },
+        {
+            "type": "list",
+            "items": [
+                {
+                    "title": "Chiarezza operativa",
+                    "description": "Trasformiamo obiettivi complessi in azioni semplici. Una schermata, un'idea."
+                },
+                {
+                    "title": "Progresso misurabile",
+                    "description": "Metriche semplici e feedback sul prossimo passo, senza promesse irrealistiche."
+                },
+                {
+                    "title": "Rispetto per la persona",
+                    "description": "Un tono calmo che riconosce la fatica e ti aiuta a ripartire, non a sentirti in colpa."
+                }
+            ]
+        }
+    ],
+    "sources": [
+        {
+            "title": "Lauris - Il tuo Study OS",
+            "isBook": false,
+            "author": "App Store",
+            "url": "https://apps.apple.com/us/app/lauris/id6759625379",
+            "imageURL": null
+        }
+    ]
+}

@@ -1,0 +1,44 @@
+{
+    "id": "privacy",
+    "title": "Privacy",
+    "description": "I tuoi dati appartengono a te. Ecco come li proteggiamo.",
+    "symbol": "hand.raised.fill",
+    "body": [
+        {
+            "type": "paragraph",
+            "title": "I tuoi dati restano tuoi",
+            "text": "Lauris è progettata per rispettare la tua privacy. Non vendiamo i tuoi dati a terzi e non analizziamo i tuoi appunti per scopi pubblicitari. Tutto ciò che scrivi e pianifichi è pensato per restare privato."
+        },
+        {
+            "type": "paragraph",
+            "title": "Dati aggregati e anonimi",
+            "text": "Per migliorare l'app, raccogliamo solo dati aggregati e anonimi tramite gli strumenti standard di Apple. Questo ci serve per capire quali funzionalità vengono usate di più, senza mai sapere chi sta facendo cosa."
+        },
+        {
+            "type": "paragraph",
+            "title": "Gestione dei Crash",
+            "text": "Se l'app dovesse chiudersi inaspettatamente, riceviamo un report tecnico anonimo (crash log). Questo ci aiuta a individuare e correggere i bug velocemente, garantendoti un'esperienza sempre più stabile."
+        },
+        {
+            "type": "paragraph",
+            "title": "Nessun tracciamento",
+            "text": "Non ti tracciamo attraverso altri siti web o app. Il tuo percorso di studio è una questione personale e noi lo trattiamo come tale."
+        }
+    ],
+    "sources": [
+        {
+            "title": "Privacy Policy",
+            "isBook": false,
+            "author": "Lauris",
+            "url": "https://brand-origin-studio.github.io/documents/#privacy",
+            "imageURL": null
+        },
+        {
+            "title": "Privacy Apple",
+            "isBook": false,
+            "author": "Apple Inc.",
+            "url": "https://www.apple.com/it/privacy/",
+            "imageURL": null
+        }
+    ]
+}

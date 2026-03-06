@@ -1,0 +1,92 @@
+{
+    "id": "terms",
+    "title": "Termini e Condizioni",
+    "description": "Le regole per utilizzare Lauris in modo sicuro e responsabile.",
+    "symbol": "text.book.closed.fill",
+    "body": [
+        {
+            "type": "paragraph",
+            "title": "1. Introduzione e accettazione",
+            "text": "Benvenuto in Lauris. Scaricando o utilizzando l'app, accetti i presenti termini. Se non sei d'accordo con una qualsiasi parte di questi termini, ti invitiamo a non utilizzare il servizio."
+        },
+        {
+            "type": "paragraph",
+            "title": "2. Descrizione del servizio (MVP)",
+            "text": "Lauris è uno Study OS che include funzionalità di pianificazione (Widget, Obiettivi), Libreria appunti, Sessioni guidate (Focus Mode) e monitoraggio progressi. L'app è fornita 'così com'è' e le funzionalità possono evolvere nel tempo."
+        },
+        {
+            "type": "paragraph",
+            "title": "3. Licenza d'uso non esclusiva",
+            "text": "Ti concediamo una licenza limitata, non esclusiva e non trasferibile per utilizzare l'app a scopo personale e non commerciale, in accordo con questi termini."
+        },
+        {
+            "type": "paragraph",
+            "title": "4. Account utente e responsabilità",
+            "text": "Sei responsabile della sicurezza del tuo dispositivo e dell'accesso all'app. Poiché i dati sono salvati localmente, sei responsabile del loro backup tramite i sistemi del tuo dispositivo."
+        },
+        {
+            "type": "paragraph",
+            "title": "5. Contenuti generati dall'utente (UGC)",
+            "text": "Gli appunti, i piani e i dati che inserisci in Lauris sono tuoi. Non rivendichiamo alcuna proprietà sui tuoi contenuti di studio."
+        },
+        {
+            "type": "paragraph",
+            "title": "6. Comportamenti vietati",
+            "text": "Non è consentito: effettuare reverse engineering dell'app, utilizzare l'app per scopi illegali, o tentare di aggirare le protezioni di sicurezza."
+        },
+        {
+            "type": "paragraph",
+            "title": "7. Proprietà intellettuale",
+            "text": "Il marchio Lauris, il logo, il codice sorgente, il design dell'interfaccia e i contenuti editoriali (Pillole) sono proprietà esclusiva di Lauris e sono protetti dalle leggi sul copyright."
+        },
+        {
+            "type": "paragraph",
+            "title": "8. Limitazione di responsabilità",
+            "text": "Lauris fornisce strumenti per organizzare lo studio, ma non garantisce risultati specifici, voti o superamento di esami. Non siamo responsabili per danni diretti o indiretti derivanti dall'uso o dall'impossibilità di usare l'app."
+        },
+        {
+            "type": "paragraph",
+            "title": "9. Disclaimer legale",
+            "text": "Lauris non è un servizio medico, terapeutico o psicologico. Le 'Pillole' e i suggerimenti su stress o ansia sono di natura pratica e organizzativa, non clinica. Per problemi di salute, rivolgiti a un professionista."
+        },
+        {
+            "type": "paragraph",
+            "title": "10. Terminazione",
+            "text": "Possiamo sospendere o terminare il supporto all'app in qualsiasi momento, senza preavviso, se riteniamo che vi sia stata una violazione di questi termini."
+        },
+        {
+            "type": "paragraph",
+            "title": "11. Modifiche ai termini",
+            "text": "Ci riserviamo il diritto di modificare questi termini. Le modifiche saranno effettive dal momento della pubblicazione nell'app o tramite notifica."
+        },
+        {
+            "type": "paragraph",
+            "title": "12. Privacy",
+            "text": "L'uso dell'app è regolato anche dalla nostra Privacy Policy, consultabile nella sezione dedicata dell'account."
+        },
+        {
+            "type": "paragraph",
+            "title": "13. Legge applicabile e foro competente",
+            "text": "Questi termini sono regolati dalla legge italiana. Per qualsiasi controversia sarà competente in via esclusiva il Foro di Milano."
+        },
+        {
+            "type": "paragraph",
+            "title": "14. Contatti",
+            "text": "Per domande su questi termini, puoi contattare il team di sviluppo all'indirizzo email di supporto indicato nell'App Store."
+        },
+        {
+            "type": "paragraph",
+            "title": "15. Data di ultimo aggiornamento",
+            "text": "Febbraio 2026."
+        }
+    ],
+    "sources": [
+        {
+            "title": "Termini e condizioni",
+            "isBook": false,
+            "author": "Lauris",
+            "url": "https://brand-origin-studio.github.io/documents/#termini",
+            "imageURL": null
+        }
+    ]
+}

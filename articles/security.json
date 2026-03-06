@@ -1,0 +1,38 @@
+{
+    "id": "security",
+    "title": "Sicurezza",
+    "description": "Crittografia locale e protezione del dispositivo per i tuoi progressi.",
+    "symbol": "lock.fill",
+    "body": [
+        {
+            "type": "paragraph",
+            "title": "Una cassaforte digitale",
+            "text": "I tuoi appunti, i tuoi piani di studio e i tuoi progressi sono salvati localmente sul tuo dispositivo. Utilizziamo gli standard di sicurezza nativi di iOS per garantire che i tuoi file siano criptati e inaccessibili a chi non possiede il tuo codice di sblocco."
+        },
+        {
+            "type": "paragraph",
+            "title": "Backup e Cloud",
+            "text": "Poiché i dati risiedono sul tuo dispositivo, ti consigliamo vivamente di attivare il backup su iCloud. Questo garantisce che, anche in caso di smarrimento del telefono, tu possa recuperare tutto il tuo percorso universitario senza perdere nemmeno una sessione."
+        },
+        {
+            "type": "cit",
+            "text": "Privacy al 100% locale: nessun dato sensibile viene inviato ai nostri server.",
+        }
+    ],
+    "sources": [
+        {
+            "title": "Backup con iCloud",
+            "isBook": false,
+            "author": "Apple Inc.",
+            "url": "https://support.apple.com/it-it/108366",
+            "imageURL": null
+        },
+        {
+            "title": "Sicurezza Apple",
+            "isBook": false,
+            "author": "Apple Inc.",
+            "url": "https://support.apple.com/it-it/guide/security/welcome/web",
+            "imageURL": null
+        }
+    ],
+}
