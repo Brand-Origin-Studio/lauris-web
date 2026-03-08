@@ -20,7 +20,6 @@
 <meta property="twitter:description" content="Dagli appunti al 30 e lode. Unisci studio, agenda e focus in un unico flusso continuo.">
 <meta property="twitter:image" content="https://brand-origin-studio.github.io/documents/social-cover.png">
 
-
 <style> 
 :root { 
     /* Colori Semantici di Sistema - LIGHT MODE */
@@ -28,7 +27,7 @@
     --bg-secondary: #f5f5f7; 
     
     --color-text: #1d1d1f; 
-    --color-text-secondary: #86868b; 
+    --color-text-secondary: #6e6e73; /* A11Y FIX: Scurito per contrasto AA */
     --color-border: #d2d2d7; 
     --color-accent: #0071e3; 
     --focus-ring: rgba(0, 113, 227, 0.5);
@@ -192,7 +191,7 @@ nav a.nav-link:hover, nav span.nav-link:hover { background: var(--nav-hover); co
 
 .plan-safeguard { display: flex; align-items: flex-start; gap: 24px; background: var(--bg-secondary); padding: 40px; border-radius: 32px; text-align: left; border: 1px solid var(--color-border); }
 .plan-safeguard-icon { width: 64px; height: 64px; background: var(--bg-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 10px 20px rgba(0,0,0,0.06); color: var(--color-text); border: 1px solid rgba(0,0,0,0.05); }
-.plan-safeguard-text h4 { font-size: 21px; font-weight: 600; margin-bottom: 8px; color: var(--color-text); }
+.plan-safeguard-text h3 { font-size: 21px; font-weight: 600; margin-bottom: 8px; color: var(--color-text); } /* A11Y FIX: h4 -> h3 */
 .plan-safeguard-text p { font-size: 17px; margin: 0; color: var(--color-text-secondary); line-height: 1.5; }
 
 /* SEZIONE DOWNLOAD */
@@ -216,7 +215,7 @@ nav a.nav-link:hover, nav span.nav-link:hover { background: var(--nav-hover); co
 .faq-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; margin-bottom: 56px; }
 .faq-card { background: var(--bg-primary); padding: 40px; border-radius: 32px; text-align: left; border: 1px solid var(--color-border); box-shadow: 0 10px 30px rgba(0,0,0,0.02); transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1); }
 .faq-card:hover { transform: translateY(-4px); }
-.faq-card h4 { font-size: 21px; font-weight: 600; margin-bottom: 16px; line-height: 1.3; color: var(--color-text); }
+.faq-card h3 { font-size: 21px; font-weight: 600; margin-bottom: 16px; line-height: 1.3; color: var(--color-text); } /* A11Y FIX: h4 -> h3 */
 .faq-card p { font-size: 17px; margin-bottom: 0; color: var(--color-text-secondary); line-height: 1.5; }
 
 /* FOOTER */
@@ -227,7 +226,7 @@ footer { padding: 100px 24px 40px; background: var(--bg-secondary); border-top: 
 .footer-brand h2 { font-size: 24px; margin-bottom: 16px; font-weight: 600; }
 .footer-brand p { font-size: 15px; color: var(--color-text-secondary); max-width: 320px; line-height: 1.6;}
 .footer-links-wrapper { display: flex; gap: 64px; flex-wrap: wrap; }
-.footer-col h4 { font-size: 13px; font-weight: 600; color: var(--color-text); margin-bottom: 24px; text-transform: uppercase; letter-spacing: 0.05em; }
+.footer-col h3 { font-size: 13px; font-weight: 600; color: var(--color-text); margin-bottom: 24px; text-transform: uppercase; letter-spacing: 0.05em; } /* A11Y FIX: h4 -> h3 */
 .footer-col ul { list-style: none; padding: 0; }
 .footer-col ul li { margin-bottom: 16px; }
 .footer-col ul li span, .footer-col ul li a { font-size: 14px; color: var(--color-text-secondary); cursor: pointer; transition: color 0.2s; font-weight: 500; text-decoration: none; }
@@ -316,11 +315,9 @@ details .details-content p { font-size: 19px; margin: 0; color: var(--color-text
     font-size: 26px;
 }
 
-
 .spinner-container { display: flex; justify-content: center; align-items: center; padding: 80px 0; }
 .spinner { width: 32px; height: 32px; border: 3px solid var(--color-border); border-top-color: var(--color-accent); border-radius: 50%; animation: spin 1s linear infinite; }
 @keyframes spin { 100% { transform: rotate(360deg); } }
-
 
 /* =========================================
    MEDIA QUERIES - LOGICA EDGE-TO-EDGE
@@ -452,7 +449,7 @@ details .details-content p { font-size: 19px; margin: 0; color: var(--color-text
         </div> 
     </section> 
 
-    <div class="screenshots-scroller reveal delay-3"> 
+    <div class="screenshots-scroller reveal delay-3" tabindex="0" role="region" aria-label="Galleria screenshot dell'applicazione"> 
         <div class="screenshot-item"><img src="screenshots/1.png" alt="Dashboard Lauris" loading="lazy"></div>
         <div class="screenshot-item"><img src="screenshots/2.png" alt="Appunti Lauris" loading="lazy"></div>
         <div class="screenshot-item"><img src="screenshots/3.png" alt="Focus Mode" loading="lazy"></div>
@@ -550,7 +547,7 @@ details .details-content p { font-size: 19px; margin: 0; color: var(--color-text
                         </svg>
                     </div>
                     <div class="plan-safeguard-text">
-                        <h4>I tuoi dati, sempre al sicuro.</h4>
+                        <h3>I tuoi dati, sempre al sicuro.</h3>
                         <p>Quando l'Early Access terminerà, l'app passerà alla sua versione finale di rilascio. <strong>Tutti i tuoi appunti, i corsi e i progressi verranno mantenuti intatti sul tuo dispositivo.</strong> Nessuna interruzione, nessun dato perso.</p>
                     </div>
                 </div>
@@ -617,15 +614,15 @@ details .details-content p { font-size: 19px; margin: 0; color: var(--color-text
             
             <div class="faq-grid">
                 <div class="faq-card">
-                    <h4>Che cos’è esattamente Lauris?</h4>
+                    <h3>Che cos’è esattamente Lauris?</h3>
                     <p>Lauris è uno Study OS per universitari. Collega le tue lezioni, i tuoi appunti e i tuoi obiettivi in un unico flusso per aiutarti a studiare con costanza.</p>
                 </div>
                 <div class="faq-card">
-                    <h4>Come creo il mio primo Corso?</h4>
+                    <h3>Come creo il mio primo Corso?</h3>
                     <p>Vai nella sezione 'Corsi' e tocca '+'. Inserisci nome, crediti (CFU) e colore. Da lì potrai aggiungere argomenti e appunti specifici.</p>
                 </div>
                 <div class="faq-card">
-                    <h4>Posso registrare l'audio delle lezioni?</h4>
+                    <h3>Posso registrare l'audio delle lezioni?</h3>
                     <p>Certamente. Puoi registrare l'audio mentre prendi appunti testuali, così da avere tutto sincronizzato in un unico posto.</p>
                 </div>
             </div>
@@ -651,7 +648,7 @@ details .details-content p { font-size: 19px; margin: 0; color: var(--color-text
             </div>
             <div class="footer-links-wrapper">
                 <div class="footer-col">
-                    <h4>Prodotto</h4>
+                    <h3>Prodotto</h3>
                     <ul>
                         <li><a href="#features">Scopri</a></li>
                         <li><a href="#piani">Piani</a></li>
@@ -659,7 +656,7 @@ details .details-content p { font-size: 19px; margin: 0; color: var(--color-text
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>Risorse</h4>
+                    <h3>Risorse</h3>
                     <ul>
                         <li><span data-modal="about" role="button" tabindex="0">Chi Siamo</span></li>
                         <li><span data-modal="accessibility" role="button" tabindex="0">Accessibilità</span></li>
@@ -678,7 +675,7 @@ details .details-content p { font-size: 19px; margin: 0; color: var(--color-text
     </div>
 </footer> 
 
-<div id="dynamic-modal" class="modal-overlay" aria-modal="true" role="dialog" aria-labelledby="modal-title">
+<div id="dynamic-modal" class="modal-overlay" aria-modal="true" role="dialog" aria-labelledby="modal-title" aria-hidden="true">
     <div class="modal-header"> 
         <button id="btn-reader-mode" class="btn-reader" aria-label="Attiva modalità lettura" title="Modalità Lettura">
             <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -690,7 +687,7 @@ details .details-content p { font-size: 19px; margin: 0; color: var(--color-text
         <button id="modal-close-btn" class="btn-close" aria-label="Chiudi finestra">&times;</button> 
     </div> 
     <div class="modal-content"> 
-        <h2 id="modal-title"></h2> 
+        <h2 id="modal-title">Caricamento...</h2> 
         <p id="modal-desc" class="modal-desc"></p> 
         <div id="modal-body" class="dynamic-body"></div>
     </div>
@@ -748,6 +745,10 @@ async function openModal(fileName) {
     focusedElementBeforeModal = document.activeElement; 
     document.body.style.overflow = 'hidden';
     modal.classList.add('active');
+    
+    // A11Y FIX: Rivela il modale agli screen reader
+    modal.setAttribute('aria-hidden', 'false'); 
+    
     modal.scrollTo(0, 0); 
     compactTitle.classList.remove('visible'); 
     
@@ -839,6 +840,10 @@ async function openModal(fileName) {
 
 function closeModal() {
     modal.classList.remove('active');
+    
+    // A11Y FIX: Nasconde nuovamente il modale agli screen reader
+    modal.setAttribute('aria-hidden', 'true'); 
+    
     document.body.style.overflow = '';
     if (focusedElementBeforeModal) focusedElementBeforeModal.focus(); 
 }
