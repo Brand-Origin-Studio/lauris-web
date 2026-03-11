@@ -1,0 +1,320 @@
+[
+    {
+        "id": "oggi",
+        "image": "support-today",
+        "title": "Oggi: il tuo punto di partenza",
+        "description": "Una dashboard chiara per capire subito cosa fare, senza perderti tra mille tab aperte.",
+        "body": [
+            {
+                "type": "paragraph",
+                "title": "Tutto in un colpo d'occhio",
+                "text": "La schermata 'Oggi' è progettata per ridurre il rumore mentale. Qui Lauris raccoglie solo le informazioni essenziali per affrontare la giornata corrente, permettendoti di passare dalla pianificazione all'azione in pochi istanti."
+            },
+            {
+                "type": "list",
+                "items": [
+                    {
+                        "title": "Lezioni del giorno",
+                        "description": "Visualizza orari e aule delle lezioni previste per oggi."
+                    },
+                    {
+                        "title": "Promemoria esami",
+                        "description": "Tieni sotto controllo i giorni mancanti alle prossime scadenze importanti."
+                    },
+                    {
+                        "title": "Panoramica carriera",
+                        "description": "Un rapido check sui tuoi dati principali, senza distrazioni."
+                    }
+                ]
+            },
+            {
+                "type": "paragraph",
+                "text": "Ogni mattina, apri questa sezione per orientarti. Non serve cercare altrove: il tuo piano quotidiano parte da qui."
+            }
+        ],
+        "sources": []
+    },
+    {
+        "id": "corsi",
+        "image": "support-notes",
+        "title": "Corsi: la tua libreria ordinata",
+        "description": "Centralizza appunti e materiali. Un sistema gerarchico semplice per ritrovare tutto in pochi tap.",
+        "body": [
+            {
+                "type": "paragraph",
+                "title": "Struttura solida, mente libera",
+                "text": "Dimentica i file sparsi su dispositivi diversi. La sezione Corsi funge da archivio centrale del tuo Study OS. Abbiamo strutturato l'organizzazione in modo gerarchico per garantire la massima reperibilità."
+            },
+            {
+                "type": "list",
+                "items": [
+                    {
+                        "title": "Corso",
+                        "description": "Il contenitore principale (es. Diritto Privato, Analisi I)."
+                    },
+                    {
+                        "title": "Argomento",
+                        "description": "Le macro-aree del corso, utili per spezzare la complessità."
+                    },
+                    {
+                        "title": "Appunto",
+                        "description": "La singola risorsa. Puoi creare capitoli per ogni argomento per scendere nel dettaglio."
+                    }
+                ]
+            },
+            {
+                "type": "paragraph",
+                "title": "Formati supportati",
+                "text": "Ogni studente ha il suo metodo. Dentro ogni appunto puoi integrare:"
+            },
+            {
+                "type": "list",
+                "items": [
+                    {
+                        "title": "Testo e Scrittura a mano",
+                        "description": "Per chi ama digitare o usare la stilo."
+                    },
+                    {
+                        "title": "Audio e Foto",
+                        "description": "Per catturare lezioni dal vivo o schemi alla lavagna."
+                    },
+                    {
+                        "title": "File esterni",
+                        "description": "Allega PDF o slide direttamente nell'argomento pertinente."
+                    }
+                ]
+            }
+        ],
+        "sources": []
+    },
+    {
+        "id": "editor-avanzato",
+        "image": "support-editor",
+        "title": "Editor: velocità del pensiero",
+        "description": "Trasforma idee sparse in appunti potenti e interattivi con comandi fulminei.",
+        "body": [
+            {
+                "type": "paragraph",
+                "title": "Oltre il semplice testo",
+                "text": "Dimentica i vecchi documenti disordinati. L'editor di Lauris è uno spazio di lavoro modulare in cui ogni paragrafo, immagine o grafico è un 'blocco' indipendente. Questo ti permette di riorganizzare gli appunti in un attimo, mantenendo sempre un layout pulito."
+            },
+            {
+                "type": "photo",
+                "name": "support-editor-blocks",
+                "alt": "Anteprima del menu contestuale dell'editor a blocchi con i vari comandi disponibili"
+            },
+            {
+                "type": "paragraph",
+                "title": "Il potere del comando Slash (/)",
+                "text": "Vogliamo che la tua concentrazione resti sul contenuto, non sui bottoni. Digita semplicemente '/' (slash) in un blocco vuoto per aprire il menu contestuale rapido e trasformare il testo in qualsiasi elemento visivo in una frazione di secondo."
+            },
+            {
+                "type": "list",
+                "items": [
+                    {
+                        "title": "Struttura visiva",
+                        "description": "Usa Titoli, Sottotitoli, Citazioni e Divisori per dare una gerarchia chiara ai tuoi riassunti."
+                    },
+                    {
+                        "title": "Liste e Task",
+                        "description": "Crea elenchi puntati, numerati o checklist interattive per tenere traccia dei concetti da ripassare."
+                    },
+                    {
+                        "title": "Media e Riferimenti",
+                        "description": "Inserisci caroselli di immagini, mappe native, snippet di codice e anteprime di link web."
+                    },
+                    {
+                        "title": "Dati Complessi",
+                        "description": "Organizza le informazioni con Tabelle, genera Grafici dinamici o usa la TimeLine per tracciare eventi cronologici."
+                    }
+                ]
+            },
+            {
+                "type": "cit",
+                "text": "Gli appunti migliori non sono quelli più lunghi, ma quelli strutturati per essere ricordati.",
+                "person": "Il Team di Lauris"
+            },
+            {
+                "type": "paragraph",
+                "title": "Flessibilità e gesti nativi",
+                "text": "L'editor supporta pienamente il Drag & Drop: puoi trascinare foto o link da Safari direttamente nei tuoi appunti. E se sbagli? Nessun problema. Usa i tasti Undo/Redo sulla tastiera oppure scuoti fisicamente l'iPhone (Shake-to-Undo) per annullare l'ultima modifica all'istante."
+            }
+        ],
+        "sources": [
+            {
+                "title": "Annullare l'inserimento su iPhone (Shake-to-Undo)",
+                "isBook": false,
+                "author": "Apple Inc.",
+                "url": "https://support.apple.com/it-it/guide/iphone/iphb4cb71db7/ios",
+                "imageURL": null
+            }
+        ]
+    },
+    {
+        "id": "study",
+        "image": "support-study",
+        "title": "Studio: dal piano all'azione",
+        "description": "Trasforma gli obiettivi in sessioni guidate e monitora i tuoi progressi visibili.",
+        "body": [
+            {
+                "type": "paragraph",
+                "title": "Tracker Obiettivi",
+                "text": "Questa è la sala macchine del tuo studio. Qui non ti limiti a segnare le date, ma costruisci il percorso per arrivarci preparato."
+            },
+            {
+                "type": "list",
+                "items": [
+                    {
+                        "title": "Registra Esame",
+                        "description": "Crea un nuovo obiettivo legato a un Corso specifico."
+                    },
+                    {
+                        "title": "Mappa gli argomenti",
+                        "description": "All'interno dell'esami, elenca gli argomenti da studiare. Man mano che li completi, segnali come 'studiati'."
+                    },
+                    {
+                        "title": "Progressi visibili",
+                        "description": "Il sistema calcola automaticamente la percentuale di completamento dell'obiettivo complessivo. Saprai sempre a che punto sei."
+                    }
+                ]
+            },
+            {
+                "type": "paragraph",
+                "title": "Sessione Guidata",
+                "text": "Quando è ora di studiare, avvia una Sessione di focus. Questo trasforma un'intenzione vaga in un'azione concreta, riducendo l'ansia da prestazione."
+            }
+        ],
+        "sources": []
+    },
+    {
+        "id": "calendar",
+        "image": "support-calendar",
+        "title": "Agenda: il tuo ritmo settimanale",
+        "description": "Pianifica le lezioni e sincronizza i tuoi tempi con la realtà universitaria.",
+        "body": [
+            {
+                "type": "paragraph",
+                "title": "Calendario Lezioni",
+                "text": "L'Agenda di Lauris non è un calendario generico. È ottimizzata per la ciclicità universitaria. Configura il tuo orario settimanale una sola volta e lascia che l'app organizzi la visualizzazione."
+            },
+            {
+                "type": "list",
+                "items": [
+                    {
+                        "title": "Configurazione Corsi",
+                        "description": "Imposta i corsi settimanali con orari e aule ricorrenti."
+                    },
+                    {
+                        "title": "Live Activity",
+                        "description": "Quando una lezione è in corso, Lauris mostra un'attività live sulla schermata di blocco, per non perdere mai il senso del tempo durante la giornata."
+                    }
+                ]
+            },
+            {
+                "type": "paragraph",
+                "text": "Avere un'agenda chiara ti aiuta a proteggere gli spazi vuoti da dedicare alle sessioni di studio individuale."
+            }
+        ],
+        "sources": []
+    },
+    {
+        "id": "career",
+        "image": "support-career",
+        "title": "Carriera: libretto digitale",
+        "description": "Monitora la tua media e guarda al futuro con le previsioni del voto di laurea.",
+        "body": [
+            {
+                "type": "paragraph",
+                "title": "Misura il tuo percorso",
+                "text": "La sezione Carriera funge da libretto voti avanzato. Non serve a giudicarti, ma a darti consapevolezza sui risultati ottenuti."
+            },
+            {
+                "type": "list",
+                "items": [
+                    {
+                        "title": "Aggiungi Voto",
+                        "description": "Registra l'esito di ogni esame completato."
+                    },
+                    {
+                        "title": "Media e Previsione",
+                        "description": "Visualizza la tua media attuale e una proiezione realistica del voto di laurea, basata sui crediti acquisiti."
+                    }
+                ]
+            },
+            {
+                "type": "paragraph",
+                "text": "Avere i dati chiari ti aiuta a pianificare i prossimi passi con maggiore serenità e strategia."
+            }
+        ],
+        "sources": []
+    },
+    {
+        "id": "account",
+        "image": "support-account",
+        "title": "Account: il tuo profilo studente",
+        "description": "Gestisci le impostazioni, la privacy e trova supporto quando ne hai bisogno.",
+        "body": [
+            {
+                "type": "paragraph",
+                "title": "Tutto sotto controllo",
+                "text": "Nella sezione Account gestisci la tua identità all'interno di Lauris. Qui puoi accedere alle informazioni legali (Privacy, Termini e Condizioni) e verificare i dettagli di sicurezza."
+            },
+            {
+                "type": "paragraph",
+                "title": "Supporto e Guide",
+                "text": "Se hai dubbi su una funzionalità o vuoi scoprire le ultime novità introdotte nello Study OS, questa è la sezione giusta. Troverai guide rapide per sfruttare al meglio ogni strumento."
+            }
+        ],
+        "sources": []
+    },
+    {
+        "id": "customization",
+        "image": "support-customization",
+        "title": "Personalizzazione: uno spazio tuo",
+        "description": "Adatta l'aspetto di Lauris alle tue preferenze visive e di lettura.",
+        "body": [
+            {
+                "type": "paragraph",
+                "title": "Comfort visivo",
+                "text": "Passiamo molte ore sullo schermo. Per questo Lauris ti permette di adattare l'interfaccia per ridurre l'affaticamento e sentirti a tuo agio."
+            },
+            {
+                "type": "list",
+                "items": [
+                    {
+                        "title": "Avatar",
+                        "description": "Scegli l'immagine che ti rappresenta nel tuo profilo."
+                    },
+                    {
+                        "title": "Dark Mode",
+                        "description": "Ideale per le sessioni di studio serali o per chi preferisce toni scuri."
+                    },
+                    {
+                        "title": "Dimensione Testi",
+                        "description": "Aumenta la leggibilità per non sforzare la vista durante la lettura degli appunti o dei quiz."
+                    }
+                ]
+            }
+        ],
+        "sources": [
+            {
+                "title": "Attivare la dark mode",
+                "isBook": false,
+                "author": "Apple Inc.",
+                "url": "https://support.apple.com/it-it/108350",
+                "imageURL": null
+            },
+            {
+                "title": "Modificare le dimensioni del testo",
+                "isBook": false,
+                "author": "Apple Inc.",
+                "url": "https://support.apple.com/it-it/102453",
+                "imageURL": null
+            }
+        ]
+    }
+]
+ 
+ 
+ 
+ 

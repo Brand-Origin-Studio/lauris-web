@@ -1,0 +1,104 @@
+<!DOCTYPE html> 
+<html lang="it"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"> 
+    <title>Domande Frequenti - Lauris</title> 
+    <link rel="stylesheet" href="assets/css/style.css">
+</head> 
+<body> 
+
+    <div id="nav-placeholder"></div>
+
+    <main class="faq-page" style="padding: 140px 20px 80px; max-width: 800px; margin: 0 auto;">
+        
+        <header class="text-center" style="margin-bottom: 60px;">
+            <span class="badge reveal">FAQ</span>
+            <h1 id="faq-page-title" class="reveal delay-1" style="font-size: clamp(2.5rem, 5vw, 4rem); letter-spacing: -0.04em; margin-bottom: 16px;">
+                Caricamento...
+            </h1>
+            <p id="faq-page-desc" class="lead-text reveal delay-2">
+                Recupero le informazioni...
+            </p>
+        </header>
+
+        <div id="faq-container" class="faq-accordion-container reveal delay-3">
+            <div class="spinner-container">
+                <div class="spinner"></div>
+            </div>
+        </div>
+
+        <div class="text-center reveal" style="margin-top: 80px; padding-top: 60px; border-top: 1px solid var(--color-border);">
+            <h3 style="font-size: 2rem; margin-bottom: 16px;">Hai bisogno di guide più approfondite?</h3>
+            <p style="color: var(--color-text-secondary); margin-bottom: 24px;">Esplora il nostro manuale interattivo per scoprire tutti i segreti dello Study OS.</p>
+            <a href="support.html" class="btn-secondary">Vai al Centro di Supporto</a>
+        </div>
+
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="assets/js/components.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", async () => {
+            const faqContainer = document.getElementById('faq-container');
+            const pageTitle = document.getElementById('faq-page-title');
+            const pageDesc = document.getElementById('faq-page-desc');
+
+            // Avviso per chi sviluppa in locale senza Live Server
+            if (window.location.protocol === 'file:') {
+                pageTitle.innerText = "Avviso Sviluppatore";
+                pageDesc.innerText = "Devi usare un Live Server per caricare il file JSON esterno.";
+                faqContainer.innerHTML = `
+                    <div style="background: var(--bg-secondary); padding: 32px; border-radius: 24px; text-align: center;">
+                        <h3 style="margin-bottom: 16px;">CORS Error</h3>
+                        <p style="color: var(--color-text-secondary);">Apri il progetto con Live Server (VS Code) per visualizzare le FAQ.</p>
+                    </div>`;
+                return;
+            }
+
+            try {
+                // Pesca il file JSON dalla cartella
+                const response = await fetch('assets/json/faq.json');
+                if (!response.ok) throw new Error('Errore nel caricamento del JSON');
+                
+                const faqData = await response.json();
+
+                // 1. Popola l'header con i dati del JSON
+                pageTitle.innerText = faqData.title || "Domande Frequenti";
+                pageDesc.innerText = faqData.description || "Tutto quello che devi sapere su Lauris.";
+
+                // 2. Svuota il contenitore (rimuove lo spinner)
+                faqContainer.innerHTML = '';
+
+                // 3. Genera le domande ciclando sul blocco "body"
+                if (faqData.body && faqData.body.length > 0) {
+                    faqData.body.forEach(item => {
+                        // Verifica che sia un blocco paragrafo con titolo (formato Domanda/Risposta)
+                        if (item.type === 'paragraph' && item.title && item.text) {
+                            const details = document.createElement('details');
+                            details.innerHTML = `
+                                <summary>${item.title}</summary>
+                                <div class="details-content">
+                                    <p>${item.text}</p>
+                                </div>
+                            `;
+                            faqContainer.appendChild(details);
+                        }
+                    });
+                } else {
+                    faqContainer.innerHTML = '<p class="text-center" style="color: var(--color-text-secondary);">Nessuna domanda disponibile al momento.</p>';
+                }
+
+            } catch (error) {
+                console.error("Errore fetch FAQ:", error);
+                pageTitle.innerText = "Ops!";
+                pageDesc.innerText = "C'è stato un problema.";
+                faqContainer.innerHTML = `<p class="text-center" style="color: var(--color-accent);">Impossibile caricare le domande frequenti in questo momento. Verifica la connessione o l'esistenza del file assets/json/faq.json.</p>`;
+            }
+        });
+    </script>
+</body> 
+</html>
